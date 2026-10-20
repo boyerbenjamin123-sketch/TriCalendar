@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-20T09:40:02.322Z",
+ "updatedAt": "2026-10-20T10:52:01.076Z",
  "races": {
   "nz": {
    "name": "IRONMAN New Zealand",
@@ -2198,6 +2198,38 @@
    "cardBadge": {
     "cls": "bfull",
     "label": "Full 140.6"
+   },
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Lasse Nygaard Priester",
+      "nat": "GER",
+      "time": "3:43:29",
+      "note": "★ Record du parcours · 1re victoire Pro Series"
+     },
+     {
+      "pos": 2,
+      "name": "Jelle Geens",
+      "nat": "BEL"
+     },
+     {
+      "pos": 3,
+      "name": "Tjebbe Kaindl",
+      "nat": "AUT",
+      "note": "Podium à domicile pour l'Autriche"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Laura Philipp",
+      "nat": "GER",
+      "time": "4:13:22",
+      "note": "★ 4e victoire à Zell am See, deux semaines après Kalmar"
+     }
+    ]
    }
   },
   "nice": {
@@ -2266,6 +2298,66 @@
    "cardBadge": {
     "cls": "bwc",
     "label": "WC Qualification"
+   },
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Hayden Wilde",
+      "nat": "NZL",
+      "time": "3:50:51",
+      "note": "★ Champion du monde 70.3"
+     },
+     {
+      "pos": 2,
+      "name": "Kristian Blummenfelt",
+      "nat": "NOR",
+      "time": "3:51:09",
+      "note": "Run en 1:05:12, record de l'histoire du Mondial 70.3"
+     },
+     {
+      "pos": 3,
+      "name": "Jelle Geens",
+      "nat": "BEL",
+      "time": "3:52:40",
+      "note": "Visait un 3e titre mondial consécutif"
+     },
+     {
+      "pos": 4,
+      "name": "Gustav Iden",
+      "nat": "NOR",
+      "time": "3:53:16",
+      "note": "Meilleur temps vélo du jour"
+     },
+     {
+      "pos": 5,
+      "name": "Lasse Nygaard Priester",
+      "nat": "GER",
+      "time": "3:54:08"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Taylor Knibb",
+      "nat": "USA",
+      "time": "4:19:24",
+      "note": "★ 4e titre mondial 70.3 · record du parcours battu de 3:40"
+     },
+     {
+      "pos": 2,
+      "name": "Julie Derron",
+      "nat": "SUI",
+      "time": "4:23:30"
+     },
+     {
+      "pos": 3,
+      "name": "Alanis Siffert",
+      "nat": "SUI",
+      "time": "4:25:10"
+     }
+    ]
    }
   },
   "kona": {
@@ -2340,6 +2432,140 @@
    "cardBadge": {
     "cls": "bwc",
     "label": "World Champ."
+   },
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Vincent Luis",
+      "nat": "FRA",
+      "time": "7:47:27",
+      "note": "★ 1er Français sacré à Kona, dès ses débuts à Hawaï"
+     },
+     {
+      "pos": 2,
+      "name": "Gustav Iden",
+      "nat": "NOR",
+      "time": "7:49:02",
+      "note": "Pénalité de 3 min sur le vélo · remporte la Pro Series"
+     },
+     {
+      "pos": 3,
+      "name": "Matthew Marquardt",
+      "nat": "USA",
+      "time": "7:49:58"
+     },
+     {
+      "pos": 4,
+      "name": "Gregory Barnaby",
+      "nat": "ITA",
+      "time": "7:51:01"
+     },
+     {
+      "pos": 5,
+      "name": "Pierre Le Corre",
+      "nat": "FRA",
+      "time": "7:53:28"
+     },
+     {
+      "pos": 6,
+      "name": "Sam Long",
+      "nat": "USA",
+      "time": "7:55:20"
+     },
+     {
+      "pos": 7,
+      "name": "Jonas Schomburg",
+      "nat": "GER",
+      "time": "7:56:41"
+     },
+     {
+      "pos": 8,
+      "name": "Kristian Blummenfelt",
+      "nat": "NOR",
+      "time": "7:58:06"
+     },
+     {
+      "pos": 9,
+      "name": "Youri Keulen",
+      "nat": "NED",
+      "time": "7:58:25"
+     },
+     {
+      "pos": 10,
+      "name": "Menno Koolhaas",
+      "nat": "NED",
+      "time": "7:58:54",
+      "note": "Magnus Ditlev (DEN), en tête jusqu'à 10 km de l'arrivée, a abandonné · Laidlow et Lange aussi"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Taylor Knibb",
+      "nat": "USA",
+      "time": "8:36:29",
+      "note": "★ Championne du monde, quelques semaines après son titre 70.3"
+     },
+     {
+      "pos": 2,
+      "name": "Laura Philipp",
+      "nat": "GER",
+      "time": "8:39:33",
+      "note": "Meilleur marathon (2:50:42) · remporte la Pro Series"
+     },
+     {
+      "pos": 3,
+      "name": "Julie Derron",
+      "nat": "SUI",
+      "time": "8:46:24",
+      "note": "Podium dès ses débuts à Kona malgré 3 min de pénalité"
+     },
+     {
+      "pos": 4,
+      "name": "Kat Matthews",
+      "nat": "GBR",
+      "time": "8:49:37"
+     },
+     {
+      "pos": 5,
+      "name": "Imogen Simmonds",
+      "nat": "SUI",
+      "time": "8:51:43"
+     },
+     {
+      "pos": 6,
+      "name": "Lisa Perterer",
+      "nat": "AUT",
+      "time": "8:52:53"
+     },
+     {
+      "pos": 7,
+      "name": "Hannah Berry",
+      "nat": "NZL",
+      "time": "8:59:40"
+     },
+     {
+      "pos": 8,
+      "name": "Solveig Løvseth",
+      "nat": "NOR",
+      "time": "9:02:08",
+      "note": "Effondrée à environ 1 km de l'arrivée alors qu'elle menait"
+     },
+     {
+      "pos": 9,
+      "name": "Anne-Sophie Pierre",
+      "nat": "FRA",
+      "time": "9:03:48"
+     },
+     {
+      "pos": 10,
+      "name": "Grace Thek",
+      "nat": "AUS",
+      "time": "9:06:36"
+     }
+    ]
    }
   }
  },
@@ -2347,11 +2573,11 @@
   "abu26": {
    "name": "WTCS Abu Dhabi 2026",
    "loc": "Hudayriyat Island, Abu Dhabi",
-   "date": "Reportée (guerre en Iran) — nouvelle date non annoncée",
-   "format": "Sprint + Mixed Relay — REPORTÉE",
+   "date": "13-14 Novembre 2026",
+   "format": "Sprint + Mixed Relay",
    "url": "https://triathlon.org",
-   "isoDate": "20260328",
-   "postponed": true,
+   "isoDate": "20261113",
+   "postponed": false,
    "men": [
     "Matt Hauser (AUS)",
     "Hayden Wilde (NZL)",
@@ -2377,7 +2603,6 @@
     "Miriam Casillas (ESP)"
    ],
    "startUTC": null,
-   "sub": "Abu Dhabi, UAE · prévue le 28 mars, reportée (guerre en Iran)",
    "cardBadge": {
     "cls": "bwtcs",
     "label": "Sprint"
@@ -3394,6 +3619,89 @@
    "cardBadge": {
     "cls": "bwtcs",
     "label": "Olympique"
+   },
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Max Studer",
+      "nat": "SUI",
+      "time": "1:41:08",
+      "note": "★ 2e victoire consécutive à Weihai"
+     },
+     {
+      "pos": 2,
+      "name": "David Cantero Del Campo",
+      "nat": "ESP",
+      "time": "1:41:18"
+     },
+     {
+      "pos": 3,
+      "name": "Tyler Mislawchuk",
+      "nat": "CAN",
+      "time": "1:41:25",
+      "note": "1er podium WTCS depuis 7 ans"
+     },
+     {
+      "pos": 4,
+      "name": "João Nuno Batista",
+      "nat": "POR",
+      "time": "1:41:41"
+     },
+     {
+      "pos": 5,
+      "name": "Nicola Azzano",
+      "nat": "ITA",
+      "time": "1:41:54"
+     },
+     {
+      "pos": 7,
+      "name": "John Reed",
+      "nat": "USA",
+      "time": "1:41:59"
+     },
+     {
+      "pos": 10,
+      "name": "Matthew Hauser",
+      "nat": "AUS",
+      "note": "Champion du monde en titre, chute sur le vélo"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Cassandre Beaugrand",
+      "nat": "FRA",
+      "time": "1:49:20",
+      "note": "★ 4e victoire en 4 départs · record perso sur 10 km (32:12)"
+     },
+     {
+      "pos": 2,
+      "name": "Beth Potter",
+      "nat": "GBR",
+      "time": "1:49:26"
+     },
+     {
+      "pos": 3,
+      "name": "Lisa Tertsch",
+      "nat": "GER",
+      "time": "1:49:44"
+     },
+     {
+      "pos": 4,
+      "name": "Anqi Huang",
+      "nat": "CHN",
+      "time": "1:50:33",
+      "note": "Débuts WTCS à domicile"
+     },
+     {
+      "pos": 5,
+      "name": "Gwen Jorgensen",
+      "nat": "USA",
+      "time": "1:50:36"
+     }
+    ]
    }
   },
   "karlovy": {
@@ -3432,6 +3740,66 @@
    "cardBadge": {
     "cls": "bwtcs",
     "label": "Sprint WC"
+   },
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Dorian Coninx",
+      "nat": "FRA",
+      "note": "★ 2e victoire de la saison, devant un Yee revenu très fort"
+     },
+     {
+      "pos": 2,
+      "name": "Alex Yee",
+      "nat": "GBR"
+     },
+     {
+      "pos": 3,
+      "name": "Tjebbe Kaindl",
+      "nat": "AUT"
+     },
+     {
+      "pos": 4,
+      "name": "Ricardo Batista",
+      "nat": "POR"
+     },
+     {
+      "pos": 7,
+      "name": "Martin Sobey",
+      "nat": "CAN"
+     },
+     {
+      "pos": 12,
+      "name": "Vasco Vilaça",
+      "nat": "POR"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Georgia Taylor-Brown",
+      "nat": "GBR",
+      "note": "★ 1re victoire WTCS depuis plus de 3 ans"
+     },
+     {
+      "pos": 2,
+      "name": "Taylor Spivey",
+      "nat": "USA",
+      "time": "2:03:41"
+     },
+     {
+      "pos": 3,
+      "name": "Lisa Tertsch",
+      "nat": "GER"
+     },
+     {
+      "pos": 5,
+      "name": "Therese Feuersinger",
+      "nat": "AUT"
+     }
+    ]
    }
   },
   "ponte": {
@@ -3470,6 +3838,139 @@
    "cardBadge": {
     "cls": "bwtcs",
     "label": "Champ. Monde"
+   },
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Matthew Hauser",
+      "nat": "AUS",
+      "time": "1:39:31",
+      "note": "Victoire au sprint, même temps que Vilaça"
+     },
+     {
+      "pos": 2,
+      "name": "Vasco Vilaça",
+      "nat": "POR",
+      "time": "1:39:31",
+      "note": "★ Champion du monde 2026"
+     },
+     {
+      "pos": 3,
+      "name": "Alex Yee",
+      "nat": "GBR",
+      "time": "1:39:35",
+      "note": "Meilleur run du jour : 28:46"
+     },
+     {
+      "pos": 4,
+      "name": "Ricardo Batista",
+      "nat": "POR",
+      "time": "1:39:36"
+     },
+     {
+      "pos": 5,
+      "name": "Hayden Wilde",
+      "nat": "NZL",
+      "time": "1:40:26"
+     },
+     {
+      "pos": 6,
+      "name": "Dorian Coninx",
+      "nat": "FRA",
+      "time": "1:40:36"
+     },
+     {
+      "pos": 7,
+      "name": "Dylan McCullough",
+      "nat": "NZL",
+      "time": "1:40:38"
+     },
+     {
+      "pos": 8,
+      "name": "Roberto Sanchez Mantecon",
+      "nat": "ESP",
+      "time": "1:40:55"
+     },
+     {
+      "pos": 9,
+      "name": "Connor Bentley",
+      "nat": "GBR",
+      "time": "1:41:07"
+     },
+     {
+      "pos": 10,
+      "name": "Yanis Seguin",
+      "nat": "FRA",
+      "time": "1:41:08"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Cassandre Beaugrand",
+      "nat": "FRA",
+      "time": "1:50:52",
+      "note": "★ 5 victoires en 5 courses · 2e titre mondial"
+     },
+     {
+      "pos": 2,
+      "name": "Georgia Taylor-Brown",
+      "nat": "GBR",
+      "time": "1:51:57"
+     },
+     {
+      "pos": 3,
+      "name": "Kate Waugh",
+      "nat": "GBR",
+      "time": "1:52:23"
+     },
+     {
+      "pos": 4,
+      "name": "Beth Potter",
+      "nat": "GBR",
+      "time": "1:52:55",
+      "note": "Vice-championne du monde 2026"
+     },
+     {
+      "pos": 5,
+      "name": "Laura Lindemann",
+      "nat": "GER",
+      "time": "1:53:05"
+     },
+     {
+      "pos": 6,
+      "name": "Kirsten Kasper",
+      "nat": "USA",
+      "time": "1:53:10"
+     },
+     {
+      "pos": 7,
+      "name": "Diana Isakova",
+      "nat": "AIN",
+      "time": "1:53:21"
+     },
+     {
+      "pos": 8,
+      "name": "Leonie Periault",
+      "nat": "FRA",
+      "time": "1:53:47"
+     },
+     {
+      "pos": 9,
+      "name": "Lisa Tertsch",
+      "nat": "GER",
+      "time": "1:53:52"
+     },
+     {
+      "pos": 10,
+      "name": "Tanja Neubert",
+      "nat": "GER",
+      "time": "1:54:08",
+      "note": "Márta Kropkó (HUN) disqualifiée"
+     }
+    ]
    }
   }
  },
@@ -4004,15 +4505,82 @@
    "cardBadge": {
     "cls": "bt100",
     "label": "Mixed Pro"
+   },
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Hayden Wilde",
+      "nat": "NZL",
+      "time": "3:06:24",
+      "note": "★ 2e victoire T100 2026 · 6 jours après son titre 70.3"
+     },
+     {
+      "pos": 2,
+      "name": "Jelle Geens",
+      "nat": "BEL",
+      "time": "3:06:43"
+     },
+     {
+      "pos": 3,
+      "name": "Kyle Smith",
+      "nat": "NZL",
+      "time": "3:06:48",
+      "note": "Retour à la compétition après une blessure"
+     },
+     {
+      "pos": 4,
+      "name": "Jake Birtwhistle",
+      "nat": "AUS",
+      "time": "3:08:22"
+     },
+     {
+      "pos": 5,
+      "name": "Lasse Nygaard Priester",
+      "nat": "GER",
+      "time": "3:09:29"
+     },
+     {
+      "pos": 6,
+      "name": "Sam Dickinson",
+      "nat": "GBR",
+      "time": "3:10:05"
+     },
+     {
+      "pos": 7,
+      "name": "Gregor Payet",
+      "nat": "LUX",
+      "time": "3:10:14"
+     },
+     {
+      "pos": 8,
+      "name": "Menno Koolhaas",
+      "nat": "NED",
+      "time": "3:10:22"
+     },
+     {
+      "pos": 9,
+      "name": "Antonio Benito López",
+      "nat": "ESP",
+      "time": "3:10:36"
+     },
+     {
+      "pos": 10,
+      "name": "Wilhelm Hirsch",
+      "nat": "GER",
+      "time": "3:11:25"
+     }
+    ]
    }
   },
   "saudi": {
    "name": "Saudi Arabia T100",
    "loc": "Arabie Saoudite",
-   "date": "1 Novembre 2026",
+   "date": "27 Novembre 2026",
    "format": "Hommes Pro",
    "url": "https://t100triathlon.com",
-   "isoDate": "20261101",
+   "isoDate": "20261127",
    "men": [
     "Hayden Wilde (NZL)",
     "Sam Laidlow (FRA)",
@@ -4037,7 +4605,7 @@
     "Flora Duffy (BER)",
     "Laura Philipp (GER)"
    ],
-   "startUTC": "2026-11-01T05:00:00Z",
+   "startUTC": "2026-11-27T05:00:00Z",
    "sub": "Arabie Saoudite",
    "cardBadge": {
     "cls": "bt100",
@@ -4085,7 +4653,7 @@
   "qatar": {
    "name": "Qatar T100 World Championship Final",
    "loc": "Doha, Qatar",
-   "date": "11-13 Decembre 2026",
+   "date": "10-12 Décembre 2026",
    "format": "Hommes + Femmes",
    "url": "https://t100triathlon.com",
    "isoDate": "20261211",

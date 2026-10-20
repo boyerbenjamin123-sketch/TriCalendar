@@ -1,0 +1,10 @@
+{
+  "name": "tricalendar",
+  "version": "1.0.0",
+  "description": "TriCalendar : scripts de données (résultats, .ics)",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

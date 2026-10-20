@@ -1,0 +1,14 @@
+name = "tricalendar-push"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[[kv_namespaces]]
+binding = "SUBS"
+id = "COLLE_ICI_L_ID_KV"
+
+[vars]
+VAPID_SUBJECT = "mailto:COLLE_ICI_TON_EMAIL"
+VAPID_PUBLIC_KEY = "COLLE_ICI_LA_CLE_PUBLIQUE"

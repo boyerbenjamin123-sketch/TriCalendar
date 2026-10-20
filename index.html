@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>TriCalendar 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0A0A0A">
@@ -283,6 +285,20 @@ body.light .sh-share{background:rgba(0,0,0,.05)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .rcard{animation:fadeUp .25s ease both}
 
+/* accessibilité */
+.rcard:focus-visible,.nitem:focus-visible,.stat-pill:focus-visible,.fbtn:focus-visible,.sh-btn-main:focus-visible,.sh-share:focus-visible,.month-toggle:focus-visible,.sr-race:focus-visible,.fav-btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.page-hero-cal,.page-hero-ath{padding-top:max(52px,calc(env(safe-area-inset-top,0px) + 12px))}
+.theme-btn{top:max(52px,calc(env(safe-area-inset-top,0px) + 12px))}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* favoris, direct, alertes */
+.fav-btn{background:none;border:none;color:var(--muted);font-size:20px;line-height:1;padding:6px;cursor:pointer;flex-shrink:0}
+.fav-btn.on{color:var(--gold)}
+.fav-star{color:var(--gold);font-size:12px;margin-left:5px}
+.stat-pill.fav{background:rgba(212,160,67,.15);border-color:rgba(212,160,67,.25);color:var(--gold)}
+.stat-pill.active.fav{background:var(--gold);border-color:var(--gold);color:#000}
+.notif-row{display:flex;align-items:center;gap:10px;padding:12px 0;border-top:1px solid var(--border);font-size:14px}
+.notif-row select{background:var(--card2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-family:inherit;font-size:14px}
+.notif-row input[type=checkbox]{width:20px;height:20px}
 </style>
 </head>
 <body>
@@ -292,7 +308,7 @@ body.light .sh-share{background:rgba(0,0,0,.05)}
 
   <div class="page-hero-cal">
     <div class="hero-glow" style="background:radial-gradient(circle,rgba(232,0,45,.2),transparent 70%)"></div>
-    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+    <button class="theme-btn" id="themeBtn" aria-label="Changer de thème" onclick="toggleTheme()">🌙</button>
     <div class="hero-eyebrow im">Saison 2026</div>
     <div class="hero-title">TRICALENDAR<br>2026</div>
     <div class="hero-sub" id="heroSub">35 épreuves · IRONMAN · WTCS · T100</div>
@@ -307,6 +323,8 @@ body.light .sh-share{background:rgba(0,0,0,.05)}
       <button class="stat-pill upcoming" id="spill-upcoming" onclick="filterCal('upcoming')">À venir</button>
       <button class="stat-pill done" id="spill-done" onclick="filterCal('done')">✓ Terminées</button>
       <a class="stat-pill all" id="subBtn" style="text-decoration:none" href="#">📅 S'abonner</a>
+      <button class="stat-pill fav" id="spill-fav" onclick="filterCal('fav')">★ Favoris</button>
+      <button class="stat-pill all" id="notifBtn" onclick="openNotifSheet()">🔔 Alertes</button>
     </div>
   </div>
 
@@ -331,7 +349,7 @@ body.light .sh-share{background:rgba(0,0,0,.05)}
 
   <div class="page-hero-ath">
     <div class="hero-glow" style="background:radial-gradient(circle,rgba(48,209,88,.18),transparent 70%)"></div>
-    <button class="theme-btn" id="themeBtn2" onclick="toggleTheme()">🌙</button>
+    <button class="theme-btn" id="themeBtn2" aria-label="Changer de thème" onclick="toggleTheme()">🌙</button>
     <div class="hero-eyebrow ath">Saison 2026</div>
     <div class="hero-title">ATHLÈTES<br>& CLASSEMENTS</div>
     <div class="hero-sub">Classements en cours · Recherche tous circuits</div>
@@ -340,8 +358,8 @@ body.light .sh-share{background:rgba(0,0,0,.05)}
   <!-- Tabs classement -->
   <div class="ath-tab-bar">
     <button class="ath-tab active im" id="tab-im26"  onclick="switchTab('im26')">IRONMAN 26</button>
-    <button class="ath-tab wtcs"      id="tab-wtcs"  onclick="switchTab('wtcs')">WTCS 25</button>
-    <button class="ath-tab t100"      id="tab-t100"  onclick="switchTab('t100')">T100 25</button>
+    <button class="ath-tab wtcs" id="tab-wtcs" onclick="switchTab('wtcs')">WTCS 26</button>
+    <button class="ath-tab t100" id="tab-t100" onclick="switchTab('t100')">T100 26</button>
     <button class="ath-tab"           id="tab-srch"  onclick="switchTab('srch')">🔍 Recherche</button>
   </div>
 
@@ -349,30 +367,8 @@ body.light .sh-share{background:rgba(0,0,0,.05)}
 
 <div id="panel-im26" class="rank-panel active">
 
-<div class="rank-header"><div class="rank-title">Classement IRONMAN 2026</div><div class="rank-sub">Après 2 / 16 épreuves · En cours</div></div>
-<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div>
-<div class="rank-row"><div class="rank-pos g1">1</div><div class="rank-av m">KB</div><div class="rank-info"><div class="rank-name">🇳🇴 Kristian Blummenfelt </div><div class="rank-detail">NOR</div></div><div class="rank-score"><div class="rank-pts im">1&#160;300</div><div class="rank-prize">NZ 6e + Geelong 1er</div></div></div>
-<div class="rank-row"><div class="rank-pos g2">2</div><div class="rank-av m">TF</div><div class="rank-info"><div class="rank-name">🇺🇸 Trevor Foley </div><div class="rank-detail">USA</div></div><div class="rank-score"><div class="rank-pts im">1&#160;000</div><div class="rank-prize">NZ 1er</div></div></div>
-<div class="rank-row"><div class="rank-pos g3">3</div><div class="rank-av m">JG</div><div class="rank-info"><div class="rank-name">🇧🇪 Jelle Geens </div><div class="rank-detail">BEL</div></div><div class="rank-score"><div class="rank-pts im">800</div><div class="rank-prize">Geelong 2e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">4</div><div class="rank-av m">PL</div><div class="rank-info"><div class="rank-name">🇫🇷 Pierre Le Corre </div><div class="rank-detail">FRA</div></div><div class="rank-score"><div class="rank-pts im">800</div><div class="rank-prize">NZ 2e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">5</div><div class="rank-av m">HW</div><div class="rank-info"><div class="rank-name">🇳🇿 Hayden Wilde </div><div class="rank-detail">NZL</div></div><div class="rank-score"><div class="rank-pts im">600</div><div class="rank-prize">Geelong 3e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">6</div><div class="rank-av m">MH</div><div class="rank-info"><div class="rank-name">🇺🇸 Matt Hanson </div><div class="rank-detail">USA</div></div><div class="rank-score"><div class="rank-pts im">600</div><div class="rank-prize">NZ 3e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">7</div><div class="rank-av m">JB</div><div class="rank-info"><div class="rank-name">🇦🇺 Jake Birtwhistle </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">500</div><div class="rank-prize">Geelong 4e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">8</div><div class="rank-av m">JM</div><div class="rank-info"><div class="rank-name">🇦🇺 Joel Moody </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">500</div><div class="rank-prize">NZ 4e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">9</div><div class="rank-av m">KM</div><div class="rank-info"><div class="rank-name">🇦🇺 Kurt McDonald </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">400</div><div class="rank-prize">Geelong 5e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">10</div><div class="rank-av m">MP</div><div class="rank-info"><div class="rank-name">🇳🇿 Mike Phillips </div><div class="rank-detail">NZL</div></div><div class="rank-score"><div class="rank-pts im">400</div><div class="rank-prize">NZ 5e</div></div></div>
-<div class="gdiv" style="margin-top:12px"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div>
-<div class="rank-row"><div class="rank-pos g1">1</div><div class="rank-av f">KM</div><div class="rank-info"><div class="rank-name">🇬🇧 Kat Matthews <span class="rank-note champion">★ 2 victoires en 2026</span></div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts im">2&#160;000</div><div class="rank-prize">NZ 1re + Geelong 1re</div></div></div>
-<div class="rank-row"><div class="rank-pos g2">2</div><div class="rank-av f">TJ</div><div class="rank-info"><div class="rank-name">🇨🇦 Tamara Jewett </div><div class="rank-detail">CAN</div></div><div class="rank-score"><div class="rank-pts im">1&#160;100</div><div class="rank-prize">NZ 4e + Geelong 3e</div></div></div>
-<div class="rank-row"><div class="rank-pos g3">3</div><div class="rank-av f">HB</div><div class="rank-info"><div class="rank-name">🇳🇿 Hannah Berry </div><div class="rank-detail">NZL</div></div><div class="rank-score"><div class="rank-pts im">800</div><div class="rank-prize">NZ 2e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">4</div><div class="rank-av f">GT</div><div class="rank-info"><div class="rank-name">🇦🇺 Grace Thek </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">800</div><div class="rank-prize">Geelong 2e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">5</div><div class="rank-av f">LW</div><div class="rank-info"><div class="rank-name">🇳🇱 Lotte Wilms </div><div class="rank-detail">NED</div></div><div class="rank-score"><div class="rank-pts im">600</div><div class="rank-prize">NZ 3e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">6</div><div class="rank-av f">SG</div><div class="rank-info"><div class="rank-name">🇬🇧 Sophia Green </div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts im">500</div><div class="rank-prize">Geelong 4e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">7</div><div class="rank-av f">CJ</div><div class="rank-info"><div class="rank-name">🇦🇺 Chelsea Jewett </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">500</div><div class="rank-prize">NZ 4e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">8</div><div class="rank-av f">DL</div><div class="rank-info"><div class="rank-name">🇺🇸 Danielle Lewis </div><div class="rank-detail">USA</div></div><div class="rank-score"><div class="rank-pts im">400</div><div class="rank-prize">NZ 5e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">9</div><div class="rank-av f">SC</div><div class="rank-info"><div class="rank-name">🇬🇧 Steph Clutterbuck </div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts im">400</div><div class="rank-prize">Geelong 5e</div></div></div>
-<div class="rank-row"><div class="rank-pos ">10</div><div class="rank-av f">RH</div><div class="rank-info"><div class="rank-name">🇦🇺 Regan Hollioake </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">300</div><div class="rank-prize">NZ 6e</div></div></div>
-
+<div class="rank-header"><div class="rank-title">Classement IRONMAN 2026</div><div class="rank-sub">Saison terminée · Résultats définitifs après Kona</div></div>
+<div id="im26-rank"></div>
 <div style="height:1px;background:var(--border);margin:20px 0"></div><div class="rank-header"><div class="rank-title">Classement IRONMAN 2025</div><div class="rank-sub">Saison terminée · Résultats définitifs</div></div>
 <div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div>
 <div class="rank-row">
@@ -601,265 +597,20 @@ body.light .sh-share{background:rgba(0,0,0,.05)}
 </div>
 
 <div id="panel-wtcs" class="rank-panel">
-<div class="rank-header"><div class="rank-title">Classement WTCS 2026</div><div class="rank-sub">Mis à jour après WTCS Yokohama · Mai 2026</div></div>
-
-<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div>
-
-<div class="rank-row"><div class="rank-pos g1">1</div><div class="rank-av wm">MH</div><div class="rank-info"><div class="rank-name">🇦🇺 Matthew Hauser <span class="rank-note champion">Leader WTCS</span></div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts wtcs">1000</div><div class="rank-prize">pts</div></div></div>
-
-<div class="rank-row"><div class="rank-pos g2">2</div><div class="rank-av wm">VV</div><div class="rank-info"><div class="rank-name">🇵🇹 Vasco Vilaça</div><div class="rank-detail">POR</div></div><div class="rank-score"><div class="rank-pts wtcs">1000</div><div class="rank-prize">pts</div></div></div>
-
-<div class="rank-row"><div class="rank-pos g3">3</div><div class="rank-av wm">TH</div><div class="rank-info"><div class="rank-name">🇩🇪 Tim Hellwig</div><div class="rank-detail">GER</div></div><div class="rank-score"><div class="rank-pts wtcs">928</div><div class="rank-prize">pts</div></div></div>
-
-<div class="rank-row"><div class="rank-pos">4</div><div class="rank-av wm">HG</div><div class="rank-info"><div class="rank-name">🇩🇪 Henry Graf</div><div class="rank-detail">GER</div></div><div class="rank-score"><div class="rank-pts wtcs">925</div><div class="rank-prize">pts</div></div></div>
-
-<div class="rank-row"><div class="rank-pos">5</div><div class="rank-av wm">MH</div><div class="rank-info"><div class="rank-name">🇧🇷 Miguel Hidalgo</div><div class="rank-detail">BRA</div></div><div class="rank-score"><div class="rank-pts wtcs">925</div><div class="rank-prize">pts</div></div></div>
-
-<div class="gdiv" style="margin-top:12px"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div>
-
-<div class="rank-row"><div class="rank-pos g1">1</div><div class="rank-av wm">BP</div><div class="rank-info"><div class="rank-name">🇬🇧 Beth Potter <span class="rank-note champion">Leader WTCS</span></div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts wtcs">1925</div><div class="rank-prize">pts</div></div></div>
-
-<div class="rank-row"><div class="rank-pos g2">2</div><div class="rank-av wm">JL</div><div class="rank-info"><div class="rank-name">🇱🇺 Jeanne Lehair</div><div class="rank-detail">LUX</div></div><div class="rank-score"><div class="rank-pts wtcs">1711</div><div class="rank-prize">pts</div></div></div>
-
-<div class="rank-row"><div class="rank-pos g3">3</div><div class="rank-av wm">TM</div><div class="rank-info"><div class="rank-name">🇸🇪 Tilda Månsson</div><div class="rank-detail">SWE</div></div><div class="rank-score"><div class="rank-pts wtcs">1424</div><div class="rank-prize">pts</div></div></div>
-
-<div class="rank-row"><div class="rank-pos">4</div><div class="rank-av wm">TS</div><div class="rank-info"><div class="rank-name">🇺🇸 Taylor Spivey</div><div class="rank-detail">USA</div></div><div class="rank-score"><div class="rank-pts wtcs">1311</div><div class="rank-prize">pts</div></div></div>
-
-<div class="rank-row"><div class="rank-pos">5</div><div class="rank-av wm">SR</div><div class="rank-info"><div class="rank-name">🇬🇧 Sian Rainsley</div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts wtcs">1075</div><div class="rank-prize">pts</div></div></div>
+  <div class="rank-header"><div class="rank-title">Classement WTCS 2026</div><div class="rank-sub">Saison terminée · après la Grande Finale de Pontevedra</div></div>
+  <div id="wtcs-rank"></div>
 </div>
+
 <div id="panel-t100" class="rank-panel">
-<div class="rank-header"><div class="rank-title">Classement T100 2025</div><div class="rank-sub">Saison terminée · Résultats définitifs</div></div>
-<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div>
-<div class="rank-row">
-  <div class="rank-pos g1">1</div>
-  <div class="rank-av tm">HW</div>
-  <div class="rank-info">
-    <div class="rank-name">🇳🇿 Hayden Wilde <span class="rank-note champion">Champion 2025</span></div>
-    <div class="rank-detail">NZL</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">3&#160;200</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos g2">2</div>
-  <div class="rank-av tm">SL</div>
-  <div class="rank-info">
-    <div class="rank-name">🇫🇷 Sam Laidlow </div>
-    <div class="rank-detail">FRA</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;950</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos g3">3</div>
-  <div class="rank-av tm">PH</div>
-  <div class="rank-info">
-    <div class="rank-name">🇧🇪 Pieter Heemeryck </div>
-    <div class="rank-detail">BEL</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;780</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">4</div>
-  <div class="rank-av tm">AD</div>
-  <div class="rank-info">
-    <div class="rank-name">🇩🇪 Andreas Dreitz </div>
-    <div class="rank-detail">GER</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;600</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">5</div>
-  <div class="rank-av tm">KS</div>
-  <div class="rank-info">
-    <div class="rank-name">🇳🇿 Kyle Smith </div>
-    <div class="rank-detail">NZL</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;400</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">6</div>
-  <div class="rank-av tm">LC</div>
-  <div class="rank-info">
-    <div class="rank-name">🇫🇷 Leon Chevalier </div>
-    <div class="rank-detail">FRA</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;200</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">7</div>
-  <div class="rank-av tm">MN</div>
-  <div class="rank-info">
-    <div class="rank-name">🇦🇺 Max Neumann </div>
-    <div class="rank-detail">AUS</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;050</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">8</div>
-  <div class="rank-av tm">GI</div>
-  <div class="rank-info">
-    <div class="rank-name">🇳🇴 Gustav Iden </div>
-    <div class="rank-detail">NOR</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">1&#160;920</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">9</div>
-  <div class="rank-av tm">NK</div>
-  <div class="rank-info">
-    <div class="rank-name">🇦🇺 Nicholas Kastelein </div>
-    <div class="rank-detail">AUS</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">1&#160;800</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">10</div>
-  <div class="rank-av tm">RH</div>
-  <div class="rank-info">
-    <div class="rank-name">🇬🇧 Rupert Hollinshead </div>
-    <div class="rank-detail">GBR</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">1&#160;680</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div>
-<div class="gdiv" style="margin-top:12px"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div>
-<div class="rank-row">
-  <div class="rank-pos g1">1</div>
-  <div class="rank-av tf">TK</div>
-  <div class="rank-info">
-    <div class="rank-name">🇺🇸 Taylor Knibb <span class="rank-note champion">Championne 2025</span></div>
-    <div class="rank-detail">USA</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">3&#160;100</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos g2">2</div>
-  <div class="rank-av tf">PF</div>
-  <div class="rank-info">
-    <div class="rank-name">🇨🇦 Paula Findlay </div>
-    <div class="rank-detail">CAN</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;870</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos g3">3</div>
-  <div class="rank-av tf">KM</div>
-  <div class="rank-info">
-    <div class="rank-name">🇬🇧 Kat Matthews </div>
-    <div class="rank-detail">GBR</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;750</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">4</div>
-  <div class="rank-av tf">JM</div>
-  <div class="rank-info">
-    <div class="rank-name">🇺🇸 Jocelyn McCauley </div>
-    <div class="rank-detail">USA</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;500</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">5</div>
-  <div class="rank-av tf">EP</div>
-  <div class="rank-info">
-    <div class="rank-name">🇬🇧 Emma Pallant-Browne </div>
-    <div class="rank-detail">GBR</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;300</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">6</div>
-  <div class="rank-av tf">BP</div>
-  <div class="rank-info">
-    <div class="rank-name">🇬🇧 Beth Potter </div>
-    <div class="rank-detail">GBR</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;150</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">7</div>
-  <div class="rank-av tf">GT</div>
-  <div class="rank-info">
-    <div class="rank-name">🇬🇧 Georgia Taylor-Brown </div>
-    <div class="rank-detail">GBR</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">2&#160;010</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">8</div>
-  <div class="rank-av tf">LC</div>
-  <div class="rank-info">
-    <div class="rank-name">🇬🇧 Lucy Charles-Barclay </div>
-    <div class="rank-detail">GBR</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">1&#160;880</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">9</div>
-  <div class="rank-av tf">LP</div>
-  <div class="rank-info">
-    <div class="rank-name">🇩🇪 Laura Philipp </div>
-    <div class="rank-detail">GER</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">1&#160;750</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div><div class="rank-row">
-  <div class="rank-pos ">10</div>
-  <div class="rank-av tf">FD</div>
-  <div class="rank-info">
-    <div class="rank-name">🇧🇲 Flora Duffy </div>
-    <div class="rank-detail">BER</div>
-  </div>
-  <div class="rank-score">
-    <div class="rank-pts t100">1&#160;620</div>
-    <div class="rank-prize">pts</div>
-  </div>
-</div>
+  <div class="rank-header"><div class="rank-title">T100 · Race to Qatar 2026</div><div class="rank-sub">Après 3 courses par circuit · les 3 meilleurs scores + la finale comptent</div></div>
+  <div id="t100-rank"></div>
 </div>
 
 <div id="panel-srch" class="rank-panel" style="padding-top:12px">
     <div class="srch-section">
       <div class="srch-wrap">
         <svg class="srch-icon" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-        <input class="srch-input" id="srchInput" type="text" placeholder="Blummenfelt, Matthews, Wilde…" oninput="doSearch(this.value)" autocomplete="off" spellcheck="false">
+        <input class="srch-input" id="srchInput" aria-label="Rechercher un athlète" type="text" placeholder="Blummenfelt, Matthews, Wilde…" oninput="doSearch(this.value)" autocomplete="off" spellcheck="false">
       </div>
       <div class="srch-results" id="srchResults">
         <div class="srch-hint">Tapez au moins 2 lettres</div>
@@ -871,11 +622,11 @@ body.light .sh-share{background:rgba(0,0,0,.05)}
 
 <!-- BOTTOM NAV -->
 <div class="bnav">
-  <div class="nitem active" id="nav-cal" onclick="showPage('cal')">
+  <div class="nitem active" id="nav-cal" role="button" tabindex="0" onclick="showPage('cal')">
     <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
     <span class="nlabel">Calendrier</span>
   </div>
-  <div class="nitem" id="nav-ath" onclick="showPage('ath')">
+  <div class="nitem" id="nav-ath" role="button" tabindex="0" onclick="showPage('ath')">
     <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
     <span class="nlabel">Athlètes</span>
   </div>
@@ -883,7 +634,7 @@ body.light .sh-share{background:rgba(0,0,0,.05)}
 
 <!-- SHEET MODAL -->
 <div class="overlay" id="overlay" onclick="closeSheet()"></div>
-<div class="sheet" id="sheet">
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Détail de la course" tabindex="-1">
   <div class="sh-handle"></div>
   <div class="sh-scroll" id="sheetContent"></div>
 </div>
@@ -922,18 +673,7 @@ function switchTab(t) {
 }
 
 // ── Mode clair/sombre ──
-function toggleTheme() {
-  var on=document.body.classList.toggle("light");
-  var ico=on?"☀️":"🌙";
-  ["themeBtn","themeBtn2"].forEach(function(id){var b=document.getElementById(id);if(b)b.textContent=ico;});
-  try{localStorage.setItem("tri_theme",on?"light":"dark");}catch(e){}
-}
-(function(){
-  try{if(localStorage.getItem("tri_theme")==="light"){
-    document.body.classList.add("light");
-    setTimeout(function(){["themeBtn","themeBtn2"].forEach(function(id){var b=document.getElementById(id);if(b)b.textContent="☀️";});},50);
-  }}catch(e){}
-})();
+
 
 // ── Filtres calendrier ──
 function isDone(iso) {
@@ -1165,17 +905,6 @@ function openT100(id) {
 }
 
 // ── Modal helpers ──
-function openModal() {
-  document.getElementById("sheetContent").scrollTop=0;
-  document.getElementById("overlay").classList.add("open");
-  document.getElementById("sheet").classList.add("open");
-  document.body.style.overflow="hidden";
-}
-function closeSheet() {
-  document.getElementById("overlay").classList.remove("open");
-  document.getElementById("sheet").classList.remove("open");
-  document.body.style.overflow="";
-}
 
 // ── Partage ──
 function shareRace(r) {
@@ -1276,74 +1005,6 @@ var athleteDB = [
   {name:"Flora Duffy",nat:"BER",circuits:["WTCS","T100"]},
 ];
 // ── Recherche athlète ──
-function doSearch(q) {
-  q=q.trim().toLowerCase();
-  var res=document.getElementById("srchResults"); if(!res) return;
-  if(q.length<2){res.innerHTML='<div class="srch-hint">Tapez au moins 2 lettres</div>';return;}
-  var found={};
-  function addAthlete(cn,nat,races){
-    var key=cn.toLowerCase();
-    if(!found[key]) found[key]={cn:cn,nat:nat,f:flag(nat),races:races||[]};
-    else found[key].races=found[key].races.concat(races||[]);
-  }
-  // Scan courses (athlètes engagés/résultats)
-  function scanMap(map,circuit,openFn,badgeCls,color){
-    for(var id in map){
-      var r=map[id];
-      var all=(r.men||[]).concat(r.women||[]);
-      for(var i=0;i<all.length;i++){
-        var nm=all[i];
-        if(nm.toLowerCase().indexOf(q)===-1) continue;
-        var nat=getNat(nm),cn=stripNat(nm),key=cn.toLowerCase();
-        if(!found[key]) found[key]={cn:cn,nat:nat,f:flag(nat),races:[]};
-        found[key].races.push({id:id,r:r,circuit:circuit,openFn:openFn,badgeCls:badgeCls,color:color});
-      }
-    }
-  }
-  scanMap(races,"IRONMAN","openSheet","bim","#FF4B6A");
-  scanMap(wtcsRaces,"WTCS","openWTCS","bwtcs","#30D158");
-  scanMap(t100Races,"T100","openT100","bt100","#FF9F0A");
-  // Scan athleteDB (athlètes connus sans course spécifique dans les données)
-  for(var ai=0;ai<athleteDB.length;ai++){
-    var ath=athleteDB[ai];
-    if(ath.name.toLowerCase().indexOf(q)===-1) continue;
-    var key=ath.name.toLowerCase();
-    if(!found[key]) found[key]={cn:ath.name,nat:ath.nat,f:flag(ath.nat),races:[],dbOnly:true,circuits:ath.circuits};
-  }
-  var keys=Object.keys(found);
-  if(keys.length===0){res.innerHTML='<div class="sr-empty"><div style="font-size:36px;margin-bottom:8px">🤔</div>Aucun résultat pour "'+q+'"</div>';return;}
-  var html="";
-  keys.forEach(function(k){
-    var ath=found[k],ini=ath.cn.split(" ").map(function(w){return w[0];}).join("").substring(0,2).toUpperCase();
-    var circuitsBadges="";
-    if(ath.dbOnly && ath.circuits){
-      ath.circuits.forEach(function(circ){
-        var bcls=circ==="IRONMAN"?"bim":circ==="WTCS"?"bwtcs":"bt100";
-        var col=circ==="IRONMAN"?"#FF4B6A":circ==="WTCS"?"#30D158":"#FF9F0A";
-        circuitsBadges+='<span class="sr-rbadge '+bcls+'" style="color:'+col+'">'+circ+'</span> ';
-      });
-    }
-    var subtitle=ath.races.length>0?ath.nat+' · '+ath.races.length+' course'+(ath.races.length>1?"s":""):ath.nat+(circuitsBadges?" · Athlète connu":"");
-    html+='<div class="sr-card">';
-    html+='<div class="sr-ath-hdr"><div class="sr-av">'+ini+'</div><div><div class="sr-ath-name">'+(ath.f?ath.f+" ":"")+ath.cn+'</div><div class="sr-ath-sub">'+subtitle+'</div></div>';
-    if(ath.dbOnly && circuitsBadges) html+='<div style="display:flex;gap:4px;flex-shrink:0;margin-left:auto">'+circuitsBadges+'</div>';
-    html+='</div>';
-    if(ath.races.length>0){
-      ath.races.forEach(function(rc){
-        var onc=rc.openFn+"('"+rc.id+"')";
-        html+='<div class="sr-race" onclick="'+onc+'">';
-        html+='<span class="sr-rbadge '+rc.badgeCls+'" style="color:'+rc.color+'">'+rc.circuit+'</span>';
-        html+='<span class="sr-rname">'+rc.r.name+'</span>';
-        html+='<span class="sr-rdate">'+rc.r.date+'</span>';
-        html+='</div>';
-      });
-    } else if(ath.dbOnly){
-      html+='<div style="padding:8px 14px;font-size:11px;color:var(--muted);border-top:1px solid var(--border)">Engagements disponibles prochainement</div>';
-    }
-    html+='</div>';
-  });
-  res.innerHTML=html;
-}
 
 function downloadICS(id) {
   var r = races[id];
@@ -1451,6 +1112,7 @@ function applyData(d) {
       r.startTimeUTC = r.startUTC ? r.startUTC.slice(11, 16) : '06:00';   // utilisé par les boutons « ajouter au calendrier »
     }
   });
+  buildAthIndex();
   renderAll();
   setSync(d.updatedAt, false);
 }
@@ -1496,24 +1158,6 @@ function badgesHTML(c, r) {
   if (c === 'wtcs') return '<span class="rbadge bwtcs">' + (r.format || '').split(/ [+·—] /)[0] + '</span><span class="rbadge bwtcs" style="font-size:8px">WTCS</span>';
   return '<span class="rbadge bt100">' + (r.format || '') + '</span><span class="rbadge bt100" style="font-size:8px">T100</span>';
 }
-function cardHTML(c, id, r) {
-  var done = raceDone(r), d = r.isoDate, day = +d.slice(6,8), mon = MONTHS[+d.slice(4,6) - 1];
-  var loc = (r.loc || '').split(' — ')[0], dateBlock, sub, status = '';
-  if (r.postponed) {
-    dateBlock = '<div class="rdate" style="background:rgba(255,159,10,.12)"><div class="rdate-d" style="font-size:11px">⏳</div><div class="rdate-m">Reportée</div></div>';
-    sub = r.sub || (loc + ' · date initiale ' + day + ' ' + mon);
-    status = '<span class="done-badge" style="background:rgba(255,159,10,.18);color:var(--t100)">⏳ Reportée</span>';
-  } else {
-    dateBlock = '<div class="rdate"><div class="rdate-d">' + day + '</div><div class="rdate-m">' + mon + '</div></div>';
-    sub = r.sub || loc;
-    if (done) status = '<span class="done-badge">✓ Terminée</span>';
-  }
-  return '<div class="rcard rcard-' + c + (done ? ' rcard-done' : '') + '" data-circuit="' + c + '" data-done="' + (done ? '1' : '') + '" onclick="openRace(\'' + c + '\',\'' + id + '\')">' +
-    dateBlock +
-    '<div class="rcard-mid"><div class="rcard-name">' + r.name + '</div><div class="rcard-sub"><span style="color:var(--muted)">' + sub + '</span></div></div>' +
-    '<div class="rcard-badges">' + status + badgesHTML(c, r) + '</div>' +
-    '<svg class="rcard-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>';
-}
 function renderCalendar() {
   var list = [];
   allCircuits().forEach(function(p) { for (var id in p[1]) list.push({c:p[0], id:id, r:p[1][id]}); });
@@ -1534,7 +1178,6 @@ function renderCalendar() {
   });
   document.getElementById('cal-cards').innerHTML = html;
 }
-function toggleMonth(btn) { btn.parentElement.classList.toggle('collapsed'); }
 function renderHero() {
   var s = computeStats();
   function t(id, v) { var e = document.getElementById(id); if (e) e.textContent = v; }
@@ -1543,26 +1186,8 @@ function renderHero() {
   t('spill-wtcs', '🟢 ' + s.wtcs.total + ' WTCS');
   t('spill-t100', '🟡 ' + s.t100.total + ' T100');
 }
-function renderAll() { renderCalendar(); renderHero(); filterCal(currentFilter); initNextBanner(); }
 
 // ═══════════ FILTRES / PROGRESSION / PROCHAIN DÉPART ═══════════
-function filterCal(type) {
-  currentFilter = type;
-  var pillMap = {all:'spill-all', upcoming:'spill-upcoming', done:'spill-done', im:'spill-im', wtcs:'spill-wtcs', t100:'spill-t100'};
-  Object.keys(pillMap).forEach(function(k) { var el = document.getElementById(pillMap[k]); if (el) el.classList.toggle('active', k === type); });
-  document.querySelectorAll('#cal-cards .rcard').forEach(function(card) {
-    var c = card.dataset.circuit, done = !!card.dataset.done, show;
-    if (type === 'all') show = true; else if (type === 'upcoming') show = !done; else if (type === 'done') show = done; else show = (type === c);
-    card.style.display = show ? 'flex' : 'none';
-  });
-  var expand = (type !== 'all' && type !== 'upcoming');
-  document.querySelectorAll('#cal-cards .month-wrap').forEach(function(w) {
-    var vis = [].some.call(w.querySelectorAll('.rcard'), function(c) { return c.style.display !== 'none'; });
-    w.style.display = vis ? '' : 'none';
-    w.classList.toggle('collapsed', expand ? false : w.dataset.dc === '1');
-  });
-  updateProgress(type);
-}
 function updateProgress(type) {
   var s = computeStats();
   var m = {all:[s.total,s.done], upcoming:[s.total-s.done,0], done:[s.done,s.done], im:[s.im.total,s.im.done], wtcs:[s.wtcs.total,s.wtcs.done], t100:[s.t100.total,s.t100.done]};
@@ -1601,10 +1226,297 @@ function initNextBanner() {
 }
 
 // ═══════════ DÉMARRAGE ═══════════
-boot();
-document.addEventListener('visibilitychange', function() {
-  if (!document.hidden) { if (cachedData) renderAll(); syncData(); }
+// ═══════════ OUTILS ═══════════
+function norm(s) { return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ø/gi, 'o').replace(/ł/gi, 'l').toLowerCase().trim(); }
+function esc(s) { return String(s).replace(/[&<>"']/g, function(c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+// ═══════════ THÈME (suit le système + barre d'état) ═══════════
+function applyTheme(light) {
+  document.body.classList.toggle('light', light);
+  ['themeBtn', 'themeBtn2'].forEach(function(id) { var b = document.getElementById(id); if (b) b.textContent = light ? '☀️' : '🌙'; });
+  var m = document.querySelector('meta[name=theme-color]'); if (m) m.content = light ? '#F0F0F5' : '#0A0A0A';
+}
+function toggleTheme() {
+  var light = !document.body.classList.contains('light');
+  applyTheme(light);
+  try { localStorage.setItem('tri_theme', light ? 'light' : 'dark'); } catch(e) {}
+}
+(function() {
+  var s = null; try { s = localStorage.getItem('tri_theme'); } catch(e) {}
+  applyTheme(s ? s === 'light' : window.matchMedia('(prefers-color-scheme: light)').matches);
+})();
+
+// ═══════════ FAVORIS ═══════════
+var favs = {}; try { favs = JSON.parse(localStorage.getItem('tri_favs')) || {}; } catch(e) {}
+function isFav(name) { return !!favs[norm(name)]; }
+function raceNames(r) {
+  var s = {};
+  (r.men || []).concat(r.women || []).forEach(function(n) { s[norm(stripNat(n))] = 1; });
+  var res = r.results || {};
+  (res.men || []).concat(res.women || []).forEach(function(a) { s[norm(a.name)] = 1; });
+  return s;
+}
+function raceHasFav(r) {
+  var keys = Object.keys(favs); if (!keys.length) return false;
+  var n = raceNames(r); return keys.some(function(k) { return n[k]; });
+}
+function toggleFav(name) {
+  var k = norm(name); if (favs[k]) delete favs[k]; else favs[k] = name;
+  try { localStorage.setItem('tri_favs', JSON.stringify(favs)); } catch(e) {}
+  renderAll();
+  var s = document.getElementById('srchInput'); if (s && s.value) doSearch(s.value);
+  decorateSheetFavs();
+  syncNotifPrefs();
+}
+function decorateSheetFavs() {
+  document.querySelectorAll('#sheetContent .ath-row').forEach(function(row) {
+    var old = row.querySelector('.fav-btn'); if (old) old.remove();
+    var n = row.querySelector('.ath-name'); if (!n) return;
+    var name = n.textContent.replace(/^[^\p{L}]+/u, '').trim(), on = isFav(name);
+    var b = document.createElement('button');
+    b.className = 'fav-btn' + (on ? ' on' : ''); b.textContent = on ? '★' : '☆';
+    b.setAttribute('aria-label', (on ? 'Retirer des favoris : ' : 'Ajouter aux favoris : ') + name);
+    b.onclick = function(ev) { ev.stopPropagation(); toggleFav(name); };
+    row.appendChild(b);
+  });
+}
+
+// ═══════════ DIRECT + BADGE ═══════════
+function hoursFor(c, r) { return r.days > 1 ? (r.days - 1) * 24 + 8 : c === 'im' ? (r.badge === 'b703' ? 6 : 10) : c === 'wtcs' ? 2.5 : 4; }
+function isLive(c, r) {
+  if (r.postponed || r.done || !r.startUTC) return false;
+  var s = Date.parse(r.startUTC), n = Date.now(); return n >= s && n <= s + hoursFor(c, r) * 3600000;
+}
+function updateBadge() {
+  if (!('setAppBadge' in navigator)) return;
+  var today = new Intl.DateTimeFormat('sv-SE', {timeZone: 'Europe/Paris'}).format(new Date()).replace(/-/g, ''), n = 0;
+  allCircuits().forEach(function(p) { for (var id in p[1]) { var r = p[1][id]; if (!r.postponed && r.isoDate === today && !raceDone(r)) n++; } });
+  (n ? navigator.setAppBadge(n) : navigator.clearAppBadge()).catch(function() {});
+}
+
+// ═══════════ CARTES, FILTRES, MODAL (versions accessibles) ═══════════
+var lastRender = 0, lastFocus = null;
+function cardHTML(c, id, r) {
+  var done = raceDone(r), d = r.isoDate, day = +d.slice(6, 8), mon = MONTHS[+d.slice(4, 6) - 1];
+  var loc = (r.loc || '').split(' — ')[0], dateBlock, sub, status = '', fav = raceHasFav(r);
+  if (r.postponed) {
+    dateBlock = '<div class="rdate" style="background:rgba(255,159,10,.12)"><div class="rdate-d" style="font-size:11px">⏳</div><div class="rdate-m">Reportée</div></div>';
+    sub = r.sub || (loc + ' · date initiale ' + day + ' ' + mon);
+    status = '<span class="done-badge" style="background:rgba(255,159,10,.18);color:var(--t100)">⏳ Reportée</span>';
+  } else {
+    dateBlock = '<div class="rdate"><div class="rdate-d">' + day + '</div><div class="rdate-m">' + mon + '</div></div>';
+    sub = r.sub || loc;
+    if (isLive(c, r)) status = '<span class="done-badge" style="background:rgba(232,0,45,.18);color:var(--im)">● EN DIRECT</span>';
+    else if (done) status = '<span class="done-badge">✓ Terminée</span>';
+  }
+  return '<div class="rcard rcard-' + c + (done ? ' rcard-done' : '') + '" role="button" tabindex="0" data-circuit="' + c + '" data-id="' + id + '" data-done="' + (done ? '1' : '') + '" data-fav="' + (fav ? '1' : '') + '">' +
+    dateBlock +
+    '<div class="rcard-mid"><div class="rcard-name">' + esc(r.name) + (fav ? '<span class="fav-star">★</span>' : '') + '</div><div class="rcard-sub"><span style="color:var(--muted)">' + esc(sub) + '</span></div></div>' +
+    '<div class="rcard-badges">' + status + badgesHTML(c, r) + '</div>' +
+    '<svg class="rcard-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></div>';
+}
+function toggleMonth(btn) {
+  var w = btn.parentElement; w.classList.toggle('collapsed');
+  btn.setAttribute('aria-expanded', String(!w.classList.contains('collapsed')));
+}
+function filterCal(type) {
+  currentFilter = type;
+  var pillMap = {all:'spill-all', upcoming:'spill-upcoming', done:'spill-done', fav:'spill-fav', im:'spill-im', wtcs:'spill-wtcs', t100:'spill-t100'};
+  Object.keys(pillMap).forEach(function(k) { var el = document.getElementById(pillMap[k]); if (el) el.classList.toggle('active', k === type); });
+  document.querySelectorAll('#cal-cards .rcard').forEach(function(card) {
+    var c = card.dataset.circuit, done = !!card.dataset.done, show;
+    if (type === 'all') show = true;
+    else if (type === 'upcoming') show = !done;
+    else if (type === 'done') show = done;
+    else if (type === 'fav') show = card.dataset.fav === '1';
+    else show = (type === c);
+    card.style.display = show ? 'flex' : 'none';
+  });
+  var expand = (type !== 'all' && type !== 'upcoming');
+  document.querySelectorAll('#cal-cards .month-wrap').forEach(function(w) {
+    var vis = [].some.call(w.querySelectorAll('.rcard'), function(c) { return c.style.display !== 'none'; });
+    w.style.display = vis ? '' : 'none';
+    w.classList.toggle('collapsed', expand ? false : w.dataset.dc === '1');
+    var tb = w.querySelector('.month-toggle'); if (tb) tb.setAttribute('aria-expanded', String(!w.classList.contains('collapsed')));
+  });
+  updateProgress(type);
+}
+function renderAll() { lastRender = Date.now(); renderCalendar(); renderHero(); filterCal(currentFilter); initNextBanner(); updateBadge(); }
+
+function openModal() {
+  lastFocus = document.activeElement;
+  document.getElementById('sheetContent').scrollTop = 0;
+  document.getElementById('overlay').classList.add('open');
+  var sh = document.getElementById('sheet'); sh.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  decorateSheetFavs();
+  sh.focus();
+}
+function closeSheet() {
+  document.getElementById('overlay').classList.remove('open');
+  document.getElementById('sheet').classList.remove('open');
+  document.body.style.overflow = '';
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+
+// délégation : clic + clavier (Entrée / Espace), Échap ferme la fiche
+document.getElementById('cal-cards').addEventListener('click', function(e) {
+  var c = e.target.closest('.rcard'); if (c) openRace(c.dataset.circuit, c.dataset.id);
 });
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSheet();
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.rcard,[role=button]')) { e.preventDefault(); e.target.click(); }
+});
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden) return;
+  if (cachedData && Date.now() - lastRender > 600000) renderAll();   // re-rendu max. toutes les 10 min
+  syncData();
+});
+
+// ═══════════ RECHERCHE (résultats + favoris + sans accents) ═══════════
+var athIndex = {};
+function buildAthIndex() {
+  athIndex = {};
+  var meta = [['im','IRONMAN',races,'bim','#FF4B6A'], ['wtcs','WTCS',wtcsRaces,'bwtcs','#30D158'], ['t100','T100',t100Races,'bt100','#FF9F0A']];
+  function get(name, nat) {
+    var k = norm(name), a = athIndex[k];
+    if (!a) a = athIndex[k] = {cn: name, nat: nat || '', races: {}, circuits: []};
+    if (!a.nat && nat) a.nat = nat;
+    return a;
+  }
+  meta.forEach(function(m) {
+    for (var id in m[2]) {
+      var r = m[2][id], res = r.results || {}, key = m[0] + ':' + id;
+      (r.men || []).concat(r.women || []).forEach(function(s) {
+        var a = get(stripNat(s), getNat(s)); a.races[key] = a.races[key] || {id: id, m: m, r: r};
+      });
+      (res.men || []).concat(res.women || []).forEach(function(x) {
+        var a = get(x.name, x.nat), e; a.cn = x.name;   // graphie officielle (avec accents) affichée en priorité
+        e = a.races[key] = a.races[key] || {id: id, m: m, r: r};
+        e.pos = x.pos; e.time = x.time || '';
+      });
+    }
+  });
+  athleteDB.forEach(function(x) { get(x.name, x.nat).circuits = x.circuits; });
+}
+function doSearch(q) {
+  var res = document.getElementById('srchResults'); if (!res) return;
+  var nq = norm(q); if (nq.length < 2) { res.innerHTML = '<div class="srch-hint">Tapez au moins 2 lettres</div>'; return; }
+  var tokens = nq.split(/\s+/);
+  var keys = Object.keys(athIndex).filter(function(k) { return tokens.every(function(t) { return k.indexOf(t) !== -1; }); });
+  if (!keys.length) { res.innerHTML = '<div class="sr-empty"><div style="font-size:36px;margin-bottom:8px">🤔</div>Aucun résultat pour « ' + esc(q) + ' »</div>'; return; }
+  keys.sort(function(a, b) { return Object.keys(athIndex[b].races).length - Object.keys(athIndex[a].races).length || a.localeCompare(b); });
+  var medals = ['🥇', '🥈', '🥉'], html = '';
+  keys.slice(0, 40).forEach(function(k) {
+    var a = athIndex[k], fav = isFav(a.cn);
+    var list = Object.keys(a.races).map(function(x) { return a.races[x]; }).sort(function(x, y) { return x.r.isoDate.localeCompare(y.r.isoDate); });
+    var ini = a.cn.split(' ').map(function(w) { return w[0]; }).join('').substring(0, 2).toUpperCase();
+    html += '<div class="sr-card"><div class="sr-ath-hdr"><div class="sr-av">' + esc(ini) + '</div><div style="flex:1;min-width:0"><div class="sr-ath-name">' + flag(a.nat) + ' ' + esc(a.cn) + '</div><div class="sr-ath-sub">' + esc(a.nat) + ' · ' + list.length + ' course' + (list.length > 1 ? 's' : '') + '</div></div>' +
+      '<button class="fav-btn' + (fav ? ' on' : '') + '" data-fav="' + esc(a.cn) + '" aria-label="' + (fav ? 'Retirer des favoris' : 'Ajouter aux favoris') + '">' + (fav ? '★' : '☆') + '</button></div>';
+    list.forEach(function(e) {
+      var right = e.pos ? '<span class="sr-rdate" style="color:var(--gold);font-weight:700">' + (e.pos <= 3 ? medals[e.pos - 1] : e.pos + 'e') + (e.time ? ' · ' + esc(e.time) : '') + '</span>' : '<span class="sr-rdate">' + esc(e.r.date) + '</span>';
+      html += '<div class="sr-race" role="button" tabindex="0" data-c="' + e.m[0] + '" data-id="' + e.id + '"><span class="sr-rbadge ' + e.m[3] + '" style="color:' + e.m[4] + '">' + e.m[1] + '</span><span class="sr-rname">' + esc(e.r.name) + '</span>' + right + '</div>';
+    });
+    if (!list.length) html += '<div style="padding:8px 14px;font-size:11px;color:var(--muted);border-top:1px solid var(--border)">' + esc(a.circuits.join(' · ')) + ' · Engagements à venir</div>';
+    html += '</div>';
+  });
+  res.innerHTML = html;
+}
+document.getElementById('srchResults').addEventListener('click', function(e) {
+  var f = e.target.closest('.fav-btn'); if (f) { toggleFav(f.dataset.fav); return; }
+  var r = e.target.closest('.sr-race'); if (r) openRace(r.dataset.c, r.dataset.id);
+});
+
+// Entrée : [nom, nat, points affichés, texte sous les points, note|null, rang (facultatif)]
+var RANKS = {
+  im26: {cls:'im', avM:'m', avF:'f', data:{
+    men: [["Gustav Iden","NOR","20 177","$200 000","Champion Pro Series 2026"],["Jonas Schomburg","GER","20 124","$130 000"],["Kristian Blummenfelt","NOR","19 985","$85 000"],["Kacper Stepniak","POL","18 163","$70 000"],["Kieran Lindars","GBR","18 054","$50 000"],["Vincent Luis","FRA","17 598","$40 000","Champion du monde Kona"],["Marten Van Riel","BEL","17 582","$30 000"],["Matthew Marquardt","USA","17 547","$20 000"],["Matt Hanson","USA","17 182","$15 000"],["Sam Long","USA","16 724","$10 000"]],
+    women: [["Laura Philipp","GER","20 754","$200 000","Championne Pro Series 2026"],["Solveig Løvseth","NOR","19 460","$130 000"],["Kat Matthews","GBR","17 465","$85 000"],["Lisa Perterer","AUT","17 253","$70 000"],["Marta Sanchez","ESP","16 896","$50 000"],["Hannah Berry","NZL","16 768","$40 000"],["Taylor Knibb","USA","16 281","$30 000","Championne du monde Kona"],["Lotte Wilms","NED","16 273","$20 000"],["Grace Thek","AUS","15 512","$15 000"],["Jackie Hering","USA","13 996","$10 000"]]}},
+  wtcs: {cls:'wtcs', avM:'wm', avF:'wf', data:{
+    men: [["Vasco Vilaça","POR","—","pts","Champion du monde 2026",1],["Ricardo Batista","POR","—","pts","Bronze mondial",3],["Miguel Hidalgo","BRA","—","pts",null,5]],
+    women: [["Cassandre Beaugrand","FRA","5 250","pts","Championne du monde 2026"],["Beth Potter","GBR","4 764,32","pts","Vice-championne"],["Georgia Taylor-Brown","GBR","4 302,08","pts"],["Lisa Tertsch","GER","4 231,21","pts"],["Leonie Periault","FRA","4 113,45","pts"],["Tilda Månsson","SWE","3 879,42","pts"],["Jeanne Lehair","LUX","3 601,39","pts"],["Taylor Spivey","USA","3 601,19","pts"],["Emma Lombardi","FRA","3 205,07","pts"],["Diana Isakova","AIN","3 118,31","pts"]]}},
+  t100: {cls:'t100', avM:'tm', avF:'tf', data:{
+    men: [["Hayden Wilde","NZL","96","pts"],["Jake Birtwhistle","AUS","59","pts"],["Lasse Nygaard Priester","GER","49","pts"],["Sam Dickinson","GBR","47","pts"],["Rico Bogen","GER","43","pts"],["Gregor Payet","LUX","40","pts"],["Menno Koolhaas","NED","37","pts"],["Kyle Smith","NZL","34","pts"],["Kurt McDonald","AUS","32","pts"],["Henry Räppo","EST","30","pts"]],
+    women: [["Julie Derron","SUI","64","pts"],["Imogen Simmonds","SUI","62","pts"],["Georgia Taylor-Brown","GBR","61","pts"],["Alanis Siffert","SUI","47","pts"],["Bianca Bogen","GER","42","pts"],["Taylor Spivey","USA","40","pts"],["Nicole Van der Kaay","NZL","39","pts"],["Taylor Knibb","USA","35","pts"],["Sara Pérez Sala","ESP","34","pts"],["Kate Waugh","GBR","29","pts"]]}}
+};
+function renderRankBlock(elId, key) {
+  var el = document.getElementById(elId), cfg = RANKS[key]; if (!el || !cfg) return;
+  function rows(list, av) {
+    return list.map(function(p, i) {
+      var pos = p[5] || (i + 1);
+      var ini = p[0].split(' ').map(function(w) { return w[0]; }).join('').substring(0, 2).toUpperCase();
+      var gc = pos === 1 ? 'g1' : pos === 2 ? 'g2' : pos === 3 ? 'g3' : '';
+      return '<div class="rank-row"><div class="rank-pos ' + gc + '">' + pos + '</div><div class="rank-av ' + av + '">' + ini + '</div><div class="rank-info"><div class="rank-name">' + flag(p[1]) + ' ' + p[0] + (p[4] ? ' <span class="rank-note champion">' + p[4] + '</span>' : '') + '</div><div class="rank-detail">' + p[1] + '</div></div><div class="rank-score"><div class="rank-pts ' + cfg.cls + '">' + p[2] + '</div><div class="rank-prize">' + p[3] + '</div></div></div>';
+    }).join('');
+  }
+  el.innerHTML = '<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div>' + rows(cfg.data.men, cfg.avM) +
+    '<div class="gdiv" style="margin-top:12px"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div>' + rows(cfg.data.women, cfg.avF);
+}
+renderRankBlock('im26-rank', 'im26'); renderRankBlock('wtcs-rank', 'wtcs'); renderRankBlock('t100-rank', 't100');
+
+var PUSH_URL = 'COLLE_ICI_L_URL_DU_WORKER';        // ex. https://tricalendar-push.xxx.workers.dev
+var VAPID_PUBLIC = 'COLLE_ICI_LA_CLE_PUBLIQUE';
+function b64uToU8(s) { var p = '='.repeat((4 - s.length % 4) % 4), b = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(b, function(c) { return c.charCodeAt(0); }); }
+function getNotifPrefs() { try { return JSON.parse(localStorage.getItem('tri_notif')); } catch(e) { return null; } }
+function postSub(sub, prefs, welcome) {
+  return fetch(PUSH_URL + '/subscribe', {method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({subscription: sub.toJSON(), circuits: prefs.circuits, favsOnly: prefs.favsOnly, lead: prefs.lead, favs: Object.keys(favs), welcome: !!welcome})})
+    .then(function(r) { if (!r.ok) throw new Error('serveur ' + r.status); });
+}
+function syncNotifPrefs() {   // renvoie les favoris au serveur quand ils changent
+  var p = getNotifPrefs(); if (!p || !p.on || !('serviceWorker' in navigator) || !('PushManager' in window)) return;
+  navigator.serviceWorker.ready.then(function(reg) { return reg.pushManager.getSubscription(); })
+    .then(function(sub) { if (sub) postSub(sub, p, false); }).catch(function() {});
+}
+function saveNotif() {
+  function say(t) { var m = document.getElementById('nf-msg'); if (m) m.textContent = t; }
+  var prefs = {on: true,
+    circuits: ['im', 'wtcs', 't100'].filter(function(c) { return document.getElementById('nf-' + c).checked; }),
+    favsOnly: document.getElementById('nf-fav').checked, lead: +document.getElementById('nf-lead').value};
+  if (!prefs.circuits.length) return say('Choisis au moins un circuit.');
+  if (!('PushManager' in window)) return say("Indisponible ici : ajoute d'abord l'app à l'écran d'accueil.");
+  Notification.requestPermission().then(function(perm) {      // appelé directement dans le geste utilisateur
+    if (perm !== 'granted') throw new Error('perm');
+    return navigator.serviceWorker.ready;
+  }).then(function(reg) {
+    return reg.pushManager.getSubscription().then(function(s) {
+      return s || reg.pushManager.subscribe({userVisibleOnly: true, applicationServerKey: b64uToU8(VAPID_PUBLIC)});
+    });
+  }).then(function(sub) { return postSub(sub, prefs, true); }).then(function() {
+    try { localStorage.setItem('tri_notif', JSON.stringify(prefs)); } catch(e) {}
+    say('✅ Alertes activées. Une notification de test arrive.');
+  }).catch(function(e) {
+    say(e.message === 'perm' ? 'Permission refusée : autorise-la dans Réglages → Notifications → Tri 2026.' : 'Échec : ' + e.message);
+  });
+}
+function disableNotif() {
+  var p = getNotifPrefs() || {}; p.on = false;
+  try { localStorage.setItem('tri_notif', JSON.stringify(p)); } catch(e) {}
+  navigator.serviceWorker.ready.then(function(reg) { return reg.pushManager.getSubscription(); }).then(function(sub) {
+    if (!sub) return; var ep = sub.endpoint;
+    return sub.unsubscribe().then(function() {
+      return fetch(PUSH_URL + '/unsubscribe', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({endpoint: ep})});
+    });
+  }).then(function() { var m = document.getElementById('nf-msg'); if (m) m.textContent = 'Alertes désactivées.'; }).catch(function() {});
+}
+function openNotifSheet() {
+  var p = getNotifPrefs() || {on: false, circuits: ['im', 'wtcs', 't100'], favsOnly: false, lead: 60};
+  function box(id, label, on) { return '<label class="notif-row"><input type="checkbox" id="nf-' + id + '"' + (on ? ' checked' : '') + '> ' + label + '</label>'; }
+  var h = '<div class="sh-hero"><div class="sh-circuit wtcs">ALERTES</div><div class="sh-name">Notifications</div><div class="sh-loc">Rappel avant le départ et résultats disponibles</div></div><div class="ssec">';
+  if (!('PushManager' in window)) h += '<div class="sh-loc" style="margin-bottom:12px">⚠️ Disponible seulement depuis l\'app ajoutée à l\'écran d\'accueil (iOS 16.4 ou plus).</div>';
+  h += '<div class="ssec-title">Circuits</div>' +
+    box('im', '🔴 IRONMAN', p.circuits.indexOf('im') > -1) + box('wtcs', '🟢 WTCS', p.circuits.indexOf('wtcs') > -1) + box('t100', '🟡 T100', p.circuits.indexOf('t100') > -1) +
+    '<div class="ssec-title" style="margin-top:14px">Filtre</div>' + box('fav', '★ Seulement les courses où figure un de mes favoris', p.favsOnly) +
+    '<div class="ssec-title" style="margin-top:14px">Rappel avant le départ</div><label class="notif-row"><select id="nf-lead">' +
+    [15, 30, 60, 120].map(function(m) { return '<option value="' + m + '"' + (p.lead === m ? ' selected' : '') + '>' + (m < 60 ? m + ' min' : (m / 60) + ' h') + '</option>'; }).join('') + '</select></label>' +
+    '<div class="sh-btns-row"><button class="sh-btn-main wtcs" onclick="saveNotif()">' + (p.on ? 'Mettre à jour' : 'Activer') + '</button>' +
+    (p.on ? '<button class="sh-share" onclick="disableNotif()">Désactiver</button>' : '') + '</div><p id="nf-msg" class="sh-loc" style="margin-top:10px"></p></div><div style="height:20px"></div>';
+  document.getElementById('sheetContent').innerHTML = h;
+  openModal();
+}
+
+
+boot();
 window.addEventListener('online', syncData);
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() { navigator.serviceWorker.register('sw.js'); });
