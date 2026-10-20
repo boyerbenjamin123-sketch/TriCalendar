@@ -1,0 +1,4124 @@
+{
+ "updatedAt": "2026-10-20T09:40:02.322Z",
+ "races": {
+  "nz": {
+   "name": "IRONMAN New Zealand",
+   "loc": "Taupö, Nouvelle-Zelande",
+   "date": "7 Mars 2026",
+   "isoDate": "20260307",
+   "startTime": "07h00 NZDT",
+   "days": 1,
+   "badge": "bfull",
+   "badgeLabel": "Full IRONMAN · 140.6 mi",
+   "broadcast": [
+    {
+     "icon": "TV",
+     "name": "Outside TV",
+     "detail": "USA & Canada",
+     "time": "Dim. 7 mars · 18h00 UTC — 19h00 heure francaise (CET)"
+    },
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Direct + replay"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Trevor Foley (USA)",
+    "Pierre Le Corre (FRA)",
+    "Matt Hanson (USA)",
+    "Jack Moody (NZL)",
+    "Mike Phillips (NZL)",
+    "Kristian Blummenfelt (NOR)",
+    "Kyle Smith (NZL)",
+    "Henrik Goesch (FIN)",
+    "Rasmus Svenningsson (SWE)",
+    "David Martin (CZE)"
+   ],
+   "women": [
+    "Kat Matthews (GBR)",
+    "Hannah Berry (NZL)",
+    "Lotte Wilms (NED)",
+    "Tamara Jewett (CAN)",
+    "Danielle Lewis (USA)",
+    "Regan Hollioake (AUS)",
+    "Gabrielle Lumkes (USA)",
+    "Fenella Langridge (GBR)",
+    "Rhianne Hughes (GBR)",
+    "Rebecca Clarke (NZL)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Trevor Foley",
+      "nat": "USA",
+      "time": "7:46:44"
+     },
+     {
+      "pos": 2,
+      "name": "Pierre Le Corre",
+      "nat": "FRA",
+      "time": "7:48:26"
+     },
+     {
+      "pos": 3,
+      "name": "Matt Hanson",
+      "nat": "USA",
+      "time": "7:50:39"
+     },
+     {
+      "pos": 4,
+      "name": "Jack Moody",
+      "nat": "NZL",
+      "time": "7:54:12"
+     },
+     {
+      "pos": 5,
+      "name": "Mike Phillips",
+      "nat": "NZL",
+      "time": "7:57:33"
+     },
+     {
+      "pos": 6,
+      "name": "Kristian Blummenfelt",
+      "nat": "NOR",
+      "time": "8:01:02"
+     },
+     {
+      "pos": 7,
+      "name": "Kyle Smith",
+      "nat": "NZL",
+      "time": "8:08:15"
+     },
+     {
+      "pos": 8,
+      "name": "Henrik Goesch",
+      "nat": "FIN",
+      "time": "8:14:40"
+     },
+     {
+      "pos": 9,
+      "name": "Rasmus Svenningsson",
+      "nat": "SWE",
+      "time": "8:18:22"
+     },
+     {
+      "pos": 10,
+      "name": "David Martin",
+      "nat": "CZE",
+      "time": "8:24:55"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Kat Matthews",
+      "nat": "GBR",
+      "time": "8:28:55",
+      "note": "★ Record parcours"
+     },
+     {
+      "pos": 2,
+      "name": "Hannah Berry",
+      "nat": "NZL",
+      "time": "8:35:43"
+     },
+     {
+      "pos": 3,
+      "name": "Lotte Wilms",
+      "nat": "NED",
+      "time": "8:39:57"
+     },
+     {
+      "pos": 4,
+      "name": "Tamara Jewett",
+      "nat": "CAN",
+      "time": "8:41:20",
+      "note": "★ Record run 2:42:40"
+     },
+     {
+      "pos": 5,
+      "name": "Danielle Lewis",
+      "nat": "USA",
+      "time": "8:49:35"
+     },
+     {
+      "pos": 6,
+      "name": "Regan Hollioake",
+      "nat": "AUS",
+      "time": "8:54:45"
+     },
+     {
+      "pos": 7,
+      "name": "Gabrielle Lumkes",
+      "nat": "USA",
+      "time": "9:05:39"
+     },
+     {
+      "pos": 8,
+      "name": "Fenella Langridge",
+      "nat": "GBR",
+      "time": "9:09:10"
+     },
+     {
+      "pos": 9,
+      "name": "Rhianne Hughes",
+      "nat": "GBR",
+      "time": "9:16:39"
+     },
+     {
+      "pos": 10,
+      "name": "Rebecca Clarke",
+      "nat": "NZL",
+      "time": "9:19:46"
+     }
+    ]
+   },
+   "startUTC": "2026-03-06T18:00:00Z",
+   "sub": "Taupō, NZ",
+   "cardBadge": {
+    "cls": "bfull",
+    "label": "Full 140.6"
+   }
+  },
+  "gel": {
+   "name": "IRONMAN 70.3 Geelong",
+   "loc": "Geelong, Australie",
+   "date": "22 Mars 2026",
+   "isoDate": "20260322",
+   "startTime": "07h00 AEDT",
+   "days": 1,
+   "badge": "b703",
+   "badgeLabel": "70.3",
+   "broadcast": [
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Dim. 22 mars · 06h00 UTC — 07h00 heure francaise (CET)"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Kristian Blummenfelt (NOR)",
+    "Jelle Geens (BEL)",
+    "Hayden Wilde (NZL)",
+    "Jake Birtwhistle (AUS)",
+    "Kurt McDonald (AUS)",
+    "Sam Long (USA)",
+    "Nick Thompson (AUS)",
+    "Cameron Wurf (AUS)",
+    "Daniel Baekkegard (DEN)",
+    "Florian Angert (GER)"
+   ],
+   "women": [
+    "Kat Matthews (GBR)",
+    "Grace Thek (AUS)",
+    "Tamara Jewett (CAN)",
+    "Sophia Green (GBR)",
+    "Steph Clutterbuck (GBR)",
+    "Milan Agnew (AUS)",
+    "Penny Slater (AUS)",
+    "Regan Hollioake (AUS)",
+    "Lisa Perterer (AUT)",
+    "Hannah Berry (NZL)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Kristian Blummenfelt",
+      "nat": "NOR",
+      "time": "3:30:25",
+      "note": "Run 1:06:39 fulgurant"
+     },
+     {
+      "pos": 2,
+      "name": "Jelle Geens",
+      "nat": "BEL",
+      "time": "3:31:24",
+      "note": "Record vélo 1:56:03 battu"
+     },
+     {
+      "pos": 3,
+      "name": "Hayden Wilde",
+      "nat": "NZL",
+      "time": "3:31:52",
+      "note": "Record vélo 1:56:03"
+     },
+     {
+      "pos": 4,
+      "name": "Jake Birtwhistle",
+      "nat": "AUS",
+      "time": "3:38:14"
+     },
+     {
+      "pos": 5,
+      "name": "Kurt McDonald",
+      "nat": "AUS",
+      "time": "3:41:02"
+     },
+     {
+      "pos": 6,
+      "name": "Sam Long",
+      "nat": "USA",
+      "time": "3:45:18"
+     },
+     {
+      "pos": 7,
+      "name": "Nick Thompson",
+      "nat": "AUS",
+      "time": "3:47:33"
+     },
+     {
+      "pos": 8,
+      "name": "Cameron Wurf",
+      "nat": "AUS",
+      "time": "3:51:20"
+     },
+     {
+      "pos": 9,
+      "name": "Daniel Baekkegard",
+      "nat": "DEN",
+      "time": "3:53:44"
+     },
+     {
+      "pos": 10,
+      "name": "Florian Angert",
+      "nat": "GER",
+      "time": "3:56:10"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Kat Matthews",
+      "nat": "GBR",
+      "time": "4:06:15",
+      "note": "2e victoire cons&#233;cutive 2026"
+     },
+     {
+      "pos": 2,
+      "name": "Grace Thek",
+      "nat": "AUS",
+      "time": "4:06:51",
+      "note": "9e podium &#224; Geelong"
+     },
+     {
+      "pos": 3,
+      "name": "Tamara Jewett",
+      "nat": "CAN",
+      "time": "4:15:27",
+      "note": "Remontada depuis -12 min v&#233;lo"
+     },
+     {
+      "pos": 4,
+      "name": "Sophia Green",
+      "nat": "GBR",
+      "time": "4:18:40"
+     },
+     {
+      "pos": 5,
+      "name": "Steph Clutterbuck",
+      "nat": "GBR",
+      "time": "4:21:05"
+     },
+     {
+      "pos": 6,
+      "name": "Milan Agnew",
+      "nat": "AUS",
+      "time": "4:22:33"
+     },
+     {
+      "pos": 7,
+      "name": "Penny Slater",
+      "nat": "AUS",
+      "time": "4:24:18"
+     },
+     {
+      "pos": 8,
+      "name": "Regan Hollioake",
+      "nat": "AUS",
+      "time": "4:27:52"
+     },
+     {
+      "pos": 9,
+      "name": "Lisa Perterer",
+      "nat": "AUT",
+      "time": "4:31:10"
+     },
+     {
+      "pos": 10,
+      "name": "Hannah Berry",
+      "nat": "NZL",
+      "time": "4:34:45"
+     }
+    ]
+   },
+   "startUTC": "2026-03-21T20:00:00Z",
+   "sub": "Geelong, AUS",
+   "cardBadge": {
+    "cls": "b703",
+    "label": "70.3"
+   }
+  },
+  "ocean": {
+   "name": "IRONMAN 70.3 Oceanside",
+   "loc": "Oceanside, Californie, USA",
+   "date": "28 Mars 2026",
+   "isoDate": "20260328",
+   "startTime": "07h00 PDT",
+   "days": 1,
+   "badge": "b703",
+   "badgeLabel": "70.3",
+   "broadcast": [
+    {
+     "icon": "TV",
+     "name": "Outside TV",
+     "detail": "USA & Canada",
+     "time": "Sam. 28 mars · 18h00 UTC — 20h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit",
+     "time": "Direct + replay"
+    }
+   ],
+   "men": [
+    "Kristian Blummenfelt (NOR)",
+    "Lionel Sanders (CAN)",
+    "Sam Long (USA)",
+    "Rudy Von Berg (USA)",
+    "Magnus Ditlev (DEN)",
+    "Ben Kanute (USA)",
+    "Trevor Foley (USA)",
+    "Chris Leiferman (USA)",
+    "Matthew Marquardt (USA)",
+    "Joel Moody (AUS)"
+   ],
+   "women": [
+    "Kat Matthews (GBR)",
+    "Taylor Knibb (USA)",
+    "Chelsea Sodaro (USA)",
+    "Jackie Hering (USA)",
+    "Tamara Jewett (CAN)",
+    "Skye Moench (USA)",
+    "Laura Philipp (GER)",
+    "Jocelyn McCauley (USA)",
+    "Solveig Lovseth (NOR)",
+    "Sarah Piampiano (USA)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Kristian Blummenfelt",
+      "nat": "NOR",
+      "time": "3:40:08",
+      "note": "Run 1:07:01 record"
+     },
+     {
+      "pos": 2,
+      "name": "Jonas Schomburg",
+      "nat": "GER",
+      "time": "3:40:32"
+     },
+     {
+      "pos": 3,
+      "name": "Casper Stornes",
+      "nat": "NOR",
+      "time": "3:41:58"
+     },
+     {
+      "pos": 4,
+      "name": "Sam Long",
+      "nat": "USA",
+      "time": "3:43:15"
+     },
+     {
+      "pos": 5,
+      "name": "Rudy Von Berg",
+      "nat": "USA",
+      "time": "3:44:20"
+     },
+     {
+      "pos": 6,
+      "name": "Lionel Sanders",
+      "nat": "CAN",
+      "time": "3:45:30"
+     },
+     {
+      "pos": 7,
+      "name": "Ben Kanute",
+      "nat": "USA",
+      "time": "3:47:12"
+     },
+     {
+      "pos": 8,
+      "name": "Magnus Ditlev",
+      "nat": "DEN",
+      "time": "3:48:45"
+     },
+     {
+      "pos": 9,
+      "name": "Trevor Foley",
+      "nat": "USA",
+      "time": "3:50:18"
+     },
+     {
+      "pos": 10,
+      "name": "Chris Leiferman",
+      "nat": "USA",
+      "time": "3:52:33"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Taylor Knibb",
+      "nat": "USA",
+      "time": "4:01:39",
+      "note": "Bike 2:15:27 record"
+     },
+     {
+      "pos": 2,
+      "name": "Solveig Lovseth",
+      "nat": "NOR",
+      "time": "4:03:34"
+     },
+     {
+      "pos": 3,
+      "name": "Tamara Jewett",
+      "nat": "CAN",
+      "time": "4:05:50"
+     },
+     {
+      "pos": 4,
+      "name": "Jackie Hering",
+      "nat": "USA",
+      "time": "4:07:22"
+     },
+     {
+      "pos": 5,
+      "name": "Laura Philipp",
+      "nat": "GER",
+      "time": "4:08:15"
+     },
+     {
+      "pos": 6,
+      "name": "Chelsea Sodaro",
+      "nat": "USA",
+      "time": "4:09:40"
+     },
+     {
+      "pos": 7,
+      "name": "Skye Moench",
+      "nat": "USA",
+      "time": "4:10:33"
+     },
+     {
+      "pos": 8,
+      "name": "Kat Matthews",
+      "nat": "GBR",
+      "time": "4:12:10"
+     },
+     {
+      "pos": 9,
+      "name": "Jocelyn McCauley",
+      "nat": "USA",
+      "time": "4:15:20"
+     },
+     {
+      "pos": 10,
+      "name": "Sarah Piampiano",
+      "nat": "USA",
+      "time": "4:18:45"
+     }
+    ]
+   },
+   "startUTC": "2026-03-28T14:00:00Z",
+   "sub": "Oceanside, CA",
+   "cardBadge": {
+    "cls": "b703",
+    "label": "70.3"
+   }
+  },
+  "texas": {
+   "name": "IRONMAN Texas",
+   "loc": "The Woodlands, Texas, USA",
+   "date": "18 Avril 2026",
+   "isoDate": "20260418",
+   "startTime": "07h00 CDT",
+   "days": 1,
+   "badge": "bfull",
+   "badgeLabel": "Full IRONMAN · Champ. Amer. Nord",
+   "broadcast": [
+    {
+     "icon": "TV",
+     "name": "Outside TV",
+     "detail": "USA & Canada",
+     "time": "Sam. 18 avril · 13h00 UTC — 15h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit",
+     "time": "Direct + replay"
+    },
+    {
+     "icon": "TV",
+     "name": "ESPN (Disney+)",
+     "detail": "Amerique latine",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Kristian Blummenfelt (NOR)",
+    "Casper Stornes (NOR)",
+    "Sam Long (USA)",
+    "Patrick Lange (GER)",
+    "Rudy Von Berg (USA)",
+    "Trevor Foley (USA)",
+    "Pierre Le Corre (FRA)",
+    "Magnus Ditlev (DEN)",
+    "Ben Kanute (USA)",
+    "Matthew Marquardt (USA)"
+   ],
+   "women": [
+    "Kat Matthews (GBR)",
+    "Jackie Hering (USA)",
+    "Laura Philipp (GER)",
+    "Chelsea Sodaro (USA)",
+    "Lisa Perterer (AUT)",
+    "Taylor Knibb (USA)",
+    "Solveig Lovseth (NOR)",
+    "Tamara Jewett (CAN)",
+    "Skye Moench (USA)",
+    "Regan Hollioake (AUS)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Kristian Blummenfelt",
+      "nat": "NOR",
+      "time": "7:21:24",
+      "note": "Course record"
+     },
+     {
+      "pos": 2,
+      "name": "Casper Stornes",
+      "nat": "NOR",
+      "time": "7:23:50"
+     },
+     {
+      "pos": 3,
+      "name": "Rudy Von Berg",
+      "nat": "USA",
+      "time": "7:26:15"
+     },
+     {
+      "pos": 4,
+      "name": "Matt Hanson",
+      "nat": "USA",
+      "time": "7:28:42"
+     },
+     {
+      "pos": 5,
+      "name": "Sam Long",
+      "nat": "USA",
+      "time": "7:30:18"
+     },
+     {
+      "pos": 6,
+      "name": "Patrick Lange",
+      "nat": "GER",
+      "time": "7:32:05"
+     },
+     {
+      "pos": 7,
+      "name": "Ben Kanute",
+      "nat": "USA",
+      "time": "7:35:20"
+     },
+     {
+      "pos": 8,
+      "name": "Trevor Foley",
+      "nat": "USA",
+      "time": "7:37:45"
+     },
+     {
+      "pos": 9,
+      "name": "Pierre Le Corre",
+      "nat": "FRA",
+      "time": "7:40:10"
+     },
+     {
+      "pos": 10,
+      "name": "Magnus Ditlev",
+      "nat": "DEN",
+      "time": "7:43:30"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Solveig Lovseth",
+      "nat": "NOR",
+      "time": "8:11:09",
+      "note": "Course record"
+     },
+     {
+      "pos": 2,
+      "name": "Taylor Knibb",
+      "nat": "USA",
+      "time": "8:14:48"
+     },
+     {
+      "pos": 3,
+      "name": "Marta Sanchez",
+      "nat": "ESP",
+      "time": "8:31:06"
+     },
+     {
+      "pos": 4,
+      "name": "Jackie Hering",
+      "nat": "USA",
+      "time": "8:33:20"
+     },
+     {
+      "pos": 5,
+      "name": "Lisa Perterer",
+      "nat": "AUT",
+      "time": "8:35:45"
+     },
+     {
+      "pos": 6,
+      "name": "Laura Philipp",
+      "nat": "GER",
+      "time": "8:38:10"
+     },
+     {
+      "pos": 7,
+      "name": "Chelsea Sodaro",
+      "nat": "USA",
+      "time": "8:41:30"
+     },
+     {
+      "pos": 8,
+      "name": "Tamara Jewett",
+      "nat": "CAN",
+      "time": "8:45:15"
+     },
+     {
+      "pos": 9,
+      "name": "Skye Moench",
+      "nat": "USA",
+      "time": "8:49:40"
+     },
+     {
+      "pos": 10,
+      "name": "Regan Hollioake",
+      "nat": "AUS",
+      "time": "8:53:20"
+     }
+    ]
+   },
+   "startUTC": "2026-04-18T12:00:00Z",
+   "sub": "The Woodlands, TX",
+   "cardBadge": {
+    "cls": "bfull",
+    "label": "Full 140.6"
+   }
+  },
+  "aix": {
+   "name": "IRONMAN 70.3 Aix-en-Provence",
+   "loc": "Aix-en-Provence, France",
+   "date": "17 Mai 2026",
+   "isoDate": "20260517",
+   "startTime": "07h00 CEST",
+   "days": 1,
+   "badge": "b703",
+   "badgeLabel": "70.3",
+   "broadcast": [
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Dim. 17 mai · 07h00 UTC — 09h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Kristian Blummenfelt (NOR)",
+    "Patrick Lange (GER)",
+    "Leon Chevalier (FRA)",
+    "Jonas Schomburg (GER)",
+    "Lionel Sanders (CAN)",
+    "Henrik Goesch (FIN)",
+    "Jonas Hoffmann (GER)",
+    "Clement Mignon (FRA)",
+    "Pablo Dapena (ESP)",
+    "Florian Angert (GER)"
+   ],
+   "women": [
+    "Laura Philipp (GER)",
+    "Kat Matthews (GBR)",
+    "Solveig Lovseth (NOR)",
+    "Jackie Hering (USA)",
+    "Lisa Perterer (AUT)",
+    "Anne Reischmann (GER)",
+    "Charlene Clavet (FRA)",
+    "Michelle Vesterby (DEN)",
+    "Jeanni Metzler (RSA)",
+    "Laura Jansen (GER)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Michele Bortolamedi",
+      "nat": "ITA",
+      "time": "3:38:54"
+     },
+     {
+      "pos": 2,
+      "name": "Rico Bogen",
+      "nat": "GER",
+      "time": "3:39:26"
+     },
+     {
+      "pos": 3,
+      "name": "Lasse Nygaard Priester",
+      "nat": "GER",
+      "time": "3:39:35"
+     },
+     {
+      "pos": 4,
+      "name": "Maximilian Sperl",
+      "nat": "GER",
+      "time": "3:41:56"
+     },
+     {
+      "pos": 5,
+      "name": "Nathan Guerbeur",
+      "nat": "FRA",
+      "time": "3:42:54"
+     },
+     {
+      "pos": 6,
+      "name": "Kristian Blummenfelt",
+      "nat": "NOR",
+      "time": "3:43:20"
+     },
+     {
+      "pos": 7,
+      "name": "Patrick Lange",
+      "nat": "GER",
+      "time": "3:44:10"
+     },
+     {
+      "pos": 8,
+      "name": "Leon Chevalier",
+      "nat": "FRA",
+      "time": "3:45:30"
+     },
+     {
+      "pos": 9,
+      "name": "Jonas Schomburg",
+      "nat": "GER",
+      "time": "3:46:15"
+     },
+     {
+      "pos": 10,
+      "name": "Lionel Sanders",
+      "nat": "CAN",
+      "time": "3:47:42"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Marjolaine Pierré",
+      "nat": "FRA",
+      "time": "4:08:27",
+      "note": "Répète titre"
+     },
+     {
+      "pos": 2,
+      "name": "Imogen Simmonds",
+      "nat": "SUI",
+      "time": "4:12:10"
+     },
+     {
+      "pos": 3,
+      "name": "Laura Philipp",
+      "nat": "GER",
+      "time": "4:12:46"
+     },
+     {
+      "pos": 4,
+      "name": "Anne-Sophie Pierre",
+      "nat": "FRA",
+      "time": "4:14:04"
+     },
+     {
+      "pos": 5,
+      "name": "Hanne De Vet",
+      "nat": "BEL",
+      "time": "4:14:30"
+     },
+     {
+      "pos": 6,
+      "name": "Solveig Lovseth",
+      "nat": "NOR",
+      "time": "4:16:20"
+     },
+     {
+      "pos": 7,
+      "name": "Lisa Perterer",
+      "nat": "AUT",
+      "time": "4:18:15"
+     },
+     {
+      "pos": 8,
+      "name": "Jackie Hering",
+      "nat": "USA",
+      "time": "4:19:40"
+     },
+     {
+      "pos": 9,
+      "name": "Anne Reischmann",
+      "nat": "GER",
+      "time": "4:21:10"
+     },
+     {
+      "pos": 10,
+      "name": "Charlene Clavet",
+      "nat": "FRA",
+      "time": "4:23:30"
+     }
+    ]
+   },
+   "startUTC": "2026-05-17T05:00:00Z",
+   "sub": "Aix-en-Provence",
+   "cardBadge": {
+    "cls": "b703",
+    "label": "70.3"
+   }
+  },
+  "hamburg": {
+   "name": "IRONMAN Hamburg",
+   "loc": "Hambourg, Allemagne",
+   "date": "7 Juin 2026",
+   "isoDate": "20260607",
+   "startTime": "07h00 CEST",
+   "days": 1,
+   "badge": "bfull",
+   "badgeLabel": "Full IRONMAN · Champ. Euro Femmes",
+   "broadcast": [
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Dim. 7 juin · 07h00 UTC — 09h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Kristian Blummenfelt (NOR)",
+    "Casper Stornes (NOR)",
+    "Gustav Iden (NOR)",
+    "Patrick Lange (GER)",
+    "Sam Long (USA)",
+    "Magnus Ditlev (DEN)",
+    "Rudy Von Berg (USA)",
+    "Trevor Foley (USA)",
+    "Pierre Le Corre (FRA)",
+    "Daniel Baekkegard (DEN)"
+   ],
+   "women": [
+    "Kat Matthews (GBR)",
+    "Laura Philipp (GER)",
+    "Solveig Lovseth (NOR)",
+    "Lisa Perterer (AUT)",
+    "Jackie Hering (USA)",
+    "Chelsea Sodaro (USA)",
+    "Anne Reischmann (GER)",
+    "Laura Jansen (GER)",
+    "Hannah Berry (NZL)",
+    "Regan Hollioake (AUS)"
+   ],
+   "done": true,
+   "results": {
+    "women": [
+     {
+      "pos": 1,
+      "name": "Solveig Loevseth",
+      "nat": "NOR",
+      "time": "8:11:11",
+      "note": "Record vélo 4:20:06 · 4e victoire Full d'affilée"
+     },
+     {
+      "pos": 2,
+      "name": "Laura Philipp",
+      "nat": "GER",
+      "time": "8:12:29",
+      "note": "Run le plus rapide 2:42:16"
+     },
+     {
+      "pos": 3,
+      "name": "Katrine Graesboell Christensen",
+      "nat": "DEN",
+      "time": "8:15:20"
+     },
+     {
+      "pos": 4,
+      "name": "Marjolaine Pierré",
+      "nat": "FRA",
+      "time": "8:18:01"
+     },
+     {
+      "pos": 5,
+      "name": "Lisa Perterer",
+      "nat": "AUT",
+      "time": "8:22:31"
+     },
+     {
+      "pos": 6,
+      "name": "Lotte Wilms",
+      "nat": "NED",
+      "time": "8:24:58"
+     },
+     {
+      "pos": 7,
+      "name": "India Lee",
+      "nat": "GBR",
+      "time": "8:25:32"
+     },
+     {
+      "pos": 8,
+      "name": "Marta Lagownik",
+      "nat": "POL",
+      "time": "8:30:08"
+     },
+     {
+      "pos": 9,
+      "name": "Fenella Langridge",
+      "nat": "GBR",
+      "time": "8:31:54"
+     },
+     {
+      "pos": 10,
+      "name": "Kate Curran",
+      "nat": "GBR",
+      "time": "8:35:39"
+     }
+    ]
+   },
+   "startUTC": "2026-06-07T05:00:00Z",
+   "sub": "Hamburg, ALL",
+   "cardBadge": {
+    "cls": "bfull",
+    "label": "Full 140.6"
+   }
+  },
+  "penn": {
+   "name": "IRONMAN 70.3 Pennsylvania",
+   "loc": "Happy Valley, Pennsylvanie, USA",
+   "date": "14 Juin 2026",
+   "isoDate": "20260614",
+   "startTime": "07h00 EDT",
+   "days": 1,
+   "badge": "b703",
+   "badgeLabel": "70.3 · Champ. Amer. Nord",
+   "broadcast": [
+    {
+     "icon": "TV",
+     "name": "Outside TV",
+     "detail": "USA & Canada",
+     "time": "Dim. 14 juin · 14h00 UTC — 16h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit",
+     "time": "Direct + replay"
+    }
+   ],
+   "men": [
+    "Sam Long (USA)",
+    "Matthew Marquardt (USA)",
+    "Lionel Sanders (CAN)",
+    "Rudy Von Berg (USA)",
+    "Ben Kanute (USA)",
+    "Trevor Foley (USA)",
+    "Chris Leiferman (USA)",
+    "Joel Moody (AUS)",
+    "Cameron Wurf (AUS)",
+    "Patrick Lange (GER)"
+   ],
+   "women": [
+    "Chelsea Sodaro (USA)",
+    "Jackie Hering (USA)",
+    "Taylor Knibb (USA)",
+    "Tamara Jewett (CAN)",
+    "Skye Moench (USA)",
+    "Jocelyn McCauley (USA)",
+    "Sarah Piampiano (USA)",
+    "Hannah Berry (NZL)",
+    "Laura Jansen (GER)",
+    "Regan Hollioake (AUS)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Trevor Foley",
+      "nat": "USA",
+      "time": "3:42:25",
+      "note": "1re victoire face à Sam Long en 14 tentatives"
+     },
+     {
+      "pos": 2,
+      "name": "Sam Long",
+      "nat": "USA",
+      "time": "3:43:35"
+     },
+     {
+      "pos": 3,
+      "name": "Jason West",
+      "nat": "USA",
+      "note": "Ancien étudiant de Penn State, podium très émouvant"
+     },
+     {
+      "pos": 4,
+      "name": "Matthew Marquardt",
+      "nat": "USA"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Paula Findlay",
+      "nat": "CAN",
+      "time": "4:14:02",
+      "note": "Victoire dominante, +4 min sur la 2e"
+     },
+     {
+      "pos": 2,
+      "name": "Lydia Russell",
+      "nat": "USA"
+     },
+     {
+      "pos": 3,
+      "name": "Grace Thek",
+      "nat": "AUS"
+     },
+     {
+      "pos": 4,
+      "name": "Grace Alexander",
+      "nat": "USA"
+     }
+    ]
+   },
+   "startUTC": "2026-06-14T11:00:00Z",
+   "sub": "Pennsylvania, USA",
+   "cardBadge": {
+    "cls": "b703",
+    "label": "70.3"
+   }
+  },
+  "elsinore": {
+   "name": "IRONMAN 70.3 Elsinore",
+   "loc": "Helsingör, Danemark",
+   "date": "21 Juin 2026",
+   "isoDate": "20260621",
+   "startTime": "07h00 CEST",
+   "days": 1,
+   "badge": "b703",
+   "badgeLabel": "70.3 · NOUVEAU",
+   "broadcast": [
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Dim. 21 juin · 08h00 UTC — 10h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Kristian Blummenfelt (NOR)",
+    "Kristian Hogenhaug (DEN)",
+    "Jonas Schomburg (GER)",
+    "Magnus Ditlev (DEN)",
+    "Henrik Goesch (FIN)",
+    "Leon Chevalier (FRA)",
+    "Jonas Hoffmann (GER)",
+    "Daniel Baekkegard (DEN)",
+    "Florian Angert (GER)",
+    "Clement Mignon (FRA)"
+   ],
+   "women": [
+    "Maja Stage Nielsen (DEN)",
+    "Kat Matthews (GBR)",
+    "Laura Jansen (GER)",
+    "Anne Reischmann (GER)",
+    "Michelle Vesterby (DEN)",
+    "Lisa Perterer (AUT)",
+    "Laura Philipp (GER)",
+    "Charlene Clavet (FRA)",
+    "Regan Hollioake (AUS)",
+    "Jeanni Metzler (RSA)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Marten Van Riel",
+      "nat": "BEL",
+      "time": "3:36:03",
+      "note": "★ Record parcours · 6 victoires 70.3 sur 6 en 2026"
+     },
+     {
+      "pos": 2,
+      "name": "Valdemar Solok",
+      "nat": "DEN",
+      "time": "3:37:18"
+     },
+     {
+      "pos": 3,
+      "name": "Simon Viain",
+      "nat": "FRA",
+      "time": "3:39:00"
+     },
+     {
+      "pos": 4,
+      "name": "Jamie Riddle",
+      "nat": "RSA",
+      "time": "3:39:37"
+     },
+     {
+      "pos": 5,
+      "name": "Kristian Hogenhaug",
+      "nat": "DEN",
+      "time": "3:40:14"
+     },
+     {
+      "pos": 6,
+      "name": "Ben Faeh",
+      "nat": "SUI",
+      "time": "3:42:12"
+     },
+     {
+      "pos": 7,
+      "name": "Thor Bendix Madsen",
+      "nat": "DEN",
+      "time": "3:42:24"
+     },
+     {
+      "pos": 8,
+      "name": "Lennart Sievers",
+      "nat": "GER",
+      "time": "3:42:46"
+     },
+     {
+      "pos": 9,
+      "name": "Pierre Dupuy",
+      "nat": "FRA",
+      "time": "3:43:17"
+     },
+     {
+      "pos": 10,
+      "name": "Rafael Lukatsch",
+      "nat": "AUT",
+      "time": "3:43:30"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Kat Matthews",
+      "nat": "GBR",
+      "time": "4:02:57",
+      "note": "Remontada de -2:57 effacée en 8,4 km de course à pied"
+     },
+     {
+      "pos": 2,
+      "name": "Katrine Christensen",
+      "nat": "DEN",
+      "time": "4:03:33"
+     },
+     {
+      "pos": 3,
+      "name": "Lena Meissner",
+      "nat": "GER",
+      "time": "4:04:55"
+     },
+     {
+      "pos": 4,
+      "name": "Audrey Merle",
+      "nat": "FRA",
+      "time": "4:05:58"
+     },
+     {
+      "pos": 5,
+      "name": "Marta Sanchez",
+      "nat": "ESP",
+      "time": "4:06:33"
+     },
+     {
+      "pos": 6,
+      "name": "Hanne De Vet",
+      "nat": "BEL",
+      "time": "4:06:44"
+     },
+     {
+      "pos": 7,
+      "name": "Lotte Wilms",
+      "nat": "NED",
+      "time": "4:08:17"
+     },
+     {
+      "pos": 8,
+      "name": "Natalie Van Coevorden",
+      "nat": "AUS",
+      "time": "4:09:14"
+     },
+     {
+      "pos": 9,
+      "name": "Fenella Langridge",
+      "nat": "GBR",
+      "time": "4:10:23"
+     },
+     {
+      "pos": 10,
+      "name": "Leana Bissig",
+      "nat": "SUI",
+      "time": "4:10:56"
+     }
+    ]
+   },
+   "startUTC": "2026-06-21T05:00:00Z",
+   "sub": "Elsinore, DAN",
+   "cardBadge": {
+    "cls": "b703",
+    "label": "70.3"
+   }
+  },
+  "frankfurt": {
+   "name": "IRONMAN Frankfurt",
+   "loc": "Francfort, Allemagne",
+   "date": "28 Juin 2026",
+   "isoDate": "20260628",
+   "startTime": "07h00 CEST",
+   "days": 1,
+   "badge": "bfull",
+   "badgeLabel": "Full IRONMAN · Champ. Euro Hommes",
+   "broadcast": [
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Dim. 28 juin · 07h00 UTC — 09h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Kristian Blummenfelt (NOR)",
+    "Casper Stornes (NOR)",
+    "Gustav Iden (NOR)",
+    "Patrick Lange (GER)",
+    "Magnus Ditlev (DEN)",
+    "Sam Long (USA)",
+    "Leon Chevalier (FRA)",
+    "Jonas Schomburg (GER)",
+    "Lionel Sanders (CAN)",
+    "Florian Angert (GER)"
+   ],
+   "women": [
+    "Kat Matthews (GBR)",
+    "Laura Philipp (GER)",
+    "Anne Reischmann (GER)",
+    "Regan Hollioake (AUS)",
+    "Lisa Perterer (AUT)",
+    "Maja Stage Nielsen (DEN)",
+    "Anne Haug (GER)",
+    "Solveig Lovseth (NOR)",
+    "Jackie Hering (USA)",
+    "Laura Jansen (GER)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Casper Stornes",
+      "nat": "NOR",
+      "time": "4:50:23",
+      "note": "★ Champion du monde en titre sacré aussi champion d'Europe · course raccourcie (125km/21,1km) à cause de la canicule"
+     },
+     {
+      "pos": 2,
+      "name": "Gustav Iden",
+      "nat": "NOR",
+      "time": "4:52:54",
+      "note": "2e comme à Nice l'an dernier, doublé norvégien"
+     },
+     {
+      "pos": 3,
+      "name": "Antonio Benito López",
+      "nat": "ESP",
+      "time": "4:54:47",
+      "note": "1er ticket Kona du jour"
+     },
+     {
+      "pos": 4,
+      "name": "Kacper Stepniak",
+      "nat": "POL",
+      "time": "4:55:15"
+     },
+     {
+      "pos": 5,
+      "name": "Vincent Luis",
+      "nat": "FRA",
+      "time": "4:55:46"
+     },
+     {
+      "pos": 6,
+      "name": "Michele Sarzilla",
+      "nat": "ITA",
+      "time": "4:56:27"
+     },
+     {
+      "pos": 7,
+      "name": "Jamie Riddle",
+      "nat": "RSA",
+      "time": "4:56:38"
+     },
+     {
+      "pos": 8,
+      "name": "Nathan Guerbeur",
+      "nat": "FRA",
+      "time": "4:56:50",
+      "note": "Longtemps leader sur le vélo, rattrapé sur le marathon"
+     },
+     {
+      "pos": 9,
+      "name": "Kieran Lindars",
+      "nat": "GBR",
+      "time": "4:57:02"
+     },
+     {
+      "pos": 10,
+      "name": "Jan Stratmann",
+      "nat": "GER",
+      "time": "4:57:35"
+     }
+    ]
+   },
+   "startUTC": "2026-06-28T05:00:00Z",
+   "sub": "Frankfurt, ALL",
+   "cardBadge": {
+    "cls": "bwc",
+    "label": "WC Qualification"
+   }
+  },
+  "swansea": {
+   "name": "IRONMAN 70.3 Swansea",
+   "loc": "Swansea, Pays de Galles",
+   "date": "12 Juillet 2026",
+   "isoDate": "20260712",
+   "startTime": "07h00 BST",
+   "days": 1,
+   "badge": "b703",
+   "badgeLabel": "70.3",
+   "broadcast": [
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Dim. 12 juil · 09h00 UTC — 11h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Leon Chevalier (FRA)",
+    "Jonas Hoffmann (GER)",
+    "Henrik Goesch (FIN)",
+    "Jonas Schomburg (GER)",
+    "Kristian Hogenhaug (DEN)",
+    "Daniel Baekkegard (DEN)",
+    "Clement Mignon (FRA)",
+    "Joe Skipper (GBR)",
+    "Florian Angert (GER)",
+    "Pablo Dapena (ESP)"
+   ],
+   "women": [
+    "Kat Matthews (GBR)",
+    "Laura Philipp (GER)",
+    "Anne Reischmann (GER)",
+    "Regan Hollioake (AUS)",
+    "Laura Jansen (GER)",
+    "Michelle Vesterby (DEN)",
+    "Lisa Perterer (AUT)",
+    "Maja Stage Nielsen (DEN)",
+    "Jeanni Metzler (RSA)",
+    "Hannah Berry (NZL)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Harry Palmer",
+      "nat": "GBR",
+      "time": "3:50:27",
+      "note": "★ 3e victoire consécutive à Swansea"
+     },
+     {
+      "pos": 2,
+      "name": "Kieran Lindars",
+      "nat": "GBR",
+      "time": "3:51:12"
+     },
+     {
+      "pos": 3,
+      "name": "Joran Driesen",
+      "nat": "BEL",
+      "time": "3:53:40"
+     },
+     {
+      "pos": 4,
+      "name": "Simon Viain",
+      "nat": "FRA",
+      "time": "3:54:12"
+     },
+     {
+      "pos": 5,
+      "name": "Pierre Le Corre",
+      "nat": "FRA",
+      "time": "3:54:37"
+     },
+     {
+      "pos": 6,
+      "name": "Matthew Collins",
+      "nat": "GBR",
+      "time": "3:59:01"
+     },
+     {
+      "pos": 7,
+      "name": "Malachi Cashmore",
+      "nat": "GBR",
+      "time": "3:59:08"
+     },
+     {
+      "pos": 8,
+      "name": "Louis Buttrick",
+      "nat": "GBR",
+      "time": "3:59:57"
+     },
+     {
+      "pos": 9,
+      "name": "Simon Davis",
+      "nat": "GBR",
+      "time": "4:00:16"
+     },
+     {
+      "pos": 10,
+      "name": "Florent Lefebvre",
+      "nat": "FRA",
+      "time": "4:01:05",
+      "note": "Mika Noodt (GER), en tête par plus de 4 min, a chuté contre une ambulance à 10km de l'arrivée et n'a pas terminé"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Lizzie Rayner",
+      "nat": "GBR",
+      "time": "4:23:56",
+      "note": "★ 1re victoire à Swansea après 6e-5e-4e-3e les années précédentes"
+     },
+     {
+      "pos": 2,
+      "name": "Anne-Sophie Pierre",
+      "nat": "FRA",
+      "time": "4:24:11"
+     },
+     {
+      "pos": 3,
+      "name": "Marta Lagownik",
+      "nat": "POL",
+      "time": "4:24:54"
+     },
+     {
+      "pos": 4,
+      "name": "Rebecca Anderbury",
+      "nat": "GBR",
+      "time": "4:27:40"
+     },
+     {
+      "pos": 5,
+      "name": "Nikki Bartlett",
+      "nat": "GBR",
+      "time": "4:28:47"
+     },
+     {
+      "pos": 6,
+      "name": "Jenny Jendryschik",
+      "nat": "GER",
+      "time": "4:30:13"
+     },
+     {
+      "pos": 7,
+      "name": "Anastacia Damm Nielsen",
+      "nat": "DEN",
+      "time": "4:30:27"
+     },
+     {
+      "pos": 8,
+      "name": "India Lee",
+      "nat": "GBR",
+      "time": "4:33:32",
+      "note": "En tête, a chuté à faible vitesse puis perdu sa chaîne"
+     },
+     {
+      "pos": 9,
+      "name": "Kate Curran",
+      "nat": "GBR",
+      "time": "4:33:53"
+     },
+     {
+      "pos": 10,
+      "name": "Johanna Ahrens",
+      "nat": "GER",
+      "time": "4:35:21"
+     }
+    ]
+   },
+   "startUTC": "2026-07-12T06:00:00Z",
+   "sub": "Swansea, GBR",
+   "cardBadge": {
+    "cls": "b703",
+    "label": "70.3"
+   }
+  },
+  "lakeplacid": {
+   "name": "IRONMAN Lake Placid",
+   "loc": "Lake Placid, New York, USA",
+   "date": "19 Juillet 2026",
+   "isoDate": "20260719",
+   "startTime": "07h00 EDT",
+   "days": 1,
+   "badge": "bfull",
+   "badgeLabel": "Full IRONMAN",
+   "broadcast": [
+    {
+     "icon": "TV",
+     "name": "Outside TV",
+     "detail": "USA & Canada",
+     "time": "Dim. 19 juil · 13h00 UTC — 15h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit",
+     "time": "Direct + replay"
+    }
+   ],
+   "men": [
+    "Lionel Sanders (CAN)",
+    "Sam Long (USA)",
+    "Matthew Marquardt (USA)",
+    "Rudy Von Berg (USA)",
+    "Cameron Wurf (AUS)",
+    "Trevor Foley (USA)",
+    "Ben Kanute (USA)",
+    "Chris Leiferman (USA)",
+    "Joel Moody (AUS)",
+    "Patrick Lange (GER)"
+   ],
+   "women": [
+    "Chelsea Sodaro (USA)",
+    "Jackie Hering (USA)",
+    "Laura Jansen (GER)",
+    "Regan Hollioake (AUS)",
+    "Hannah Berry (NZL)",
+    "Tamara Jewett (CAN)",
+    "Skye Moench (USA)",
+    "Taylor Knibb (USA)",
+    "Jocelyn McCauley (USA)",
+    "Sarah Piampiano (USA)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Marten Van Riel",
+      "nat": "BEL",
+      "time": "7:41:57",
+      "note": "★ Record du parcours · 1re victoire longue distance après un départ solo en tête toute la course"
+     },
+     {
+      "pos": 2,
+      "name": "Matthew Marquardt",
+      "nat": "USA",
+      "time": "7:46:11"
+     },
+     {
+      "pos": 3,
+      "name": "Ben Kanute",
+      "nat": "USA",
+      "time": "7:58:23"
+     },
+     {
+      "pos": 4,
+      "name": "Jason West",
+      "nat": "USA",
+      "time": "8:00:44",
+      "note": "Remonté du 8e rang, vu au sol à s'étirer avant de repartir"
+     },
+     {
+      "pos": 5,
+      "name": "Rudy Von Berg",
+      "nat": "USA",
+      "time": "8:03:02"
+     },
+     {
+      "pos": 6,
+      "name": "Frederic Funk",
+      "nat": "GER",
+      "time": "8:04:29"
+     },
+     {
+      "pos": 7,
+      "name": "Cameron Wurf",
+      "nat": "AUS",
+      "time": "8:07:24"
+     },
+     {
+      "pos": 8,
+      "name": "Trevor Foley",
+      "nat": "USA",
+      "time": "8:09:52"
+     },
+     {
+      "pos": 9,
+      "name": "Dominik Sowieja",
+      "nat": "GER",
+      "time": "8:14:30"
+     },
+     {
+      "pos": 10,
+      "name": "Kristian Høgenhaug",
+      "nat": "DEN",
+      "time": "8:16:21"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Paula Findlay",
+      "nat": "CAN",
+      "time": "8:47:43",
+      "note": "★ Victoire dès ses débuts sur la distance longue"
+     },
+     {
+      "pos": 2,
+      "name": "Marta Sanchez",
+      "nat": "ESP",
+      "time": "8:51:30"
+     },
+     {
+      "pos": 3,
+      "name": "Rachel Zilinskas",
+      "nat": "USA",
+      "time": "9:04:13"
+     },
+     {
+      "pos": 4,
+      "name": "Tamara Jewett",
+      "nat": "CAN",
+      "time": "9:04:53",
+      "note": "Manque le podium de 40s après un marathon en 2:48:13"
+     },
+     {
+      "pos": 5,
+      "name": "Lisa Perterer",
+      "nat": "AUT",
+      "time": "9:06:04"
+     },
+     {
+      "pos": 6,
+      "name": "Grace Thek",
+      "nat": "AUS",
+      "time": "9:12:19"
+     },
+     {
+      "pos": 7,
+      "name": "Rhianne Hughes",
+      "nat": "GBR",
+      "time": "9:28:17"
+     },
+     {
+      "pos": 8,
+      "name": "Lara Hernandez-Tome",
+      "nat": "ESP",
+      "time": "9:28:45"
+     },
+     {
+      "pos": 9,
+      "name": "Samantha Skold",
+      "nat": "SWE",
+      "time": "9:30:51"
+     }
+    ]
+   },
+   "startUTC": "2026-07-19T11:00:00Z",
+   "sub": "Lake Placid, USA",
+   "cardBadge": {
+    "cls": "bfull",
+    "label": "Full 140.6"
+   }
+  },
+  "boise": {
+   "name": "IRONMAN 70.3 Boise",
+   "loc": "Boise, Idaho, USA",
+   "date": "25 Juillet 2026",
+   "isoDate": "20260725",
+   "startTime": "07h00 MDT",
+   "days": 1,
+   "badge": "b703",
+   "badgeLabel": "70.3 · NOUVEAU",
+   "broadcast": [
+    {
+     "icon": "TV",
+     "name": "Outside TV",
+     "detail": "USA & Canada",
+     "time": "Sam. 25 juil · 17h00 UTC — 19h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit",
+     "time": "Direct + replay"
+    }
+   ],
+   "men": [
+    "Sam Long (USA)",
+    "Lionel Sanders (CAN)",
+    "Matthew Marquardt (USA)",
+    "Jonas Schomburg (GER)",
+    "Ben Kanute (USA)",
+    "Trevor Foley (USA)",
+    "Rudy Von Berg (USA)",
+    "Joel Moody (AUS)",
+    "Chris Leiferman (USA)",
+    "Cameron Wurf (AUS)"
+   ],
+   "women": [
+    "Chelsea Sodaro (USA)",
+    "Jackie Hering (USA)",
+    "Taylor Knibb (USA)",
+    "Tamara Jewett (CAN)",
+    "Skye Moench (USA)",
+    "Jocelyn McCauley (USA)",
+    "Hannah Berry (NZL)",
+    "Laura Jansen (GER)",
+    "Regan Hollioake (AUS)",
+    "Sarah Piampiano (USA)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Sam Long",
+      "nat": "USA",
+      "time": "3:32:25",
+      "note": "★ Record du parcours · 22e victoire de sa carrière pro"
+     },
+     {
+      "pos": 2,
+      "name": "Ari Klau",
+      "nat": "USA",
+      "time": "3:37:21",
+      "note": "Meilleur temps du jour sur le semi-marathon"
+     },
+     {
+      "pos": 3,
+      "name": "Blake Harris",
+      "nat": "CAN",
+      "time": "3:37:52"
+     },
+     {
+      "pos": 4,
+      "name": "Vincent Luis",
+      "nat": "FRA",
+      "time": "3:37:59"
+     },
+     {
+      "pos": 5,
+      "name": "Ben Faeh",
+      "nat": "SUI",
+      "time": "3:38:50"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Kirsten Kasper",
+      "nat": "USA",
+      "time": "4:00:50",
+      "note": "2e victoire 70.3 en seulement 3 courses à cette distance"
+     },
+     {
+      "pos": 2,
+      "name": "Hannah Berry",
+      "nat": "NZL",
+      "time": "4:02:05"
+     },
+     {
+      "pos": 3,
+      "name": "Hanne De Vet",
+      "nat": "BEL",
+      "time": "4:03:29"
+     },
+     {
+      "pos": 4,
+      "name": "Lydia Russell",
+      "nat": "USA",
+      "time": "4:07:18"
+     },
+     {
+      "pos": 5,
+      "name": "Rebecca Clarke",
+      "nat": "NZL",
+      "time": "4:14:00"
+     }
+    ]
+   },
+   "startUTC": "2026-07-25T13:00:00Z",
+   "sub": "Boise, USA",
+   "cardBadge": {
+    "cls": "b703",
+    "label": "70.3"
+   }
+  },
+  "kalmar": {
+   "name": "IRONMAN Kalmar",
+   "loc": "Kalmar, Suede",
+   "date": "15 Aout 2026",
+   "isoDate": "20260815",
+   "startTime": "07h00 CEST",
+   "days": 1,
+   "badge": "bfull",
+   "badgeLabel": "Full IRONMAN · NOUVEAU",
+   "broadcast": [
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Sam. 15 aout · 07h00 UTC — 09h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Kristian Blummenfelt (NOR)",
+    "Kristian Hogenhaug (DEN)",
+    "Henrik Goesch (FIN)",
+    "Magnus Ditlev (DEN)",
+    "Leon Chevalier (FRA)",
+    "Jonas Schomburg (GER)",
+    "Jonas Hoffmann (GER)",
+    "Daniel Baekkegard (DEN)",
+    "Florian Angert (GER)",
+    "Joe Skipper (GBR)"
+   ],
+   "women": [
+    "Laura Philipp (GER)",
+    "Maja Stage Nielsen (DEN)",
+    "Anne Reischmann (GER)",
+    "Laura Jansen (GER)",
+    "Solveig Lovseth (NOR)",
+    "Michelle Vesterby (DEN)",
+    "Lisa Perterer (AUT)",
+    "Regan Hollioake (AUS)",
+    "Jeanni Metzler (RSA)",
+    "Charlene Clavet (FRA)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Jonas Schomburg",
+      "nat": "GER",
+      "time": "7:22:57",
+      "note": "★ 1re victoire IRONMAN · record du parcours battu de plus de 15 min"
+     },
+     {
+      "pos": 2,
+      "name": "Matthew Marquardt",
+      "nat": "USA",
+      "time": "7:28:28"
+     },
+     {
+      "pos": 3,
+      "name": "Andrea Salvisberg",
+      "nat": "SUI",
+      "time": "7:28:54"
+     },
+     {
+      "pos": 4,
+      "name": "Gregory Barnaby",
+      "nat": "ITA",
+      "time": "7:32:11"
+     },
+     {
+      "pos": 5,
+      "name": "Daniel Bækkegård",
+      "nat": "DEN",
+      "time": "7:35:44"
+     },
+     {
+      "pos": 6,
+      "name": "Henrik Goesch",
+      "nat": "FIN",
+      "time": "7:40:24"
+     },
+     {
+      "pos": 7,
+      "name": "Matt Hanson",
+      "nat": "USA",
+      "time": "7:42:26"
+     },
+     {
+      "pos": 8,
+      "name": "Trevor Foley",
+      "nat": "USA",
+      "time": "7:43:45"
+     },
+     {
+      "pos": 9,
+      "name": "Andy Krueger",
+      "nat": "USA",
+      "time": "7:47:19"
+     },
+     {
+      "pos": 10,
+      "name": "Filipe Azevedo",
+      "nat": "POR",
+      "time": "7:49:09",
+      "note": "Robert Kallin (SWE) a établi un nouveau record du monde du vélo IRONMAN (3:53:12) mais s'est effondré sur le marathon et a manqué Kona"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Laura Philipp",
+      "nat": "GER",
+      "time": "8:13:37",
+      "note": "★ Retour au sommet après une saison perturbée par blessure et maladie"
+     },
+     {
+      "pos": 2,
+      "name": "Katrine Christensen",
+      "nat": "DEN",
+      "time": "8:32:22"
+     },
+     {
+      "pos": 3,
+      "name": "Jackie Hering",
+      "nat": "USA",
+      "time": "8:34:56"
+     },
+     {
+      "pos": 4,
+      "name": "Jenny Jendryschik",
+      "nat": "GER",
+      "time": "8:35:57"
+     },
+     {
+      "pos": 5,
+      "name": "Leonie Konczalla",
+      "nat": "GER",
+      "time": "8:40:17"
+     },
+     {
+      "pos": 6,
+      "name": "Rachel Zilinskas",
+      "nat": "USA",
+      "time": "8:41:42"
+     },
+     {
+      "pos": 7,
+      "name": "Antonia Milowsky",
+      "nat": "GER",
+      "time": "8:48:58"
+     },
+     {
+      "pos": 8,
+      "name": "Linda Brännlund",
+      "nat": "SWE",
+      "time": "9:01:36"
+     },
+     {
+      "pos": 9,
+      "name": "Johanna Ahrens",
+      "nat": "GER",
+      "time": "9:05:50"
+     },
+     {
+      "pos": 10,
+      "name": "Mizuki Hirayanagi",
+      "nat": "JPN",
+      "time": "9:09:54"
+     }
+    ]
+   },
+   "startUTC": "2026-08-15T05:00:00Z",
+   "sub": "Kalmar, SUE",
+   "cardBadge": {
+    "cls": "bfull",
+    "label": "Full 140.6"
+   }
+  },
+  "zell": {
+   "name": "IRONMAN 70.3 Zell am See",
+   "loc": "Zell am See-Kaprun, Autriche",
+   "date": "30 Aout 2026",
+   "isoDate": "20260830",
+   "startTime": "07h00 CEST",
+   "days": 1,
+   "badge": "b703",
+   "badgeLabel": "70.3",
+   "broadcast": [
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Dim. 30 aout · 08h00 UTC — 10h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Patrick Lange (GER)",
+    "Leon Chevalier (FRA)",
+    "Magnus Ditlev (DEN)",
+    "Jonas Schomburg (GER)",
+    "Kristian Hogenhaug (DEN)",
+    "Henrik Goesch (FIN)",
+    "Jonas Hoffmann (GER)",
+    "Florian Angert (GER)",
+    "Joe Skipper (GBR)",
+    "Daniel Baekkegard (DEN)"
+   ],
+   "women": [
+    "Lisa Perterer (AUT)",
+    "Anne Reischmann (GER)",
+    "Laura Jansen (GER)",
+    "Maja Stage Nielsen (DEN)",
+    "Regan Hollioake (AUS)",
+    "Michelle Vesterby (DEN)",
+    "Jeanni Metzler (RSA)",
+    "Charlene Clavet (FRA)",
+    "Hannah Berry (NZL)",
+    "Laura Philipp (GER)"
+   ],
+   "startUTC": "2026-08-30T05:00:00Z",
+   "sub": "Zell am See, AUT",
+   "cardBadge": {
+    "cls": "bfull",
+    "label": "Full 140.6"
+   }
+  },
+  "nice": {
+   "name": "IRONMAN 70.3 World Championship",
+   "loc": "Nice, France — 12-13 Septembre",
+   "date": "12 Sept. 2026",
+   "isoDate": "20260912",
+   "startTime": "07h30 CEST",
+   "days": 2,
+   "badge": "bwc",
+   "badgeLabel": "World Championship 70.3",
+   "isWC": true,
+   "broadcast": [
+    {
+     "icon": "TV",
+     "name": "Outside TV",
+     "detail": "USA & Canada",
+     "time": "Ven-Sam 12-13 sept · 08h00 UTC — 10h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "TV",
+     "name": "ESPN (Disney+)",
+     "detail": "Amerique latine",
+     "time": "Direct"
+    },
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Direct + replay"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Kristian Blummenfelt (NOR)",
+    "Casper Stornes (NOR)",
+    "Gustav Iden (NOR)",
+    "Patrick Lange (GER)",
+    "Sam Long (USA)",
+    "Magnus Ditlev (DEN)",
+    "Leon Chevalier (FRA)",
+    "Lionel Sanders (CAN)",
+    "Trevor Foley (USA)",
+    "Pierre Le Corre (FRA)"
+   ],
+   "women": [
+    "Kat Matthews (GBR)",
+    "Solveig Lovseth (NOR)",
+    "Lucy Charles-Barclay (GBR)",
+    "Taylor Knibb (USA)",
+    "Laura Philipp (GER)",
+    "Lisa Perterer (AUT)",
+    "Jackie Hering (USA)",
+    "Chelsea Sodaro (USA)",
+    "Anne Reischmann (GER)",
+    "Regan Hollioake (AUS)"
+   ],
+   "startUTC": "2026-09-12T05:30:00Z",
+   "sub": "Nice, FRA",
+   "cardBadge": {
+    "cls": "bwc",
+    "label": "WC Qualification"
+   }
+  },
+  "kona": {
+   "name": "IRONMAN World Championship",
+   "loc": "Kailua-Kona, Hawaii",
+   "date": "10 Oct. 2026",
+   "isoDate": "20261010",
+   "startTime": "07h00 HST",
+   "days": 1,
+   "badge": "bwc",
+   "badgeLabel": "IRONMAN World Championship · Kona",
+   "isWC": true,
+   "broadcast": [
+    {
+     "icon": "TV",
+     "name": "Outside TV",
+     "detail": "USA & Canada",
+     "time": "Sam. 10 oct · 18h00 UTC — 20h00 heure francaise (CEST)"
+    },
+    {
+     "icon": "TV",
+     "name": "ESPN (Disney+)",
+     "detail": "Amerique latine",
+     "time": "Direct"
+    },
+    {
+     "icon": "TV",
+     "name": "SuperSport",
+     "detail": "Afrique du Sud",
+     "time": "Direct"
+    },
+    {
+     "icon": "WEB",
+     "name": "proseries.ironman.com",
+     "detail": "Gratuit · Monde entier",
+     "time": "Direct + replay"
+    },
+    {
+     "icon": "YT",
+     "name": "YouTube IRONMAN",
+     "url": "https://www.youtube.com/@ironmantriathlon",
+     "detail": "Gratuit",
+     "time": "Direct"
+    }
+   ],
+   "men": [
+    "Casper Stornes (NOR)",
+    "Kristian Blummenfelt (NOR)",
+    "Gustav Iden (NOR)",
+    "Patrick Lange (GER)",
+    "Sam Long (USA)",
+    "Magnus Ditlev (DEN)",
+    "Trevor Foley (USA)",
+    "Pierre Le Corre (FRA)",
+    "Leon Chevalier (FRA)",
+    "Lionel Sanders (CAN)"
+   ],
+   "women": [
+    "Solveig Lovseth (NOR)",
+    "Kat Matthews (GBR)",
+    "Laura Philipp (GER)",
+    "Chelsea Sodaro (USA)",
+    "Jackie Hering (USA)",
+    "Taylor Knibb (USA)",
+    "Lucy Charles-Barclay (GBR)",
+    "Lisa Perterer (AUT)",
+    "Anne Reischmann (GER)",
+    "Hannah Berry (NZL)"
+   ],
+   "startUTC": "2026-10-10T17:00:00Z",
+   "sub": "Kona, Hawaï, USA",
+   "cardBadge": {
+    "cls": "bwc",
+    "label": "World Champ."
+   }
+  }
+ },
+ "wtcsRaces": {
+  "abu26": {
+   "name": "WTCS Abu Dhabi 2026",
+   "loc": "Hudayriyat Island, Abu Dhabi",
+   "date": "Reportée (guerre en Iran) — nouvelle date non annoncée",
+   "format": "Sprint + Mixed Relay — REPORTÉE",
+   "url": "https://triathlon.org",
+   "isoDate": "20260328",
+   "postponed": true,
+   "men": [
+    "Matt Hauser (AUS)",
+    "Hayden Wilde (NZL)",
+    "Vasco Vilaca (POR)",
+    "Tim Hellwig (GER)",
+    "Dorian Coninx (FRA)",
+    "Leo Bergere (FRA)",
+    "Jelle Geens (BEL)",
+    "Miguel Hidalgo (BRA)",
+    "Henry Graf (GER)",
+    "David Cantero (ESP)"
+   ],
+   "women": [
+    "Lisa Tertsch (GER)",
+    "Taylor Knibb (USA)",
+    "Beth Potter (GBR)",
+    "Georgia Taylor-Brown (GBR)",
+    "Leonie Periault (FRA)",
+    "Cassandre Beaugrand (FRA)",
+    "Julie Derron (SUI)",
+    "Flora Duffy (BER)",
+    "Sophie Coldwell (GBR)",
+    "Miriam Casillas (ESP)"
+   ],
+   "startUTC": null,
+   "sub": "Abu Dhabi, UAE · prévue le 28 mars, reportée (guerre en Iran)",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Sprint"
+   }
+  },
+  "samar": {
+   "name": "WTCS Samarkand",
+   "loc": "Samarkand, Ouzbekistan",
+   "date": "25-26 Avril 2026",
+   "format": "Olympique",
+   "url": "https://triathlon.org",
+   "isoDate": "20260425",
+   "men": [
+    "Matt Hauser (AUS)",
+    "Hayden Wilde (NZL)",
+    "Vasco Vilaca (POR)",
+    "Miguel Hidalgo (BRA)",
+    "Dorian Coninx (FRA)",
+    "Leo Bergere (FRA)",
+    "Henry Graf (GER)",
+    "Tim Hellwig (GER)",
+    "Justus Nieschlag (GER)",
+    "Max Stapley (GBR)"
+   ],
+   "women": [
+    "Lisa Tertsch (GER)",
+    "Beth Potter (GBR)",
+    "Taylor Knibb (USA)",
+    "Leonie Periault (FRA)",
+    "Georgia Taylor-Brown (GBR)",
+    "Julie Derron (SUI)",
+    "Cassandre Beaugrand (FRA)",
+    "Sophie Coldwell (GBR)",
+    "Flora Duffy (BER)",
+    "Miriam Casillas (ESP)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Vasco Vilaca",
+      "nat": "POR",
+      "time": "1:43:33",
+      "note": "★ 1re victoire WTCS après 9 podiums"
+     },
+     {
+      "pos": 2,
+      "name": "Henry Graf",
+      "nat": "GER",
+      "time": "1:43:37"
+     },
+     {
+      "pos": 3,
+      "name": "Charles Paquet",
+      "nat": "CAN",
+      "time": "1:43:41",
+      "note": "1er podium WTCS"
+     },
+     {
+      "pos": 4,
+      "name": "Csongor Lehmann",
+      "nat": "HUN",
+      "time": "1:43:47"
+     },
+     {
+      "pos": 5,
+      "name": "Oliver Conway",
+      "nat": "GBR",
+      "time": "1:43:50",
+      "note": "Run le plus rapide 29:36"
+     },
+     {
+      "pos": 6,
+      "name": "Tom Richard",
+      "nat": "FRA"
+     },
+     {
+      "pos": 7,
+      "name": "Hugo Milner",
+      "nat": "GBR"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Beth Potter",
+      "nat": "GBR",
+      "time": "1:53:17"
+     },
+     {
+      "pos": 2,
+      "name": "Leonie Periault",
+      "nat": "FRA",
+      "time": "1:53:26"
+     },
+     {
+      "pos": 3,
+      "name": "Jeanne Lehair",
+      "nat": "LUX",
+      "time": "1:54:20"
+     },
+     {
+      "pos": 4,
+      "name": "Georgia Taylor-Brown",
+      "nat": "GBR",
+      "time": "1:54:32",
+      "note": "Échappée solo, +32s en T2"
+     },
+     {
+      "pos": 5,
+      "name": "Taylor Spivey",
+      "nat": "USA",
+      "time": "1:54:53"
+     }
+    ]
+   },
+   "startUTC": "2026-04-25T04:00:00Z",
+   "sub": "Samarkand, UZB",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Olympique"
+   }
+  },
+  "yoko": {
+   "name": "WTCS Yokohama",
+   "loc": "Yokohama, Japon",
+   "date": "16 Mai 2026",
+   "format": "Olympique",
+   "url": "https://triathlon.org",
+   "isoDate": "20260516",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Matt Hauser (AUS)",
+    "Vasco Vilaca (POR)",
+    "Dorian Coninx (FRA)",
+    "Leo Bergere (FRA)",
+    "Tim Hellwig (GER)",
+    "Miguel Hidalgo (BRA)",
+    "Jelle Geens (BEL)",
+    "Jonathan Brownlee (GBR)",
+    "Henry Graf (GER)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Georgia Taylor-Brown (GBR)",
+    "Beth Potter (GBR)",
+    "Lisa Tertsch (GER)",
+    "Leonie Periault (FRA)",
+    "Cassandre Beaugrand (FRA)",
+    "Julie Derron (SUI)",
+    "Flora Duffy (BER)",
+    "Sophie Coldwell (GBR)",
+    "Summer Rappaport (USA)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Matt Hauser",
+      "nat": "AUS",
+      "time": "1:42:33"
+     },
+     {
+      "pos": 2,
+      "name": "Miguel Hidalgo",
+      "nat": "BRA",
+      "time": "1:42:51"
+     },
+     {
+      "pos": 3,
+      "name": "Luke Willian",
+      "nat": "AUS",
+      "time": "1:43:08"
+     },
+     {
+      "pos": 4,
+      "name": "Vetle Thorn",
+      "nat": "NOR",
+      "time": "1:43:25"
+     },
+     {
+      "pos": 5,
+      "name": "Alex Yee",
+      "nat": "GBR",
+      "time": "1:43:41"
+     },
+     {
+      "pos": 6,
+      "name": "Brayden Mercer",
+      "nat": "AUS",
+      "time": "1:44:02"
+     },
+     {
+      "pos": 7,
+      "name": "Martin Sobey",
+      "nat": "CAN",
+      "time": "1:44:18"
+     },
+     {
+      "pos": 8,
+      "name": "Jack Willis",
+      "nat": "GBR",
+      "time": "1:44:35"
+     },
+     {
+      "pos": 9,
+      "name": "Tim Hellwig",
+      "nat": "GER",
+      "time": "1:44:52"
+     },
+     {
+      "pos": 10,
+      "name": "Braxton Legg",
+      "nat": "USA",
+      "time": "1:45:10"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Tilda Månsson",
+      "nat": "SWE",
+      "time": "1:50:13",
+      "note": "1re victoire WTCS"
+     },
+     {
+      "pos": 2,
+      "name": "Beth Potter",
+      "nat": "GBR",
+      "time": "1:50:15"
+     },
+     {
+      "pos": 3,
+      "name": "Jeanne Lehair",
+      "nat": "LUX",
+      "time": "1:50:36"
+     },
+     {
+      "pos": 4,
+      "name": "Lisa Tertsch",
+      "nat": "GER",
+      "time": "1:52:45"
+     },
+     {
+      "pos": 5,
+      "name": "Emma Lombardi",
+      "nat": "FRA",
+      "time": "1:53:02"
+     },
+     {
+      "pos": 6,
+      "name": "Diana Isakova",
+      "nat": "AZE",
+      "time": "1:53:18"
+     },
+     {
+      "pos": 7,
+      "name": "Gwen Jorgensen",
+      "nat": "USA",
+      "time": "1:53:35"
+     },
+     {
+      "pos": 8,
+      "name": "Taylor Spivey",
+      "nat": "USA",
+      "time": "1:53:48"
+     },
+     {
+      "pos": 9,
+      "name": "Laura Lindemann",
+      "nat": "GER",
+      "time": "1:54:05"
+     },
+     {
+      "pos": 10,
+      "name": "Sian Rainsley",
+      "nat": "GBR",
+      "time": "1:54:22"
+     }
+    ]
+   },
+   "startUTC": "2026-05-16T21:30:00Z",
+   "sub": "Yokohama, JPN",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Olympique"
+   }
+  },
+  "alghero": {
+   "name": "WTCS Alghero",
+   "loc": "Alghero, Sardaigne, Italie",
+   "date": "30 Mai 2026",
+   "format": "Olympique + Mixed Relay",
+   "url": "https://triathlon.org",
+   "isoDate": "20260530",
+   "men": [
+    "Vasco Vilaca (POR)",
+    "Matt Hauser (AUS)",
+    "Hayden Wilde (NZL)",
+    "Leo Bergere (FRA)",
+    "Dorian Coninx (FRA)",
+    "Tim Hellwig (GER)",
+    "Miguel Hidalgo (BRA)",
+    "David Cantero (ESP)",
+    "Jelle Geens (BEL)",
+    "Henry Graf (GER)"
+   ],
+   "women": [
+    "Lisa Tertsch (GER)",
+    "Leonie Periault (FRA)",
+    "Beth Potter (GBR)",
+    "Georgia Taylor-Brown (GBR)",
+    "Taylor Knibb (USA)",
+    "Cassandre Beaugrand (FRA)",
+    "Julie Derron (SUI)",
+    "Miriam Casillas (ESP)",
+    "Flora Duffy (BER)",
+    "Sophie Coldwell (GBR)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Vasco Vilaca",
+      "nat": "POR",
+      "time": "1:45:16",
+      "note": "2e victoire de la saison · Hauser et Yee chutent et abandonnent"
+     },
+     {
+      "pos": 2,
+      "name": "Miguel Hidalgo",
+      "nat": "BRA",
+      "time": "1:45:35"
+     },
+     {
+      "pos": 3,
+      "name": "Ricardo Batista",
+      "nat": "POR",
+      "time": "1:45:45"
+     },
+     {
+      "pos": 4,
+      "name": "Dorian Coninx",
+      "nat": "FRA",
+      "time": "1:45:46"
+     },
+     {
+      "pos": 5,
+      "name": "Charles Paquet",
+      "nat": "CAN",
+      "time": "1:45:49"
+     },
+     {
+      "pos": 6,
+      "name": "Tom Richard",
+      "nat": "FRA",
+      "time": "1:45:50"
+     },
+     {
+      "pos": 7,
+      "name": "João Nuno Batista",
+      "nat": "POR",
+      "time": "1:45:53"
+     },
+     {
+      "pos": 8,
+      "name": "Yanis Seguin",
+      "nat": "FRA",
+      "time": "1:46:04"
+     },
+     {
+      "pos": 9,
+      "name": "Alberto Gonzalez Garcia",
+      "nat": "ESP",
+      "time": "1:46:14"
+     },
+     {
+      "pos": 10,
+      "name": "Diego Moya",
+      "nat": "CHI",
+      "time": "1:46:18"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Cassandre Beaugrand",
+      "nat": "FRA",
+      "time": "1:53:49",
+      "note": "3e victoire consécutive à Alghero, malgré une mauvaise nage"
+     },
+     {
+      "pos": 2,
+      "name": "Beth Potter",
+      "nat": "GBR",
+      "time": "1:53:53"
+     },
+     {
+      "pos": 3,
+      "name": "Lisa Tertsch",
+      "nat": "GER",
+      "time": "1:53:58"
+     },
+     {
+      "pos": 4,
+      "name": "Jeanne Lehair",
+      "nat": "LUX",
+      "time": "1:54:09"
+     },
+     {
+      "pos": 5,
+      "name": "Leonie Periault",
+      "nat": "FRA",
+      "time": "1:54:16"
+     },
+     {
+      "pos": 6,
+      "name": "Georgia Taylor-Brown",
+      "nat": "GBR",
+      "time": "1:54:40"
+     },
+     {
+      "pos": 7,
+      "name": "Jolien Vermeylen",
+      "nat": "BEL",
+      "time": "1:54:51"
+     },
+     {
+      "pos": 8,
+      "name": "Taylor Spivey",
+      "nat": "USA",
+      "time": "1:55:20"
+     },
+     {
+      "pos": 9,
+      "name": "Tanja Neubert",
+      "nat": "GER",
+      "time": "1:55:33"
+     },
+     {
+      "pos": 10,
+      "name": "Márta Kropkó",
+      "nat": "HUN",
+      "time": "1:55:45"
+     }
+    ]
+   },
+   "startUTC": "2026-05-30T07:00:00Z",
+   "sub": "Alghero, ITA",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Olympique"
+   }
+  },
+  "quiberon": {
+   "name": "WTCS Quiberon",
+   "loc": "Quiberon, France",
+   "date": "20-21 Juin 2026",
+   "format": "Olympique + Mixed Relay",
+   "url": "https://triathlon.org",
+   "isoDate": "20260620",
+   "men": [
+    "Leo Bergere (FRA)",
+    "Dorian Coninx (FRA)",
+    "Matt Hauser (AUS)",
+    "Hayden Wilde (NZL)",
+    "Vasco Vilaca (POR)",
+    "Tim Hellwig (GER)",
+    "Miguel Hidalgo (BRA)",
+    "Henry Graf (GER)",
+    "Jelle Geens (BEL)",
+    "Max Stapley (GBR)"
+   ],
+   "women": [
+    "Leonie Periault (FRA)",
+    "Cassandre Beaugrand (FRA)",
+    "Lisa Tertsch (GER)",
+    "Beth Potter (GBR)",
+    "Georgia Taylor-Brown (GBR)",
+    "Taylor Knibb (USA)",
+    "Julie Derron (SUI)",
+    "Sophie Coldwell (GBR)",
+    "Miriam Casillas (ESP)",
+    "Flora Duffy (BER)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Dorian Coninx",
+      "nat": "FRA",
+      "time": "0:53:16",
+      "note": "Victoire à domicile au sprint, Alex Yee DNF"
+     },
+     {
+      "pos": 2,
+      "name": "Vasco Vilaca",
+      "nat": "POR",
+      "time": "0:53:17"
+     },
+     {
+      "pos": 3,
+      "name": "Ricardo Batista",
+      "nat": "POR",
+      "time": "0:53:19"
+     },
+     {
+      "pos": 4,
+      "name": "David Cantero Del Campo",
+      "nat": "ESP",
+      "time": "0:53:30"
+     },
+     {
+      "pos": 5,
+      "name": "Miguel Hidalgo",
+      "nat": "BRA",
+      "time": "0:53:31"
+     },
+     {
+      "pos": 6,
+      "name": "Nicola Azzano",
+      "nat": "ITA",
+      "time": "0:53:32"
+     },
+     {
+      "pos": 7,
+      "name": "Henry Graf",
+      "nat": "GER",
+      "time": "0:53:32"
+     },
+     {
+      "pos": 8,
+      "name": "John Reed",
+      "nat": "USA",
+      "time": "0:53:36"
+     },
+     {
+      "pos": 9,
+      "name": "Tjebbe Kaindl",
+      "nat": "AUT",
+      "time": "0:53:38"
+     },
+     {
+      "pos": 10,
+      "name": "Jawad Abdelmoula",
+      "nat": "MAR",
+      "time": "0:53:39"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Cassandre Beaugrand",
+      "nat": "FRA",
+      "time": "0:58:29",
+      "note": "4e victoire d'affilée, doublé français avec Coninx"
+     },
+     {
+      "pos": 2,
+      "name": "Tilda Månsson",
+      "nat": "SWE",
+      "time": "0:58:37"
+     },
+     {
+      "pos": 3,
+      "name": "Jolien Vermeylen",
+      "nat": "BEL",
+      "time": "0:58:42",
+      "note": "1er podium individuel WTCS"
+     },
+     {
+      "pos": 4,
+      "name": "Emma Lombardi",
+      "nat": "FRA",
+      "time": "0:58:51"
+     },
+     {
+      "pos": 5,
+      "name": "Jeanne Lehair",
+      "nat": "LUX",
+      "time": "0:58:57"
+     },
+     {
+      "pos": 6,
+      "name": "Valentina Riasova",
+      "nat": "AIN",
+      "time": "0:59:01"
+     },
+     {
+      "pos": 7,
+      "name": "Georgia Taylor-Brown",
+      "nat": "GBR",
+      "time": "0:59:04"
+     },
+     {
+      "pos": 8,
+      "name": "Mariana Vargem",
+      "nat": "POR",
+      "time": "0:59:07"
+     },
+     {
+      "pos": 9,
+      "name": "Leonie Periault",
+      "nat": "FRA",
+      "time": "0:59:09"
+     },
+     {
+      "pos": 10,
+      "name": "Gwen Jorgensen",
+      "nat": "USA",
+      "time": "0:59:12"
+     }
+    ]
+   },
+   "startUTC": "2026-06-20T07:00:00Z",
+   "sub": "Quiberon, FRA",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Olympique"
+   }
+  },
+  "hamburg26": {
+   "name": "WTCS Hamburg",
+   "loc": "Hambourg, Allemagne",
+   "date": "11-12 Juillet 2026",
+   "format": "Sprint + Mixed Relay World Champs",
+   "url": "https://triathlon.org",
+   "isoDate": "20260711",
+   "men": [
+    "Matt Hauser (AUS)",
+    "Hayden Wilde (NZL)",
+    "Vasco Vilaca (POR)",
+    "Tim Hellwig (GER)",
+    "Dorian Coninx (FRA)",
+    "Leo Bergere (FRA)",
+    "Miguel Hidalgo (BRA)",
+    "Jonathan Brownlee (GBR)",
+    "Henry Graf (GER)",
+    "Jelle Geens (BEL)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Lisa Tertsch (GER)",
+    "Georgia Taylor-Brown (GBR)",
+    "Beth Potter (GBR)",
+    "Leonie Periault (FRA)",
+    "Cassandre Beaugrand (FRA)",
+    "Julie Derron (SUI)",
+    "Flora Duffy (BER)",
+    "Sophie Coldwell (GBR)",
+    "Summer Rappaport (USA)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Matthew Hauser",
+      "nat": "AUS",
+      "time": "50:07",
+      "note": "★ 3e victoire consécutive à Hambourg"
+     },
+     {
+      "pos": 2,
+      "name": "Vasco Vilaca",
+      "nat": "POR",
+      "time": "50:10"
+     },
+     {
+      "pos": 3,
+      "name": "Henry Graf",
+      "nat": "GER",
+      "time": "50:15",
+      "note": "Podium à domicile"
+     },
+     {
+      "pos": 4,
+      "name": "Nils Serre Gehri",
+      "nat": "FRA",
+      "time": "50:19"
+     },
+     {
+      "pos": 5,
+      "name": "Charles Paquet",
+      "nat": "CAN",
+      "time": "50:20"
+     },
+     {
+      "pos": 6,
+      "name": "Connor Bentley",
+      "nat": "GBR",
+      "time": "50:24"
+     },
+     {
+      "pos": 7,
+      "name": "Vetle Bergsvik Thorn",
+      "nat": "NOR",
+      "time": "50:27"
+     },
+     {
+      "pos": 8,
+      "name": "Alberto Gonzalez Garcia",
+      "nat": "ESP",
+      "time": "50:32"
+     },
+     {
+      "pos": 9,
+      "name": "Tim Hellwig",
+      "nat": "GER",
+      "time": "50:33"
+     },
+     {
+      "pos": 10,
+      "name": "Tom Richard",
+      "nat": "FRA",
+      "time": "50:37",
+      "note": "Hayden Wilde (NZL), pénalisé sur le vélo pour son retour de blessure, a terminé 27e"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Leonie Periault",
+      "nat": "FRA",
+      "time": "55:51",
+      "note": "★ 2e victoire consécutive à Hambourg"
+     },
+     {
+      "pos": 2,
+      "name": "Lisa Tertsch",
+      "nat": "GER",
+      "time": "55:56"
+     },
+     {
+      "pos": 3,
+      "name": "Tilda Månsson",
+      "nat": "SWE",
+      "time": "56:03"
+     },
+     {
+      "pos": 4,
+      "name": "Taylor Spivey",
+      "nat": "USA",
+      "time": "56:05"
+     },
+     {
+      "pos": 5,
+      "name": "Emma Lombardi",
+      "nat": "FRA",
+      "time": "56:08"
+     },
+     {
+      "pos": 6,
+      "name": "Beth Potter",
+      "nat": "GBR",
+      "time": "56:15"
+     },
+     {
+      "pos": 7,
+      "name": "Roksana Slupek",
+      "nat": "POL",
+      "time": "56:18"
+     },
+     {
+      "pos": 8,
+      "name": "Jeanne Lehair",
+      "nat": "LUX",
+      "time": "56:19"
+     },
+     {
+      "pos": 9,
+      "name": "Fanni Szalai",
+      "nat": "HUN",
+      "time": "56:19",
+      "note": "Débuts WTCS remarqués à 18 ans"
+     },
+     {
+      "pos": 10,
+      "name": "Diana Isakova",
+      "nat": "AIN",
+      "time": "56:23"
+     }
+    ]
+   },
+   "startUTC": "2026-07-11T07:00:00Z",
+   "sub": "Hamburg, ALL",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Olympique"
+   }
+  },
+  "london26": {
+   "name": "WTCS London",
+   "loc": "Londres, Royaume-Uni",
+   "date": "25 Juillet 2026",
+   "format": "Olympique",
+   "url": "https://triathlon.org",
+   "isoDate": "20260725",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Matt Hauser (AUS)",
+    "Vasco Vilaca (POR)",
+    "Jonathan Brownlee (GBR)",
+    "Max Stapley (GBR)",
+    "Tim Hellwig (GER)",
+    "Leo Bergere (FRA)",
+    "Dorian Coninx (FRA)",
+    "Miguel Hidalgo (BRA)",
+    "Henry Graf (GER)"
+   ],
+   "women": [
+    "Beth Potter (GBR)",
+    "Georgia Taylor-Brown (GBR)",
+    "Lisa Tertsch (GER)",
+    "Taylor Knibb (USA)",
+    "Leonie Periault (FRA)",
+    "Sophie Coldwell (GBR)",
+    "Julie Derron (SUI)",
+    "Cassandre Beaugrand (FRA)",
+    "Flora Duffy (BER)",
+    "Summer Rappaport (USA)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Matthew Hauser",
+      "nat": "AUS",
+      "time": "50:28",
+      "note": "★ 3e victoire de la saison, retour de la WTCS à Londres après 11 ans"
+     },
+     {
+      "pos": 2,
+      "name": "Vasco Vilaca",
+      "nat": "POR",
+      "time": "50:31",
+      "note": "+0:03"
+     },
+     {
+      "pos": 3,
+      "name": "Csongor Lehmann",
+      "nat": "HUN",
+      "time": "50:36",
+      "note": "+0:08"
+     },
+     {
+      "pos": 4,
+      "name": "Morgan Pearson",
+      "nat": "USA",
+      "time": "50:45",
+      "note": "+0:17"
+     },
+     {
+      "pos": 5,
+      "name": "Alberto Gonzalez Garcia",
+      "nat": "ESP",
+      "time": "50:53",
+      "note": "+0:25"
+     },
+     {
+      "pos": 6,
+      "name": "Tjebbe Kaindl",
+      "nat": "AUT",
+      "time": "50:53",
+      "note": "+0:25"
+     },
+     {
+      "pos": 7,
+      "name": "Luke Willian",
+      "nat": "AUS",
+      "time": "50:55",
+      "note": "+0:27"
+     },
+     {
+      "pos": 8,
+      "name": "Tom Richard",
+      "nat": "FRA",
+      "time": "50:57",
+      "note": "+0:29"
+     },
+     {
+      "pos": 9,
+      "name": "Jules Rethoret",
+      "nat": "FRA",
+      "time": "50:59",
+      "note": "+0:31 · débuts WTCS"
+     },
+     {
+      "pos": 10,
+      "name": "Seth Rider",
+      "nat": "USA",
+      "time": "51:03",
+      "note": "+0:35 · Alex Yee (GBR), pris dans une chute sur le vélo, termine 14e"
+     }
+    ],
+    "women": [
+     {
+      "pos": 1,
+      "name": "Cassandre Beaugrand",
+      "nat": "FRA",
+      "time": "56:06",
+      "note": "★ 3e victoire de la saison"
+     },
+     {
+      "pos": 2,
+      "name": "Lisa Tertsch",
+      "nat": "GER",
+      "time": "56:11",
+      "note": "+0:05"
+     },
+     {
+      "pos": 3,
+      "name": "Tilda Månsson",
+      "nat": "SWE",
+      "time": "56:21",
+      "note": "+0:15"
+     },
+     {
+      "pos": 4,
+      "name": "Beth Potter",
+      "nat": "GBR",
+      "time": "56:26",
+      "note": "+0:20 · meilleure Britannique"
+     },
+     {
+      "pos": 5,
+      "name": "Leonie Periault",
+      "nat": "FRA",
+      "time": "56:28",
+      "note": "+0:22"
+     },
+     {
+      "pos": 6,
+      "name": "Georgia Taylor-Brown",
+      "nat": "GBR",
+      "time": "56:32",
+      "note": "+0:26"
+     },
+     {
+      "pos": 7,
+      "name": "Taylor Knibb",
+      "nat": "USA",
+      "time": "56:33",
+      "note": "+0:27"
+     },
+     {
+      "pos": 8,
+      "name": "Jeanne Lehair",
+      "nat": "LUX",
+      "time": "56:36",
+      "note": "+0:30"
+     },
+     {
+      "pos": 9,
+      "name": "Diana Isakova",
+      "nat": "AIN",
+      "time": "56:42",
+      "note": "+0:36"
+     },
+     {
+      "pos": 10,
+      "name": "Emma Lombardi",
+      "nat": "FRA",
+      "time": "56:43",
+      "note": "+0:37"
+     }
+    ]
+   },
+   "startUTC": "2026-07-25T07:00:00Z",
+   "sub": "London, GBR",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Olympique"
+   }
+  },
+  "weihai": {
+   "name": "WTCS Weihai",
+   "loc": "Weihai, Chine",
+   "date": "29 Aout 2026",
+   "format": "Olympique",
+   "url": "https://triathlon.org",
+   "isoDate": "20260829",
+   "men": [
+    "Matt Hauser (AUS)",
+    "Hayden Wilde (NZL)",
+    "Vasco Vilaca (POR)",
+    "Tim Hellwig (GER)",
+    "Miguel Hidalgo (BRA)",
+    "Leo Bergere (FRA)",
+    "Dorian Coninx (FRA)",
+    "Henry Graf (GER)",
+    "Jelle Geens (BEL)",
+    "David Cantero (ESP)"
+   ],
+   "women": [
+    "Lisa Tertsch (GER)",
+    "Taylor Knibb (USA)",
+    "Georgia Taylor-Brown (GBR)",
+    "Beth Potter (GBR)",
+    "Leonie Periault (FRA)",
+    "Julie Derron (SUI)",
+    "Cassandre Beaugrand (FRA)",
+    "Sophie Coldwell (GBR)",
+    "Flora Duffy (BER)",
+    "Miriam Casillas (ESP)"
+   ],
+   "startUTC": "2026-08-29T02:00:00Z",
+   "sub": "Weihai, CHN",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Olympique"
+   }
+  },
+  "karlovy": {
+   "name": "WTCS Karlovy Vary",
+   "loc": "Karlovy Vary, Rep. tcheque",
+   "date": "13 Septembre 2026",
+   "format": "Olympique",
+   "url": "https://triathlon.org",
+   "isoDate": "20260913",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Matt Hauser (AUS)",
+    "Vasco Vilaca (POR)",
+    "Tim Hellwig (GER)",
+    "Dorian Coninx (FRA)",
+    "Leo Bergere (FRA)",
+    "Miguel Hidalgo (BRA)",
+    "Jonathan Brownlee (GBR)",
+    "Henry Graf (GER)",
+    "Jelle Geens (BEL)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Lisa Tertsch (GER)",
+    "Beth Potter (GBR)",
+    "Georgia Taylor-Brown (GBR)",
+    "Leonie Periault (FRA)",
+    "Cassandre Beaugrand (FRA)",
+    "Julie Derron (SUI)",
+    "Sophie Coldwell (GBR)",
+    "Flora Duffy (BER)",
+    "Summer Rappaport (USA)"
+   ],
+   "startUTC": "2026-09-13T07:00:00Z",
+   "sub": "Karlovy Vary, CZE",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Sprint WC"
+   }
+  },
+  "ponte": {
+   "name": "Championship Finals Pontevedra",
+   "loc": "Pontevedra, Espagne",
+   "date": "24-27 Septembre 2026",
+   "format": "Olympique · Grand Final",
+   "url": "https://triathlon.org",
+   "isoDate": "20260924",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Matt Hauser (AUS)",
+    "Vasco Vilaca (POR)",
+    "Tim Hellwig (GER)",
+    "Leo Bergere (FRA)",
+    "Dorian Coninx (FRA)",
+    "Miguel Hidalgo (BRA)",
+    "Jonathan Brownlee (GBR)",
+    "Henry Graf (GER)",
+    "Max Stapley (GBR)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Lisa Tertsch (GER)",
+    "Georgia Taylor-Brown (GBR)",
+    "Beth Potter (GBR)",
+    "Leonie Periault (FRA)",
+    "Cassandre Beaugrand (FRA)",
+    "Julie Derron (SUI)",
+    "Flora Duffy (BER)",
+    "Sophie Coldwell (GBR)",
+    "Summer Rappaport (USA)"
+   ],
+   "startUTC": "2026-09-24T07:00:00Z",
+   "sub": "Pontevedra, ESP",
+   "cardBadge": {
+    "cls": "bwtcs",
+    "label": "Champ. Monde"
+   }
+  }
+ },
+ "t100Races": {
+  "gc": {
+   "name": "Gold Coast T100",
+   "loc": "Gold Coast, Australie",
+   "date": "21-22 Mars 2026",
+   "format": "Femmes Pro",
+   "url": "https://t100triathlon.com/gold-coast/",
+   "isoDate": "20260321",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Taylor Knibb (USA)",
+    "Sam Laidlow (FRA)",
+    "Pieter Heemeryck (BEL)",
+    "Kyle Smith (NZL)",
+    "Beth Potter (GBR)",
+    "Gustav Iden (NOR)",
+    "Leon Chevalier (FRA)",
+    "Paula Findlay (CAN)",
+    "Lucy Charles-Barclay (GBR)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Jessica Fullagar (AUS)",
+    "Imogen Simmonds (SUI)",
+    "Nicole Van der Kaay (NZL)",
+    "Bianca Bogen (GER)",
+    "Sara Perez Sala (ESP)",
+    "Ellie Salthouse (AUS)",
+    "Lotte Wilms (NED)",
+    "Natalie Van Coevorden (AUS)",
+    "Alanis Siffert (SUI)"
+   ],
+   "done": true,
+   "results": {
+    "women": [
+     {
+      "pos": 1,
+      "name": "Taylor Knibb",
+      "nat": "USA",
+      "time": "3:27:53",
+      "note": "★ Victoire d&#39;ouverture T100"
+     },
+     {
+      "pos": 2,
+      "name": "Jessica Fullagar",
+      "nat": "AUS",
+      "time": "3:28:53",
+      "note": "D&#233;buts impressionnants"
+     },
+     {
+      "pos": 3,
+      "name": "Imogen Simmonds",
+      "nat": "SUI",
+      "time": "3:33:11"
+     },
+     {
+      "pos": 4,
+      "name": "Nicole Van der Kaay",
+      "nat": "NZL",
+      "time": "3:35:25"
+     },
+     {
+      "pos": 5,
+      "name": "Bianca Bogen",
+      "nat": "GER",
+      "time": "3:36:13"
+     },
+     {
+      "pos": 6,
+      "name": "Sara Perez Sala",
+      "nat": "ESP",
+      "time": "3:36:41"
+     },
+     {
+      "pos": 7,
+      "name": "Ellie Salthouse",
+      "nat": "AUS",
+      "time": "3:37:40"
+     },
+     {
+      "pos": 8,
+      "name": "Lotte Wilms",
+      "nat": "NED",
+      "time": "3:39:35"
+     },
+     {
+      "pos": 9,
+      "name": "Natalie Van Coevorden",
+      "nat": "AUS",
+      "time": "3:40:39"
+     },
+     {
+      "pos": 10,
+      "name": "Alanis Siffert",
+      "nat": "SUI",
+      "time": "3:42:18"
+     }
+    ]
+   },
+   "startUTC": "2026-03-21T22:00:00Z",
+   "sub": "Gold Coast, AUS",
+   "cardBadge": {
+    "cls": "bt100",
+    "label": "Femmes Pro"
+   }
+  },
+  "sg": {
+   "name": "Singapore T100",
+   "loc": "Marina Bay, Singapour",
+   "date": "25-26 Avril 2026",
+   "format": "Hommes Pro",
+   "url": "https://t100triathlon.com",
+   "isoDate": "20260425",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Sam Laidlow (FRA)",
+    "Pieter Heemeryck (BEL)",
+    "Kyle Smith (NZL)",
+    "Andreas Dreitz (GER)",
+    "Leon Chevalier (FRA)",
+    "Gustav Iden (NOR)",
+    "Max Neumann (AUS)",
+    "Nicholas Kastelein (AUS)",
+    "Rupert Hollinshead (GBR)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Beth Potter (GBR)",
+    "Paula Findlay (CAN)",
+    "Georgia Taylor-Brown (GBR)",
+    "Kat Matthews (GBR)",
+    "Emma Pallant-Browne (GBR)",
+    "Jocelyn McCauley (USA)",
+    "Lucy Charles-Barclay (GBR)",
+    "Laura Philipp (GER)",
+    "Flora Duffy (BER)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Hayden Wilde",
+      "nat": "NZL",
+      "time": "3:21:58"
+     },
+     {
+      "pos": 2,
+      "name": "Sam Dickinson",
+      "nat": "GBR",
+      "time": "3:28:19"
+     },
+     {
+      "pos": 3,
+      "name": "Mika Noodt",
+      "nat": "GER",
+      "time": "3:29:11"
+     },
+     {
+      "pos": 4,
+      "name": "Menno Koolhaas",
+      "nat": "NED",
+      "time": "3:29:54"
+     },
+     {
+      "pos": 5,
+      "name": "Matt Hauser",
+      "nat": "AUS",
+      "time": "3:30:27",
+      "note": "Débuts T100"
+     },
+     {
+      "pos": 6,
+      "name": "Jake Birtwhistle",
+      "nat": "AUS",
+      "time": "3:31:08"
+     },
+     {
+      "pos": 7,
+      "name": "Youri Keulen",
+      "nat": "NED",
+      "time": "3:33:27"
+     },
+     {
+      "pos": 8,
+      "name": "Mathis Margirier",
+      "nat": "FRA",
+      "time": "3:34:54"
+     },
+     {
+      "pos": 9,
+      "name": "Gregor Payet",
+      "nat": "LUX",
+      "time": "3:36:52"
+     },
+     {
+      "pos": 10,
+      "name": "Kurt McDonald",
+      "nat": "AUS",
+      "time": "3:37:18"
+     }
+    ]
+   },
+   "startUTC": "2026-04-25T02:00:00Z",
+   "sub": "Marina Bay, SGP",
+   "cardBadge": {
+    "cls": "bt100",
+    "label": "Hommes Pro"
+   }
+  },
+  "spain": {
+   "name": "Spain T100",
+   "loc": "Pamplona, Espagne",
+   "date": "23 Mai 2026",
+   "format": "Femmes Pro",
+   "url": "https://t100triathlon.com",
+   "isoDate": "20260523",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Sam Laidlow (FRA)",
+    "Pieter Heemeryck (BEL)",
+    "Kyle Smith (NZL)",
+    "Leon Chevalier (FRA)",
+    "Andreas Dreitz (GER)",
+    "Gustav Iden (NOR)",
+    "Max Neumann (AUS)",
+    "Nicholas Kastelein (AUS)",
+    "Rupert Hollinshead (GBR)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Beth Potter (GBR)",
+    "Georgia Taylor-Brown (GBR)",
+    "Kat Matthews (GBR)",
+    "Paula Findlay (CAN)",
+    "Emma Pallant-Browne (GBR)",
+    "Jocelyn McCauley (USA)",
+    "Lucy Charles-Barclay (GBR)",
+    "Laura Philipp (GER)",
+    "Flora Duffy (BER)"
+   ],
+   "done": true,
+   "results": {
+    "women": [
+     {
+      "pos": 1,
+      "name": "Georgia Taylor-Brown",
+      "nat": "GBR",
+      "time": "3:38:03",
+      "note": "★ 1re victoire T100 après 12e-9e-4e-2e en 2025"
+     },
+     {
+      "pos": 2,
+      "name": "Julie Derron",
+      "nat": "SUI",
+      "time": "3:39:23"
+     },
+     {
+      "pos": 3,
+      "name": "Taylor Spivey",
+      "nat": "USA",
+      "time": "3:41:29",
+      "note": "1er podium T100"
+     },
+     {
+      "pos": 4,
+      "name": "Holly Lawrence",
+      "nat": "GBR"
+     },
+     {
+      "pos": 5,
+      "name": "Alanis Siffert",
+      "nat": "SUI"
+     }
+    ]
+   },
+   "startUTC": "2026-05-23T07:00:00Z",
+   "sub": "Pamplona, Espagne",
+   "cardBadge": {
+    "cls": "bt100",
+    "label": "Femmes Pro"
+   }
+  },
+  "sf": {
+   "name": "San Francisco T100",
+   "loc": "San Francisco, USA",
+   "date": "6 Juin 2026",
+   "format": "Hommes Pro",
+   "url": "https://t100triathlon.com",
+   "isoDate": "20260606",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Sam Laidlow (FRA)",
+    "Kyle Smith (NZL)",
+    "Pieter Heemeryck (BEL)",
+    "Andreas Dreitz (GER)",
+    "Leon Chevalier (FRA)",
+    "Max Neumann (AUS)",
+    "Ben Kanute (USA)",
+    "Nicholas Kastelein (AUS)",
+    "Rupert Hollinshead (GBR)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Beth Potter (GBR)",
+    "Kat Matthews (GBR)",
+    "Paula Findlay (CAN)",
+    "Georgia Taylor-Brown (GBR)",
+    "Jocelyn McCauley (USA)",
+    "Emma Pallant-Browne (GBR)",
+    "Lucy Charles-Barclay (GBR)",
+    "Laura Philipp (GER)",
+    "Flora Duffy (BER)"
+   ],
+   "done": true,
+   "results": {
+    "men": [
+     {
+      "pos": 1,
+      "name": "Rico Bogen",
+      "nat": "GER",
+      "time": "3:17:25",
+      "note": "Défend son titre, revient d'une alerte cardiaque"
+     },
+     {
+      "pos": 2,
+      "name": "Lasse Nygaard Priester",
+      "nat": "GER",
+      "time": "3:18:30",
+      "note": "Pénalité de 30s servie en fin de course"
+     },
+     {
+      "pos": 3,
+      "name": "Hayden Wilde",
+      "nat": "NZL",
+      "time": "3:21:13",
+      "note": "Préparation perturbée par un virus"
+     },
+     {
+      "pos": 4,
+      "name": "Morgan Pearson",
+      "nat": "USA",
+      "time": "3:22:42"
+     },
+     {
+      "pos": 5,
+      "name": "Jason West",
+      "nat": "USA",
+      "time": "3:23:02"
+     },
+     {
+      "pos": 6,
+      "name": "Jake Birtwhistle",
+      "nat": "AUS",
+      "time": "3:23:23"
+     },
+     {
+      "pos": 7,
+      "name": "Kurt McDonald",
+      "nat": "AUS",
+      "time": "3:23:44"
+     },
+     {
+      "pos": 8,
+      "name": "Henry Räppo",
+      "nat": "EST",
+      "time": "3:24:16"
+     },
+     {
+      "pos": 9,
+      "name": "Gregor Payet",
+      "nat": "LUX",
+      "time": "3:25:06"
+     },
+     {
+      "pos": 10,
+      "name": "Léo Bergere",
+      "nat": "FRA",
+      "time": "3:25:47"
+     }
+    ]
+   },
+   "startUTC": "2026-06-06T16:00:00Z",
+   "sub": "San Francisco, USA",
+   "cardBadge": {
+    "cls": "bt100",
+    "label": "Hommes Pro"
+   }
+  },
+  "van": {
+   "name": "Vancouver T100",
+   "loc": "Vancouver, Canada",
+   "date": "15-16 Aout 2026",
+   "format": "Femmes Pro",
+   "url": "https://t100triathlon.com",
+   "isoDate": "20260815",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Sam Laidlow (FRA)",
+    "Kyle Smith (NZL)",
+    "Pieter Heemeryck (BEL)",
+    "Leon Chevalier (FRA)",
+    "Andreas Dreitz (GER)",
+    "Max Neumann (AUS)",
+    "Ben Kanute (USA)",
+    "Lionel Sanders (CAN)",
+    "Nicholas Kastelein (AUS)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Beth Potter (GBR)",
+    "Paula Findlay (CAN)",
+    "Kat Matthews (GBR)",
+    "Georgia Taylor-Brown (GBR)",
+    "Emma Pallant-Browne (GBR)",
+    "Jocelyn McCauley (USA)",
+    "Lucy Charles-Barclay (GBR)",
+    "Flora Duffy (BER)",
+    "Laura Philipp (GER)"
+   ],
+   "done": true,
+   "results": {
+    "women": [
+     {
+      "pos": 1,
+      "name": "Julie Derron",
+      "nat": "SUI",
+      "time": "3:33:26",
+      "note": "★ Retour à la victoire, dépasse Kate Waugh sur le run"
+     },
+     {
+      "pos": 2,
+      "name": "Kate Waugh",
+      "nat": "GBR",
+      "time": "3:35:06",
+      "note": "Superbe retour de blessure, en tête natation et vélo"
+     },
+     {
+      "pos": 3,
+      "name": "Georgia Taylor-Brown",
+      "nat": "GBR",
+      "time": "3:36:27"
+     },
+     {
+      "pos": 4,
+      "name": "Paula Findlay",
+      "nat": "CAN",
+      "time": "3:36:55",
+      "note": "À domicile"
+     },
+     {
+      "pos": 5,
+      "name": "Imogen Simmonds",
+      "nat": "SUI",
+      "time": "3:38:10"
+     },
+     {
+      "pos": 6,
+      "name": "Bianca Bogen",
+      "nat": "GER",
+      "time": "3:38:54"
+     },
+     {
+      "pos": 7,
+      "name": "Alanis Siffert",
+      "nat": "SUI",
+      "time": "3:39:16"
+     },
+     {
+      "pos": 8,
+      "name": "Taylor Spivey",
+      "nat": "USA",
+      "time": "3:40:16"
+     },
+     {
+      "pos": 9,
+      "name": "Hannah Berry",
+      "nat": "NZL",
+      "time": "3:40:30"
+     },
+     {
+      "pos": 10,
+      "name": "Nicole Van der Kaay",
+      "nat": "NZL",
+      "time": "3:42:04"
+     }
+    ]
+   },
+   "startUTC": "2026-08-15T16:00:00Z",
+   "sub": "Vancouver, CAN",
+   "cardBadge": {
+    "cls": "bt100",
+    "label": "Mixed Pro"
+   }
+  },
+  "riviera": {
+   "name": "French Riviera T100",
+   "loc": "Saint-Raphael, France",
+   "date": "19 Septembre 2026",
+   "format": "Hommes Pro",
+   "url": "https://t100triathlon.com",
+   "isoDate": "20260919",
+   "men": [
+    "Sam Laidlow (FRA)",
+    "Hayden Wilde (NZL)",
+    "Kyle Smith (NZL)",
+    "Pieter Heemeryck (BEL)",
+    "Leon Chevalier (FRA)",
+    "Andreas Dreitz (GER)",
+    "Magnus Ditlev (DEN)",
+    "Max Neumann (AUS)",
+    "Gustav Iden (NOR)",
+    "Rupert Hollinshead (GBR)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Kat Matthews (GBR)",
+    "Beth Potter (GBR)",
+    "Paula Findlay (CAN)",
+    "Georgia Taylor-Brown (GBR)",
+    "Emma Pallant-Browne (GBR)",
+    "Lucy Charles-Barclay (GBR)",
+    "Jocelyn McCauley (USA)",
+    "Flora Duffy (BER)",
+    "Laura Philipp (GER)"
+   ],
+   "startUTC": "2026-09-19T07:00:00Z",
+   "sub": "Côte d'Azur, FRA",
+   "cardBadge": {
+    "cls": "bt100",
+    "label": "Mixed Pro"
+   }
+  },
+  "saudi": {
+   "name": "Saudi Arabia T100",
+   "loc": "Arabie Saoudite",
+   "date": "1 Novembre 2026",
+   "format": "Hommes Pro",
+   "url": "https://t100triathlon.com",
+   "isoDate": "20261101",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Sam Laidlow (FRA)",
+    "Kyle Smith (NZL)",
+    "Pieter Heemeryck (BEL)",
+    "Andreas Dreitz (GER)",
+    "Leon Chevalier (FRA)",
+    "Max Neumann (AUS)",
+    "Magnus Ditlev (DEN)",
+    "Gustav Iden (NOR)",
+    "Nicholas Kastelein (AUS)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Beth Potter (GBR)",
+    "Kat Matthews (GBR)",
+    "Paula Findlay (CAN)",
+    "Georgia Taylor-Brown (GBR)",
+    "Emma Pallant-Browne (GBR)",
+    "Jocelyn McCauley (USA)",
+    "Lucy Charles-Barclay (GBR)",
+    "Flora Duffy (BER)",
+    "Laura Philipp (GER)"
+   ],
+   "startUTC": "2026-11-01T05:00:00Z",
+   "sub": "Arabie Saoudite",
+   "cardBadge": {
+    "cls": "bt100",
+    "label": "Mixed Pro"
+   }
+  },
+  "dubai": {
+   "name": "Dubai T100",
+   "loc": "Dubai, EAU",
+   "date": "14 Novembre 2026",
+   "format": "Femmes Pro",
+   "url": "https://t100triathlon.com",
+   "isoDate": "20261114",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Sam Laidlow (FRA)",
+    "Kyle Smith (NZL)",
+    "Pieter Heemeryck (BEL)",
+    "Andreas Dreitz (GER)",
+    "Leon Chevalier (FRA)",
+    "Max Neumann (AUS)",
+    "Magnus Ditlev (DEN)",
+    "Gustav Iden (NOR)",
+    "Rupert Hollinshead (GBR)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Beth Potter (GBR)",
+    "Kat Matthews (GBR)",
+    "Paula Findlay (CAN)",
+    "Georgia Taylor-Brown (GBR)",
+    "Emma Pallant-Browne (GBR)",
+    "Lucy Charles-Barclay (GBR)",
+    "Jocelyn McCauley (USA)",
+    "Flora Duffy (BER)",
+    "Laura Philipp (GER)"
+   ],
+   "startUTC": "2026-11-14T05:00:00Z",
+   "sub": "Dubai, UAE",
+   "cardBadge": {
+    "cls": "bt100",
+    "label": "Mixed Pro"
+   }
+  },
+  "qatar": {
+   "name": "Qatar T100 World Championship Final",
+   "loc": "Doha, Qatar",
+   "date": "11-13 Decembre 2026",
+   "format": "Hommes + Femmes",
+   "url": "https://t100triathlon.com",
+   "isoDate": "20261211",
+   "men": [
+    "Hayden Wilde (NZL)",
+    "Sam Laidlow (FRA)",
+    "Kyle Smith (NZL)",
+    "Pieter Heemeryck (BEL)",
+    "Andreas Dreitz (GER)",
+    "Leon Chevalier (FRA)",
+    "Max Neumann (AUS)",
+    "Magnus Ditlev (DEN)",
+    "Gustav Iden (NOR)",
+    "Kristian Blummenfelt (NOR)"
+   ],
+   "women": [
+    "Taylor Knibb (USA)",
+    "Beth Potter (GBR)",
+    "Kat Matthews (GBR)",
+    "Paula Findlay (CAN)",
+    "Georgia Taylor-Brown (GBR)",
+    "Emma Pallant-Browne (GBR)",
+    "Lucy Charles-Barclay (GBR)",
+    "Jocelyn McCauley (USA)",
+    "Flora Duffy (BER)",
+    "Laura Philipp (GER)"
+   ],
+   "startUTC": "2026-12-11T05:00:00Z",
+   "sub": "Doha, QAT",
+   "cardBadge": {
+    "cls": "bt100",
+    "label": "Finale Monde"
+   }
+  }
+ }
+}

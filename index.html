@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TriCalendar 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="apple-touch-icon" href="icons/icon-192x192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tri 2026">
+<style>
+
+:root{
+  --red:#E8002D;--red2:#B8001F;--black:#0A0A0A;--card:#1A1A1A;--card2:#222;
+  --border:rgba(255,255,255,.08);--text:#F5F5F5;--muted:#888;
+  --gold:#D4A043;--green:#30D158;--blue:#0A84FF;--orange:#FF9F0A;--r:16px;
+  --im:#E8002D;--wtcs:#30D158;--t100:#FF9F0A;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--black);color:var(--text);overscroll-behavior:none}
+
+/* ── LIGHT MODE ── */
+body.light{--black:#F0F0F5;--card:#FFFFFF;--card2:#E8E8EE;--border:rgba(0,0,0,.09);--text:#1C1C1E;--muted:#636366;background:#F0F0F5}
+body.light .page-hero-cal{background:linear-gradient(180deg,#f0d0d5 0%,var(--black) 100%)}
+body.light .page-hero-ath{background:linear-gradient(180deg,#d0f0da 0%,var(--black) 100%)}
+body.light .fwrap{background:rgba(240,240,245,.97)}
+body.light .bnav{background:rgba(255,255,255,.97)}
+body.light .sheet{background:#F7F7F7}
+body.light .fbtn{color:var(--muted);border-color:rgba(0,0,0,.15)}
+body.light .rcard{background:var(--card)}
+body.light .rcard:hover{background:var(--card2)}
+body.light .srch-input{background:rgba(0,0,0,.04)}
+body.light .mhdr{color:var(--text)}
+body.light .mhdr-name{color:var(--text)}
+body.light .mcnt{background:var(--card2);color:var(--muted)}
+body.light .hero-glow{opacity:.5}
+body.light .ath-tab{background:rgba(0,0,0,.04)}
+body.light .rank-panel{background:transparent}
+body.light .nrb{backdrop-filter:none}
+body.light .sr-card{background:var(--card)}
+body.light .ath-tab-bar{background:var(--black);border-color:var(--border)}
+body.light .sprog{background:var(--black)}
+body.light .stat-pill.all{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.15);color:var(--muted)}
+body.light .stat-pill.upcoming{background:rgba(10,132,255,.1);color:var(--blue)}
+
+/* ── LAYOUT ── */
+.page{display:none;padding-bottom:80px;min-height:100vh;background:var(--black)}
+.page.active{display:block}
+
+/* ── HERO ── */
+.page-hero-cal{background:linear-gradient(180deg,#1a0005 0%,var(--black) 100%);padding:52px 20px 24px;position:relative;overflow:hidden}
+.page-hero-ath{background:linear-gradient(180deg,#001a0a 0%,var(--black) 100%);padding:52px 20px 24px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-80px;right:-60px;width:260px;height:260px;border-radius:50%;pointer-events:none}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:6px}
+.hero-eyebrow.im{color:var(--im)} .hero-eyebrow.wtcs{color:var(--wtcs)} .hero-eyebrow.ath{color:var(--wtcs)}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:1px;line-height:1;margin-bottom:4px}
+.hero-sub{font-size:12px;color:var(--muted)}
+.theme-btn{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:transform .2s;position:absolute;top:52px;right:20px}
+body.light .theme-btn{background:rgba(0,0,0,.07)}
+.theme-btn:active{transform:scale(.9)}
+
+/* ── STATS BAR ── */
+.stats-bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.stat-pill{font-size:11px;font-weight:600;padding:6px 13px;border-radius:20px;display:flex;align-items:center;gap:5px;cursor:pointer;border:1.5px solid transparent;transition:all .18s;font-family:inherit}
+.stat-pill.all{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.13);color:var(--muted)}
+.stat-pill.upcoming{background:rgba(10,132,255,.12);border-color:rgba(10,132,255,.2);color:var(--blue)}
+.stat-pill.im{background:rgba(232,0,45,.15);border-color:rgba(232,0,45,.2);color:var(--im)}
+.stat-pill.wtcs{background:rgba(48,209,88,.15);border-color:rgba(48,209,88,.2);color:var(--wtcs)}
+.stat-pill.t100{background:rgba(255,159,10,.15);border-color:rgba(255,159,10,.2);color:var(--t100)}
+.stat-pill:active{transform:scale(.93)}
+.stat-pill.active.all{background:rgba(255,255,255,.18);border-color:var(--text);color:var(--text)}
+.stat-pill.active.upcoming{background:var(--blue);border-color:var(--blue);color:#fff}
+.stat-pill.active.im{background:var(--im);border-color:var(--im);color:#fff}
+.stat-pill.active.wtcs{background:var(--wtcs);border-color:var(--wtcs);color:#000}
+.stat-pill.active.t100{background:var(--t100);border-color:var(--t100);color:#000}
+.stat-pill.done{background:rgba(48,209,88,.12);border-color:rgba(48,209,88,.2);color:var(--wtcs)}
+.stat-pill.active.done{background:var(--wtcs);border-color:var(--wtcs);color:#000}
+
+/* ── PROGRESSION ── */
+.sprog{padding:12px 16px;border-bottom:1px solid var(--border)}
+.prog-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+.prog-title{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.prog-pct{font-size:11px;font-weight:700}
+.prog-pct.im{color:var(--im)} .prog-pct.wtcs{color:var(--wtcs)} .prog-pct.t100{color:var(--t100)} .prog-pct.all{color:var(--gold)}
+.prog-track{height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;border-radius:2px;width:0;transition:width 1s ease}
+.prog-fill.im{background:linear-gradient(90deg,var(--red2),var(--im))}
+.prog-fill.wtcs{background:linear-gradient(90deg,#009933,var(--wtcs))}
+.prog-fill.t100{background:linear-gradient(90deg,#cc7a00,var(--t100))}
+.prog-fill.all{background:linear-gradient(90deg,var(--red),var(--gold))}
+
+/* ── FILTRE BAR ── */
+.fwrap{position:sticky;top:0;z-index:30;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);padding:0 0 0;border-bottom:1px solid var(--border)}
+.fscroll{display:flex;gap:8px;padding:10px 16px;overflow-x:auto;scrollbar-width:none}
+.fscroll::-webkit-scrollbar{display:none}
+.fbtn{flex-shrink:0;padding:7px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;transition:all .15s;white-space:nowrap}
+.fbtn.active{background:var(--text);border-color:var(--text);color:var(--black)}
+.fbtn.im-btn.active{background:var(--im);border-color:var(--im);color:#fff}
+.fbtn.wtcs-btn.active{background:var(--wtcs);border-color:var(--wtcs);color:#000}
+.fbtn.t100-btn.active{background:var(--t100);border-color:var(--t100);color:#000}
+.fbtn.done-btn{border-color:rgba(48,209,88,.3);color:var(--wtcs)}
+.fbtn.done-btn.active{background:var(--wtcs);border-color:var(--wtcs);color:#000}
+
+/* ── BANDEAU PROCHAIN DÉPART ── */
+.nrb{margin:10px 16px 4px;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:transform .15s}
+.nrb:active{transform:scale(.97)}
+.nrb-im{background:linear-gradient(135deg,rgba(232,0,45,.13),rgba(184,0,31,.04));border:1px solid rgba(232,0,45,.22)}
+.nrb-wtcs{background:linear-gradient(135deg,rgba(48,209,88,.13),rgba(30,150,60,.04));border:1px solid rgba(48,209,88,.22)}
+.nrb-t100{background:linear-gradient(135deg,rgba(255,159,10,.13),rgba(200,120,0,.04));border:1px solid rgba(255,159,10,.22)}
+.nrb-badge{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px}
+.nrb-badge.im{color:var(--im)} .nrb-badge.wtcs{color:var(--wtcs)} .nrb-badge.t100{color:var(--t100)}
+.nrb-name{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:1px}
+.nrb-sub{font-size:11px;color:var(--muted)}
+.nrb-cd{font-size:22px;font-weight:700;font-family:'Bebas Neue',sans-serif;letter-spacing:1px;flex-shrink:0;text-align:right;line-height:1;white-space:nowrap}
+.nrb-cd-lbl{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);text-align:right;margin-top:2px}
+
+/* ── MONTH HEADER ── */
+.mhdr{padding:12px 16px 6px;display:flex;align-items:center;gap:8px}
+.mhdr-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.5px}
+.mcnt{font-size:11px;font-weight:600;color:var(--muted);background:var(--card);padding:3px 8px;border-radius:8px}
+
+
+/* ── MOIS REPLIABLES ── */
+.month-wrap{margin-bottom:8px}
+.month-toggle{width:100%;background:transparent;border:none;color:inherit;padding:0;cursor:pointer}
+.month-toggle .mhdr{pointer-events:none}
+.month-chevron{margin-left:auto;font-size:14px;color:var(--muted);transition:transform .2s ease}
+.month-wrap.collapsed .month-chevron{transform:rotate(-90deg)}
+.month-content{overflow:hidden;transition:max-height .25s ease}
+.month-wrap.collapsed .month-content{display:none}
+
+/* ── RACE CARD ── */
+.rcard{display:flex;align-items:center;gap:12px;padding:14px 16px;margin:0 0 1px;background:var(--card);border-radius:0;cursor:pointer;transition:background .15s;border-left:3px solid transparent;position:relative}
+.rcard:first-of-type{border-radius:var(--r) var(--r) 0 0}
+.rcard:last-of-type{border-radius:0 0 var(--r) var(--r);margin-bottom:8px}
+.rcard:only-child{border-radius:var(--r);margin-bottom:8px}
+.rcard:hover{background:var(--card2)}
+.rcard-im{border-left-color:var(--im)}
+.rcard-wtcs{border-left-color:var(--wtcs)}
+.rcard-t100{border-left-color:var(--t100)}
+.rcard-done{opacity:.55}
+.rdate{width:42px;flex-shrink:0;text-align:center}
+.rdate-d{font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;letter-spacing:.5px}
+.rdate-m{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.rcard-mid{flex:1;min-width:0}
+.rcard-name{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px}
+.rcard-sub{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-wrap:nowrap;overflow:hidden}
+.rcard-badges{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.rbadge{font-size:9px;font-weight:700;letter-spacing:.8px;padding:3px 7px;border-radius:6px;white-space:nowrap;text-transform:uppercase}
+.rbadge.bim{background:rgba(232,0,45,.15);color:var(--im)}
+.rbadge.bwtcs{background:rgba(48,209,88,.15);color:var(--wtcs)}
+.rbadge.bt100{background:rgba(255,159,10,.15);color:var(--t100)}
+.rbadge.bfull{background:rgba(232,0,45,.15);color:var(--im)}
+.rbadge.b703{background:rgba(10,132,255,.15);color:var(--blue)}
+.rbadge.bwc{background:rgba(212,160,67,.15);color:var(--gold)}
+.rbadge.bnew{background:rgba(48,209,88,.15);color:var(--wtcs)}
+.done-badge{font-size:9px;font-weight:700;background:rgba(48,209,88,.15);color:var(--wtcs);padding:3px 7px;border-radius:6px;letter-spacing:.5px}
+.rcard-chevron{color:var(--muted);flex-shrink:0;opacity:.5}
+
+/* ── SHEET (modal bottom) ── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:50;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.overlay.open{opacity:1;pointer-events:all}
+.sheet{position:fixed;bottom:0;left:0;right:0;max-height:92vh;background:var(--card);border-radius:20px 20px 0 0;z-index:51;transform:translateY(100%);transition:transform .35s cubic-bezier(.32,0,.15,1)}
+.sheet.open{transform:translateY(0)}
+.sh-handle{width:36px;height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin:12px auto 0}
+.sh-scroll{overflow-y:auto;max-height:calc(92vh - 32px);padding-bottom:env(safe-area-inset-bottom,20px)}
+.sh-hero{padding:16px 20px 20px;border-bottom:1px solid var(--border)}
+.sh-circuit{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.sh-circuit.im{color:var(--im)} .sh-circuit.wtcs{color:var(--wtcs)} .sh-circuit.t100{color:var(--t100)}
+.sh-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.5px;margin-bottom:4px;line-height:1.1}
+.sh-loc{font-size:13px;color:var(--muted);margin-bottom:6px}
+.sh-time{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:4px 10px;border-radius:8px;margin-top:6px}
+.sh-time.im{background:rgba(232,0,45,.15);color:var(--im)}
+.sh-time.wtcs{background:rgba(48,209,88,.15);color:var(--wtcs)}
+.sh-time.t100{background:rgba(255,159,10,.15);color:var(--t100)}
+.sh-btns-row{display:flex;gap:8px;margin-top:12px}
+.sh-btn-main{flex:1;padding:11px;border:none;border-radius:12px;color:#fff;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.sh-btn-main:active{opacity:.8}
+.sh-btn-main.im{background:var(--im)}
+.sh-btn-main.wtcs{background:var(--wtcs);color:#000}
+.sh-btn-main.t100{background:var(--t100);color:#000}
+.sh-share{display:flex;align-items:center;justify-content:center;gap:5px;padding:11px 14px;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:12px;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;flex-shrink:0}
+.sh-share:active{background:rgba(255,255,255,.14)}
+body.light .sh-share{background:rgba(0,0,0,.05)}
+.sh-ext-btn{display:flex;align-items:center;gap:8px;padding:11px 14px;border-radius:10px;border:1px solid var(--border);color:var(--muted);font-size:13px;font-weight:600;text-decoration:none;margin-top:10px;transition:background .15s}
+.sh-ext-btn:active{background:var(--card2)}
+.ssec{padding:16px 20px 0}
+.ssec-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.bc-card{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--border)}
+.bc-icon{width:34px;height:34px;border-radius:8px;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.bc-info{flex:1}
+.bc-name{font-size:13px;font-weight:600;margin-bottom:2px}
+.bc-detail{font-size:11px;color:var(--muted)}
+.bc-right{flex-shrink:0}
+.bc-live{font-size:10px;font-weight:700;background:rgba(232,0,45,.15);color:var(--im);padding:3px 8px;border-radius:6px;letter-spacing:.5px}
+.ath-grid{padding:4px 0}
+.ath-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--border)}
+.ath-num{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:var(--card2);flex-shrink:0}
+.ath-num.g1{background:linear-gradient(135deg,#7d5a00,var(--gold));color:#fff}
+.ath-num.g2{background:linear-gradient(135deg,#555,#aaa);color:#fff}
+.ath-num.g3{background:linear-gradient(135deg,#5c3012,#b87333);color:#fff}
+.ath-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--red2),var(--im));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.ath-av.f{background:linear-gradient(135deg,#3a0070,#9b59b6)}
+.ath-info{flex:1;min-width:0}
+.ath-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ath-nat{font-size:11px;color:var(--muted)}
+.ath-pts{font-size:13px;font-weight:700;color:var(--gold);text-align:right}
+.ath-prize{font-size:10px;color:var(--muted);text-align:right}
+.gdiv{display:flex;align-items:center;gap:8px;margin:12px 0 4px}
+.gline{flex:1;height:1px;background:var(--border)}
+.glabel{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+.done-results{padding:14px 0 0}
+.res-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-top:1px solid var(--border)}
+.medal{font-size:18px;width:28px;text-align:center;flex-shrink:0}
+
+/* ── PAGE ATHLÈTES ── */
+.ath-tab-bar{display:flex;padding:12px 16px;gap:8px;border-bottom:1px solid var(--border)}
+.ath-tab{flex:1;padding:9px 8px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12px;font-weight:600;font-family:inherit;cursor:pointer;transition:all .15s;text-align:center;white-space:nowrap}
+.ath-tab.active.im{background:var(--im);border-color:var(--im);color:#fff}
+.ath-tab.active.wtcs{background:var(--wtcs);border-color:var(--wtcs);color:#000}
+.ath-tab.active.t100{background:var(--t100);border-color:var(--t100);color:#000}
+.rank-panel{display:none;padding:0 16px 20px}
+.rank-panel.active{display:block}
+.rank-header{padding:16px 0 8px}
+.rank-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.5px;margin-bottom:2px}
+.rank-sub{font-size:12px;color:var(--muted)}
+.rank-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--border)}
+.rank-pos{width:28px;height:28px;border-radius:8px;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.rank-pos.g1{background:linear-gradient(135deg,#7d5a00,var(--gold));color:#fff}
+.rank-pos.g2{background:linear-gradient(135deg,#555,#aaa);color:#fff}
+.rank-pos.g3{background:linear-gradient(135deg,#5c3012,#b87333);color:#fff}
+.rank-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.rank-av.m{background:linear-gradient(135deg,var(--red2),var(--im))}
+.rank-av.f{background:linear-gradient(135deg,#3a0070,#9b59b6)}
+.rank-av.wm{background:linear-gradient(135deg,#004d1a,var(--wtcs))}
+.rank-av.wf{background:linear-gradient(135deg,#004d1a,var(--wtcs))}
+.rank-av.tm{background:linear-gradient(135deg,#7a4000,var(--t100))}
+.rank-av.tf{background:linear-gradient(135deg,#7a4000,var(--t100))}
+.rank-info{flex:1;min-width:0}
+.rank-name{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+.rank-detail{font-size:11px;color:var(--muted);margin-top:1px}
+.rank-score{text-align:right;flex-shrink:0}
+.rank-pts{font-size:14px;font-weight:700}
+.rank-pts.im{color:var(--im)} .rank-pts.wtcs{color:var(--wtcs)} .rank-pts.t100{color:var(--t100)}
+.rank-prize{font-size:10px;color:var(--muted)}
+.rank-note{font-size:11px;font-weight:600;padding:2px 7px;border-radius:6px;flex-shrink:0}
+.rank-note.champion{background:rgba(212,160,67,.15);color:var(--gold)}
+
+/* ── RECHERCHE ── */
+.srch-section{padding:16px 16px 0}
+.srch-wrap{position:relative}
+.srch-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.srch-input{width:100%;padding:12px 16px 12px 42px;background:var(--card);border:1px solid var(--border);border-radius:14px;color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
+.srch-input:focus{border-color:var(--blue)}
+.srch-hint{text-align:center;padding:28px 20px;color:var(--muted);font-size:13px}
+.srch-results{margin-top:12px}
+.sr-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.sr-ath-hdr{padding:11px 14px 8px;display:flex;align-items:center;gap:10px}
+.sr-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--red2),var(--im));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.sr-ath-name{font-size:14px;font-weight:700}
+.sr-ath-sub{font-size:11px;color:var(--muted)}
+.sr-race{display:flex;align-items:center;gap:9px;padding:9px 14px;border-top:1px solid var(--border);cursor:pointer;transition:background .15s}
+.sr-race:active{background:var(--card2)}
+.sr-rbadge{font-size:9px;font-weight:700;letter-spacing:.7px;padding:2px 7px;border-radius:6px;flex-shrink:0}
+.sr-rname{font-size:12px;font-weight:600;flex:1}
+.sr-rdate{font-size:11px;color:var(--muted);flex-shrink:0}
+.sr-empty{text-align:center;padding:36px 20px;color:var(--muted)}
+
+/* ── BOTTOM NAV ── */
+.bnav{position:fixed;bottom:0;left:0;right:0;height:64px;background:rgba(10,10,10,.97);border-top:1px solid var(--border);display:flex;z-index:40;backdrop-filter:blur(12px);padding-bottom:env(safe-area-inset-bottom,0)}
+.nitem{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;opacity:.4;transition:opacity .2s;padding:6px 0}
+.nitem.active{opacity:1}
+.nitem svg{transition:transform .2s}
+.nitem.active svg{transform:scale(1.1)}
+.nlabel{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+
+/* ── MISC ── */
+.section-wrap{padding:0 16px}
+.hidden{display:none!important}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.rcard{animation:fadeUp .25s ease both}
+
+</style>
+</head>
+<body>
+
+<!-- ══════════ PAGE CALENDRIER ══════════ -->
+<div id="page-cal" class="page active">
+
+  <div class="page-hero-cal">
+    <div class="hero-glow" style="background:radial-gradient(circle,rgba(232,0,45,.2),transparent 70%)"></div>
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+    <div class="hero-eyebrow im">Saison 2026</div>
+    <div class="hero-title">TRICALENDAR<br>2026</div>
+    <div class="hero-sub" id="heroSub">35 épreuves · IRONMAN · WTCS · T100</div>
+    <div class="hero-sub" id="syncStatus" style="margin-top:4px"></div>
+    <div class="stats-bar">
+      <button class="stat-pill all active" id="spill-all" onclick="filterCal('all')">Toutes</button>
+      <button class="stat-pill im" id="spill-im" onclick="filterCal('im')">🔴 16 IRONMAN</button>
+      <button class="stat-pill wtcs" id="spill-wtcs" onclick="filterCal('wtcs')">🟢 10 WTCS</button>
+      <button class="stat-pill t100" id="spill-t100" onclick="filterCal('t100')">🟡 9 T100</button>
+    </div>
+    <div class="stats-bar" style="margin-top:8px">
+      <button class="stat-pill upcoming" id="spill-upcoming" onclick="filterCal('upcoming')">À venir</button>
+      <button class="stat-pill done" id="spill-done" onclick="filterCal('done')">✓ Terminées</button>
+      <a class="stat-pill all" id="subBtn" style="text-decoration:none" href="#">📅 S'abonner</a>
+    </div>
+  </div>
+
+  <div class="sprog">
+    <div class="prog-label">
+      <span class="prog-title" id="progTitle">Saison 2026</span>
+      <span class="prog-pct all" id="progLbl">24 / 35 épreuves</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill all" id="progFill"></div></div>
+  </div>
+
+
+
+  <div id="nrb-cal"></div>
+
+  <div id="cal-cards" style="padding:0 16px 8px"></div>
+
+</div>
+
+<!-- ══════════ PAGE ATHLÈTES ══════════ -->
+<div id="page-ath" class="page">
+
+  <div class="page-hero-ath">
+    <div class="hero-glow" style="background:radial-gradient(circle,rgba(48,209,88,.18),transparent 70%)"></div>
+    <button class="theme-btn" id="themeBtn2" onclick="toggleTheme()">🌙</button>
+    <div class="hero-eyebrow ath">Saison 2026</div>
+    <div class="hero-title">ATHLÈTES<br>& CLASSEMENTS</div>
+    <div class="hero-sub">Classements en cours · Recherche tous circuits</div>
+  </div>
+
+  <!-- Tabs classement -->
+  <div class="ath-tab-bar">
+    <button class="ath-tab active im" id="tab-im26"  onclick="switchTab('im26')">IRONMAN 26</button>
+    <button class="ath-tab wtcs"      id="tab-wtcs"  onclick="switchTab('wtcs')">WTCS 25</button>
+    <button class="ath-tab t100"      id="tab-t100"  onclick="switchTab('t100')">T100 25</button>
+    <button class="ath-tab"           id="tab-srch"  onclick="switchTab('srch')">🔍 Recherche</button>
+  </div>
+
+  
+
+<div id="panel-im26" class="rank-panel active">
+
+<div class="rank-header"><div class="rank-title">Classement IRONMAN 2026</div><div class="rank-sub">Après 2 / 16 épreuves · En cours</div></div>
+<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div>
+<div class="rank-row"><div class="rank-pos g1">1</div><div class="rank-av m">KB</div><div class="rank-info"><div class="rank-name">🇳🇴 Kristian Blummenfelt </div><div class="rank-detail">NOR</div></div><div class="rank-score"><div class="rank-pts im">1&#160;300</div><div class="rank-prize">NZ 6e + Geelong 1er</div></div></div>
+<div class="rank-row"><div class="rank-pos g2">2</div><div class="rank-av m">TF</div><div class="rank-info"><div class="rank-name">🇺🇸 Trevor Foley </div><div class="rank-detail">USA</div></div><div class="rank-score"><div class="rank-pts im">1&#160;000</div><div class="rank-prize">NZ 1er</div></div></div>
+<div class="rank-row"><div class="rank-pos g3">3</div><div class="rank-av m">JG</div><div class="rank-info"><div class="rank-name">🇧🇪 Jelle Geens </div><div class="rank-detail">BEL</div></div><div class="rank-score"><div class="rank-pts im">800</div><div class="rank-prize">Geelong 2e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">4</div><div class="rank-av m">PL</div><div class="rank-info"><div class="rank-name">🇫🇷 Pierre Le Corre </div><div class="rank-detail">FRA</div></div><div class="rank-score"><div class="rank-pts im">800</div><div class="rank-prize">NZ 2e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">5</div><div class="rank-av m">HW</div><div class="rank-info"><div class="rank-name">🇳🇿 Hayden Wilde </div><div class="rank-detail">NZL</div></div><div class="rank-score"><div class="rank-pts im">600</div><div class="rank-prize">Geelong 3e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">6</div><div class="rank-av m">MH</div><div class="rank-info"><div class="rank-name">🇺🇸 Matt Hanson </div><div class="rank-detail">USA</div></div><div class="rank-score"><div class="rank-pts im">600</div><div class="rank-prize">NZ 3e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">7</div><div class="rank-av m">JB</div><div class="rank-info"><div class="rank-name">🇦🇺 Jake Birtwhistle </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">500</div><div class="rank-prize">Geelong 4e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">8</div><div class="rank-av m">JM</div><div class="rank-info"><div class="rank-name">🇦🇺 Joel Moody </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">500</div><div class="rank-prize">NZ 4e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">9</div><div class="rank-av m">KM</div><div class="rank-info"><div class="rank-name">🇦🇺 Kurt McDonald </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">400</div><div class="rank-prize">Geelong 5e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">10</div><div class="rank-av m">MP</div><div class="rank-info"><div class="rank-name">🇳🇿 Mike Phillips </div><div class="rank-detail">NZL</div></div><div class="rank-score"><div class="rank-pts im">400</div><div class="rank-prize">NZ 5e</div></div></div>
+<div class="gdiv" style="margin-top:12px"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div>
+<div class="rank-row"><div class="rank-pos g1">1</div><div class="rank-av f">KM</div><div class="rank-info"><div class="rank-name">🇬🇧 Kat Matthews <span class="rank-note champion">★ 2 victoires en 2026</span></div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts im">2&#160;000</div><div class="rank-prize">NZ 1re + Geelong 1re</div></div></div>
+<div class="rank-row"><div class="rank-pos g2">2</div><div class="rank-av f">TJ</div><div class="rank-info"><div class="rank-name">🇨🇦 Tamara Jewett </div><div class="rank-detail">CAN</div></div><div class="rank-score"><div class="rank-pts im">1&#160;100</div><div class="rank-prize">NZ 4e + Geelong 3e</div></div></div>
+<div class="rank-row"><div class="rank-pos g3">3</div><div class="rank-av f">HB</div><div class="rank-info"><div class="rank-name">🇳🇿 Hannah Berry </div><div class="rank-detail">NZL</div></div><div class="rank-score"><div class="rank-pts im">800</div><div class="rank-prize">NZ 2e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">4</div><div class="rank-av f">GT</div><div class="rank-info"><div class="rank-name">🇦🇺 Grace Thek </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">800</div><div class="rank-prize">Geelong 2e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">5</div><div class="rank-av f">LW</div><div class="rank-info"><div class="rank-name">🇳🇱 Lotte Wilms </div><div class="rank-detail">NED</div></div><div class="rank-score"><div class="rank-pts im">600</div><div class="rank-prize">NZ 3e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">6</div><div class="rank-av f">SG</div><div class="rank-info"><div class="rank-name">🇬🇧 Sophia Green </div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts im">500</div><div class="rank-prize">Geelong 4e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">7</div><div class="rank-av f">CJ</div><div class="rank-info"><div class="rank-name">🇦🇺 Chelsea Jewett </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">500</div><div class="rank-prize">NZ 4e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">8</div><div class="rank-av f">DL</div><div class="rank-info"><div class="rank-name">🇺🇸 Danielle Lewis </div><div class="rank-detail">USA</div></div><div class="rank-score"><div class="rank-pts im">400</div><div class="rank-prize">NZ 5e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">9</div><div class="rank-av f">SC</div><div class="rank-info"><div class="rank-name">🇬🇧 Steph Clutterbuck </div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts im">400</div><div class="rank-prize">Geelong 5e</div></div></div>
+<div class="rank-row"><div class="rank-pos ">10</div><div class="rank-av f">RH</div><div class="rank-info"><div class="rank-name">🇦🇺 Regan Hollioake </div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts im">300</div><div class="rank-prize">NZ 6e</div></div></div>
+
+<div style="height:1px;background:var(--border);margin:20px 0"></div><div class="rank-header"><div class="rank-title">Classement IRONMAN 2025</div><div class="rank-sub">Saison terminée · Résultats définitifs</div></div>
+<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div>
+<div class="rank-row">
+  <div class="rank-pos g1">1</div>
+  <div class="rank-av m">KB</div>
+  <div class="rank-info">
+    <div class="rank-name">🇳🇴 Kristian Blummenfelt <span class="rank-note champion">Champion Pro Series 2025</span></div>
+    <div class="rank-detail">NOR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">21&#160;200</div>
+    <div class="rank-prize">$200 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos g2">2</div>
+  <div class="rank-av m">CS</div>
+  <div class="rank-info">
+    <div class="rank-name">🇳🇴 Casper Stornes <span class="rank-note champion">Champ. du Monde Kona 2025</span></div>
+    <div class="rank-detail">NOR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">20&#160;414</div>
+    <div class="rank-prize">$130 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos g3">3</div>
+  <div class="rank-av m">KH</div>
+  <div class="rank-info">
+    <div class="rank-name">🇩🇰 Kristian Hogenhaug </div>
+    <div class="rank-detail">DEN</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">19&#160;984</div>
+    <div class="rank-prize">$85 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">4</div>
+  <div class="rank-av m">NT</div>
+  <div class="rank-info">
+    <div class="rank-name">🇦🇺 Nick Thompson </div>
+    <div class="rank-detail">AUS</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">18&#160;500</div>
+    <div class="rank-prize">$70 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">5</div>
+  <div class="rank-av m">GI</div>
+  <div class="rank-info">
+    <div class="rank-name">🇳🇴 Gustav Iden </div>
+    <div class="rank-detail">NOR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">18&#160;145</div>
+    <div class="rank-prize">$50 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">6</div>
+  <div class="rank-av m">RV</div>
+  <div class="rank-info">
+    <div class="rank-name">🇺🇸 Rudy Von Berg </div>
+    <div class="rank-detail">USA</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">17&#160;200</div>
+    <div class="rank-prize">$40 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">7</div>
+  <div class="rank-av m">JS</div>
+  <div class="rank-info">
+    <div class="rank-name">🇩🇪 Jonas Schomburg </div>
+    <div class="rank-detail">GER</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">16&#160;800</div>
+    <div class="rank-prize">$30 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">8</div>
+  <div class="rank-av m">HG</div>
+  <div class="rank-info">
+    <div class="rank-name">🇫🇮 Henrik Goesch </div>
+    <div class="rank-detail">FIN</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">16&#160;200</div>
+    <div class="rank-prize">$20 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">9</div>
+  <div class="rank-av m">LC</div>
+  <div class="rank-info">
+    <div class="rank-name">🇫🇷 Leon Chevalier </div>
+    <div class="rank-detail">FRA</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">15&#160;800</div>
+    <div class="rank-prize">$15 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">10</div>
+  <div class="rank-av m">JH</div>
+  <div class="rank-info">
+    <div class="rank-name">🇩🇪 Jonas Hoffmann </div>
+    <div class="rank-detail">GER</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">15&#160;200</div>
+    <div class="rank-prize">$10 000</div>
+  </div>
+</div>
+<div class="gdiv" style="margin-top:12px"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div>
+<div class="rank-row">
+  <div class="rank-pos g1">1</div>
+  <div class="rank-av f">KM</div>
+  <div class="rank-info">
+    <div class="rank-name">🇬🇧 Kat Matthews <span class="rank-note champion">Championne 2024 & 2025</span></div>
+    <div class="rank-detail">GBR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">20&#160;845</div>
+    <div class="rank-prize">$200 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos g2">2</div>
+  <div class="rank-av f">SL</div>
+  <div class="rank-info">
+    <div class="rank-name">🇳🇴 Solveig Lovseth <span class="rank-note champion">Champ. Monde Kona 2025</span></div>
+    <div class="rank-detail">NOR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">20&#160;351</div>
+    <div class="rank-prize">$130 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos g3">3</div>
+  <div class="rank-av f">LP</div>
+  <div class="rank-info">
+    <div class="rank-name">🇦🇹 Lisa Perterer </div>
+    <div class="rank-detail">AUT</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">17&#160;956</div>
+    <div class="rank-prize">$85 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">4</div>
+  <div class="rank-av f">JH</div>
+  <div class="rank-info">
+    <div class="rank-name">🇺🇸 Jackie Hering </div>
+    <div class="rank-detail">USA</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">16&#160;330</div>
+    <div class="rank-prize">$70 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">5</div>
+  <div class="rank-av f">LJ</div>
+  <div class="rank-info">
+    <div class="rank-name">🇩🇪 Laura Jansen </div>
+    <div class="rank-detail">GER</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">14&#160;961</div>
+    <div class="rank-prize">$50 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">6</div>
+  <div class="rank-av f">RH</div>
+  <div class="rank-info">
+    <div class="rank-name">🇦🇺 Regan Hollioake <span class="rank-note champion">Championne NZ 2025</span></div>
+    <div class="rank-detail">AUS</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">14&#160;852</div>
+    <div class="rank-prize">$40 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">7</div>
+  <div class="rank-av f">AR</div>
+  <div class="rank-info">
+    <div class="rank-name">🇩🇪 Anne Reischmann </div>
+    <div class="rank-detail">GER</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">14&#160;200</div>
+    <div class="rank-prize">$30 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">8</div>
+  <div class="rank-av f">MS</div>
+  <div class="rank-info">
+    <div class="rank-name">🇩🇰 Maja Stage Nielsen </div>
+    <div class="rank-detail">DEN</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">13&#160;800</div>
+    <div class="rank-prize">$20 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">9</div>
+  <div class="rank-av f">CC</div>
+  <div class="rank-info">
+    <div class="rank-name">🇫🇷 Charlene Clavet </div>
+    <div class="rank-detail">FRA</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">13&#160;200</div>
+    <div class="rank-prize">$15 000</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">10</div>
+  <div class="rank-av f">MV</div>
+  <div class="rank-info">
+    <div class="rank-name">🇩🇰 Michelle Vesterby </div>
+    <div class="rank-detail">DEN</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts im">12&#160;900</div>
+    <div class="rank-prize">$10 000</div>
+  </div>
+</div>
+</div>
+
+<div id="panel-wtcs" class="rank-panel">
+<div class="rank-header"><div class="rank-title">Classement WTCS 2026</div><div class="rank-sub">Mis à jour après WTCS Yokohama · Mai 2026</div></div>
+
+<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div>
+
+<div class="rank-row"><div class="rank-pos g1">1</div><div class="rank-av wm">MH</div><div class="rank-info"><div class="rank-name">🇦🇺 Matthew Hauser <span class="rank-note champion">Leader WTCS</span></div><div class="rank-detail">AUS</div></div><div class="rank-score"><div class="rank-pts wtcs">1000</div><div class="rank-prize">pts</div></div></div>
+
+<div class="rank-row"><div class="rank-pos g2">2</div><div class="rank-av wm">VV</div><div class="rank-info"><div class="rank-name">🇵🇹 Vasco Vilaça</div><div class="rank-detail">POR</div></div><div class="rank-score"><div class="rank-pts wtcs">1000</div><div class="rank-prize">pts</div></div></div>
+
+<div class="rank-row"><div class="rank-pos g3">3</div><div class="rank-av wm">TH</div><div class="rank-info"><div class="rank-name">🇩🇪 Tim Hellwig</div><div class="rank-detail">GER</div></div><div class="rank-score"><div class="rank-pts wtcs">928</div><div class="rank-prize">pts</div></div></div>
+
+<div class="rank-row"><div class="rank-pos">4</div><div class="rank-av wm">HG</div><div class="rank-info"><div class="rank-name">🇩🇪 Henry Graf</div><div class="rank-detail">GER</div></div><div class="rank-score"><div class="rank-pts wtcs">925</div><div class="rank-prize">pts</div></div></div>
+
+<div class="rank-row"><div class="rank-pos">5</div><div class="rank-av wm">MH</div><div class="rank-info"><div class="rank-name">🇧🇷 Miguel Hidalgo</div><div class="rank-detail">BRA</div></div><div class="rank-score"><div class="rank-pts wtcs">925</div><div class="rank-prize">pts</div></div></div>
+
+<div class="gdiv" style="margin-top:12px"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div>
+
+<div class="rank-row"><div class="rank-pos g1">1</div><div class="rank-av wm">BP</div><div class="rank-info"><div class="rank-name">🇬🇧 Beth Potter <span class="rank-note champion">Leader WTCS</span></div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts wtcs">1925</div><div class="rank-prize">pts</div></div></div>
+
+<div class="rank-row"><div class="rank-pos g2">2</div><div class="rank-av wm">JL</div><div class="rank-info"><div class="rank-name">🇱🇺 Jeanne Lehair</div><div class="rank-detail">LUX</div></div><div class="rank-score"><div class="rank-pts wtcs">1711</div><div class="rank-prize">pts</div></div></div>
+
+<div class="rank-row"><div class="rank-pos g3">3</div><div class="rank-av wm">TM</div><div class="rank-info"><div class="rank-name">🇸🇪 Tilda Månsson</div><div class="rank-detail">SWE</div></div><div class="rank-score"><div class="rank-pts wtcs">1424</div><div class="rank-prize">pts</div></div></div>
+
+<div class="rank-row"><div class="rank-pos">4</div><div class="rank-av wm">TS</div><div class="rank-info"><div class="rank-name">🇺🇸 Taylor Spivey</div><div class="rank-detail">USA</div></div><div class="rank-score"><div class="rank-pts wtcs">1311</div><div class="rank-prize">pts</div></div></div>
+
+<div class="rank-row"><div class="rank-pos">5</div><div class="rank-av wm">SR</div><div class="rank-info"><div class="rank-name">🇬🇧 Sian Rainsley</div><div class="rank-detail">GBR</div></div><div class="rank-score"><div class="rank-pts wtcs">1075</div><div class="rank-prize">pts</div></div></div>
+</div>
+<div id="panel-t100" class="rank-panel">
+<div class="rank-header"><div class="rank-title">Classement T100 2025</div><div class="rank-sub">Saison terminée · Résultats définitifs</div></div>
+<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div>
+<div class="rank-row">
+  <div class="rank-pos g1">1</div>
+  <div class="rank-av tm">HW</div>
+  <div class="rank-info">
+    <div class="rank-name">🇳🇿 Hayden Wilde <span class="rank-note champion">Champion 2025</span></div>
+    <div class="rank-detail">NZL</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">3&#160;200</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos g2">2</div>
+  <div class="rank-av tm">SL</div>
+  <div class="rank-info">
+    <div class="rank-name">🇫🇷 Sam Laidlow </div>
+    <div class="rank-detail">FRA</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;950</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos g3">3</div>
+  <div class="rank-av tm">PH</div>
+  <div class="rank-info">
+    <div class="rank-name">🇧🇪 Pieter Heemeryck </div>
+    <div class="rank-detail">BEL</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;780</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">4</div>
+  <div class="rank-av tm">AD</div>
+  <div class="rank-info">
+    <div class="rank-name">🇩🇪 Andreas Dreitz </div>
+    <div class="rank-detail">GER</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;600</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">5</div>
+  <div class="rank-av tm">KS</div>
+  <div class="rank-info">
+    <div class="rank-name">🇳🇿 Kyle Smith </div>
+    <div class="rank-detail">NZL</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;400</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">6</div>
+  <div class="rank-av tm">LC</div>
+  <div class="rank-info">
+    <div class="rank-name">🇫🇷 Leon Chevalier </div>
+    <div class="rank-detail">FRA</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;200</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">7</div>
+  <div class="rank-av tm">MN</div>
+  <div class="rank-info">
+    <div class="rank-name">🇦🇺 Max Neumann </div>
+    <div class="rank-detail">AUS</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;050</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">8</div>
+  <div class="rank-av tm">GI</div>
+  <div class="rank-info">
+    <div class="rank-name">🇳🇴 Gustav Iden </div>
+    <div class="rank-detail">NOR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">1&#160;920</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">9</div>
+  <div class="rank-av tm">NK</div>
+  <div class="rank-info">
+    <div class="rank-name">🇦🇺 Nicholas Kastelein </div>
+    <div class="rank-detail">AUS</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">1&#160;800</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">10</div>
+  <div class="rank-av tm">RH</div>
+  <div class="rank-info">
+    <div class="rank-name">🇬🇧 Rupert Hollinshead </div>
+    <div class="rank-detail">GBR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">1&#160;680</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div>
+<div class="gdiv" style="margin-top:12px"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div>
+<div class="rank-row">
+  <div class="rank-pos g1">1</div>
+  <div class="rank-av tf">TK</div>
+  <div class="rank-info">
+    <div class="rank-name">🇺🇸 Taylor Knibb <span class="rank-note champion">Championne 2025</span></div>
+    <div class="rank-detail">USA</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">3&#160;100</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos g2">2</div>
+  <div class="rank-av tf">PF</div>
+  <div class="rank-info">
+    <div class="rank-name">🇨🇦 Paula Findlay </div>
+    <div class="rank-detail">CAN</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;870</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos g3">3</div>
+  <div class="rank-av tf">KM</div>
+  <div class="rank-info">
+    <div class="rank-name">🇬🇧 Kat Matthews </div>
+    <div class="rank-detail">GBR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;750</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">4</div>
+  <div class="rank-av tf">JM</div>
+  <div class="rank-info">
+    <div class="rank-name">🇺🇸 Jocelyn McCauley </div>
+    <div class="rank-detail">USA</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;500</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">5</div>
+  <div class="rank-av tf">EP</div>
+  <div class="rank-info">
+    <div class="rank-name">🇬🇧 Emma Pallant-Browne </div>
+    <div class="rank-detail">GBR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;300</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">6</div>
+  <div class="rank-av tf">BP</div>
+  <div class="rank-info">
+    <div class="rank-name">🇬🇧 Beth Potter </div>
+    <div class="rank-detail">GBR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;150</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">7</div>
+  <div class="rank-av tf">GT</div>
+  <div class="rank-info">
+    <div class="rank-name">🇬🇧 Georgia Taylor-Brown </div>
+    <div class="rank-detail">GBR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">2&#160;010</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">8</div>
+  <div class="rank-av tf">LC</div>
+  <div class="rank-info">
+    <div class="rank-name">🇬🇧 Lucy Charles-Barclay </div>
+    <div class="rank-detail">GBR</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">1&#160;880</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">9</div>
+  <div class="rank-av tf">LP</div>
+  <div class="rank-info">
+    <div class="rank-name">🇩🇪 Laura Philipp </div>
+    <div class="rank-detail">GER</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">1&#160;750</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div><div class="rank-row">
+  <div class="rank-pos ">10</div>
+  <div class="rank-av tf">FD</div>
+  <div class="rank-info">
+    <div class="rank-name">🇧🇲 Flora Duffy </div>
+    <div class="rank-detail">BER</div>
+  </div>
+  <div class="rank-score">
+    <div class="rank-pts t100">1&#160;620</div>
+    <div class="rank-prize">pts</div>
+  </div>
+</div>
+</div>
+
+<div id="panel-srch" class="rank-panel" style="padding-top:12px">
+    <div class="srch-section">
+      <div class="srch-wrap">
+        <svg class="srch-icon" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input class="srch-input" id="srchInput" type="text" placeholder="Blummenfelt, Matthews, Wilde…" oninput="doSearch(this.value)" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="srch-results" id="srchResults">
+        <div class="srch-hint">Tapez au moins 2 lettres</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bnav">
+  <div class="nitem active" id="nav-cal" onclick="showPage('cal')">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+    <span class="nlabel">Calendrier</span>
+  </div>
+  <div class="nitem" id="nav-ath" onclick="showPage('ath')">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+    <span class="nlabel">Athlètes</span>
+  </div>
+</div>
+
+<!-- SHEET MODAL -->
+<div class="overlay" id="overlay" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet">
+  <div class="sh-handle"></div>
+  <div class="sh-scroll" id="sheetContent"></div>
+</div>
+
+<script>
+var races = {}, wtcsRaces = {}, t100Races = {};
+
+// ── Drapeaux ──
+var FLAGS={NOR:"🇳🇴",USA:"🇺🇸",GBR:"🇬🇧",GER:"🇩🇪",FRA:"🇫🇷",AUS:"🇦🇺",CAN:"🇨🇦",NZL:"🇳🇿",
+  DEN:"🇩🇰",SWE:"🇸🇪",BEL:"🇧🇪",AUT:"🇦🇹",NED:"🇳🇱",ITA:"🇮🇹",ESP:"🇪🇸",POR:"🇵🇹",
+  BRA:"🇧🇷",JPN:"🇯🇵",CHN:"🇨🇳",CZE:"🇨🇿",FIN:"🇫🇮",POL:"🇵🇱",SUI:"🇨🇭",AZE:"🇦🇿",
+  UZB:"🇺🇿",KOR:"🇰🇷",MEX:"🇲🇽",RSA:"🇿🇦",IRL:"🇮🇪",ZIM:"🇿🇼",GRE:"🇬🇷",BER:"🇧🇲"};
+function flag(nat){return FLAGS[nat]||"";}
+function getNat(s){var m=s.match(/\(([A-Z]{2,3})\)/);return m?m[1]:"";}
+function stripNat(s){return s.replace(/\s*\([A-Z]{2,3}\).*/,"");}
+
+// ── Navigation ──
+function showPage(p) {
+  ["cal","ath"].forEach(function(id){
+    var pg=document.getElementById("page-"+id);
+    var nv=document.getElementById("nav-"+id);
+    if(pg) pg.classList.toggle("active", id===p);
+    if(nv) nv.classList.toggle("active", id===p);
+  });
+}
+
+// ── Tabs athlètes ──
+function switchTab(t) {
+  ["im26","wtcs","t100","srch"].forEach(function(id){
+    var btn=document.getElementById("tab-"+id);
+    var pan=document.getElementById("panel-"+id);
+    if(btn) btn.classList.toggle("active", id===t);
+    if(pan) pan.classList.toggle("active", id===t);
+  });
+  if(t==="srch") setTimeout(function(){var s=document.getElementById("srchInput");if(s)s.focus();},150);
+}
+
+// ── Mode clair/sombre ──
+function toggleTheme() {
+  var on=document.body.classList.toggle("light");
+  var ico=on?"☀️":"🌙";
+  ["themeBtn","themeBtn2"].forEach(function(id){var b=document.getElementById(id);if(b)b.textContent=ico;});
+  try{localStorage.setItem("tri_theme",on?"light":"dark");}catch(e){}
+}
+(function(){
+  try{if(localStorage.getItem("tri_theme")==="light"){
+    document.body.classList.add("light");
+    setTimeout(function(){["themeBtn","themeBtn2"].forEach(function(id){var b=document.getElementById(id);if(b)b.textContent="☀️";});},50);
+  }}catch(e){}
+})();
+
+// ── Filtres calendrier ──
+function isDone(iso) {
+  if(!iso) return false;
+  return new Date(iso.slice(0,4)+"-"+iso.slice(4,6)+"-"+iso.slice(6,8)).getTime() < Date.now()-3600000;
+}
+
+// ── Countdown ──
+function isoToTs(iso,utc) {
+  var y=iso.slice(0,4),m=iso.slice(4,6),d=iso.slice(6,8),t=utc||"06:00";
+  return new Date(y+"-"+m+"-"+d+"T"+t+":00Z").getTime();
+}
+function fmtCd(ms) {
+  if(ms<=0) return "EN COURS";
+  var d=Math.floor(ms/86400000),h=Math.floor((ms%86400000)/3600000),min=Math.floor((ms%3600000)/60000);
+  if(d>=2) return d+"j "+h+"h";
+  if(d===1) return "1j "+h+"h "+min+"m";
+  if(h>0) return h+"h "+min+"m";
+  return min+"m";
+}
+// ── Ouverture fiche course ──
+function openRace(circuit, id) {
+  if(circuit==="im") openSheet(id);
+  else if(circuit==="wtcs") openWTCS(id);
+  else openT100(id);
+}
+
+// ── openSheet IRONMAN ──
+function openSheet(id) {
+  var r=races[id]; if(!r) return;
+  var isWC=r.isWC, gold=isWC?"color:var(--gold)":"";
+  var html='<div class="sh-hero">';
+  html+='<div class="sh-circuit im">IRONMAN PRO SERIES</div>';
+  html+='<div class="sh-name" style="'+gold+'">'+r.name+'</div>';
+  html+='<div class="sh-loc">'+r.loc+' &mdash; '+r.date+'</div>';
+  html+='<div class="rbadge bfull" style="margin-top:6px;display:inline-block">'+r.badgeLabel+'</div>';
+  if(r.startTimeFR) html+='<div class="sh-time im" style="margin-top:8px">🕐 Départ Pro : '+r.startTimeFR+'</div>';
+  html+='<div class="sh-btns-row">';
+  html+='<button class="sh-btn-main im" id="ics-btn">📅 Ajouter au calendrier</button>';
+  html+='<button class="sh-share" id="share-btn">🔗 Partager</button>';
+  html+='</div></div>';
+  // Broadcast
+  if(r.broadcast && r.broadcast.length>0) {
+    html+='<div class="ssec"><div class="ssec-title">Diffusion</div>';
+    for(var i=0;i<r.broadcast.length;i++) {
+      var b=r.broadcast[i];
+      var icon=b.icon==="YT"?"📺":b.icon==="TV"?"📺":"💻";
+      var nameHtml=b.url?'<a href="'+b.url+'" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">'+b.name+'</a>':b.name;
+      html+='<div class="bc-card"><div class="bc-icon">'+icon+'</div><div class="bc-info"><div class="bc-name">'+nameHtml+'</div><div class="bc-detail">'+b.detail+(b.time?" · "+b.time:"")+'</div></div><div class="bc-right"><div class="bc-live">LIVE</div></div></div>';
+    }
+    html+='</div>';
+  }
+  // Done results
+  if(r.done && r.results) {
+    html+='<div class="ssec"><div class="ssec-title">Résultats officiels</div>';
+    function renderRes(arr,lbl) {
+      html+='<div class="gdiv"><div class="gline"></div><div class="glabel">'+lbl+'</div><div class="gline"></div></div>';
+      for(var ri=0;ri<arr.length;ri++) {
+        var a=arr[ri];
+        var medals=["🥇","🥈","🥉"]; var m=a.pos<=3?medals[a.pos-1]:a.pos;
+        var pc=a.pos===1?"g1":a.pos===2?"g2":a.pos===3?"g3":"";
+        var f=flag(a.nat||"");
+        html+='<div class="ath-row">';
+        html+='<div class="ath-num '+pc+'">'+m+'</div>';
+        html+='<div class="ath-av">'+(a.name.split(" ").map(function(w){return w[0];}).join("").substring(0,2).toUpperCase())+'</div>';
+        html+='<div class="ath-info" style="flex:1;min-width:0">';
+        html+='<div class="ath-name">'+(f?f+" ":"")+a.name+'</div>';
+        if(a.note) html+='<div style="font-size:10px;color:var(--gold)">'+a.note+'</div>';
+        html+='</div>';
+        if(a.time) html+='<div style="font-size:12px;font-weight:700;color:var(--im);flex-shrink:0;text-align:right">'+a.time+'</div>';
+        html+='</div>';
+      }
+    }
+    if(r.results.men) renderRes(r.results.men,"Hommes");
+    if(r.results.women) renderRes(r.results.women,"Femmes");
+    html+='</div>';
+  }
+  // Athletes
+  if(r.men && r.men.length>0) {
+    html+='<div class="ssec"><div class="ssec-title">Athlètes attendus</div>';
+    html+='<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div><div class="ath-grid">';
+    for(var mi=0;mi<r.men.length;mi++) {
+      var nm=r.men[mi], ini=nm.substring(0,2).toUpperCase(), gc=mi===0?"g1":mi===1?"g2":mi===2?"g3":"";
+      var f=flag(getNat(nm)), cn=stripNat(nm);
+      html+='<div class="ath-row"><div class="ath-num '+gc+'">'+(mi+1)+'</div><div class="ath-av">'+ini+'</div><div class="ath-info"><div class="ath-name">'+cn+'</div></div>'+(f?'<div style="font-size:20px;flex-shrink:0">'+f+'</div>':'')+'</div>';
+    }
+    html+='</div></div>';
+  }
+  if(r.women && r.women.length>0) {
+    html+='<div class="ssec"><div class="gdiv"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div><div class="ath-grid">';
+    for(var wi=0;wi<r.women.length;wi++) {
+      var wn=r.women[wi], wi2=wn.substring(0,2).toUpperCase(), wg=wi===0?"g1":wi===1?"g2":wi===2?"g3":"";
+      var wf=flag(getNat(wn)), wcn=stripNat(wn);
+      html+='<div class="ath-row"><div class="ath-num '+wg+'">'+(wi+1)+'</div><div class="ath-av f">'+wi2+'</div><div class="ath-info"><div class="ath-name">'+wcn+'</div></div>'+(wf?'<div style="font-size:20px;flex-shrink:0">'+wf+'</div>':'')+'</div>';
+    }
+    html+='</div></div>';
+  }
+  html+='<div style="height:20px"></div>';
+  document.getElementById("sheetContent").innerHTML=html;
+  var icsBtn=document.getElementById("ics-btn");
+  if(icsBtn) {(function(rid){icsBtn.onclick=function(){downloadICS(rid);};})(id);}
+  var shareBtn=document.getElementById("share-btn");
+  if(shareBtn) {(function(rr){shareBtn.onclick=function(){shareRace(rr);};})(r);}
+  openModal();
+}
+
+// ── Résultats officiels (réutilisable WTCS / T100) ──
+function buildResultsHTML(results, accentVar) {
+  var html='<div class="ssec"><div class="ssec-title">Résultats officiels</div>';
+  function renderRes(arr,lbl) {
+    html+='<div class="gdiv"><div class="gline"></div><div class="glabel">'+lbl+'</div><div class="gline"></div></div>';
+    for(var ri=0;ri<arr.length;ri++) {
+      var a=arr[ri];
+      var medals=["🥇","🥈","🥉"]; var m=a.pos<=3?medals[a.pos-1]:a.pos;
+      var pc=a.pos===1?"g1":a.pos===2?"g2":a.pos===3?"g3":"";
+      var f=flag(a.nat||"");
+      html+='<div class="ath-row">';
+      html+='<div class="ath-num '+pc+'">'+m+'</div>';
+      html+='<div class="ath-av">'+(a.name.split(" ").map(function(w){return w[0];}).join("").substring(0,2).toUpperCase())+'</div>';
+      html+='<div class="ath-info" style="flex:1;min-width:0">';
+      html+='<div class="ath-name">'+(f?f+" ":"")+a.name+'</div>';
+      if(a.note) html+='<div style="font-size:10px;color:var(--gold)">'+a.note+'</div>';
+      html+='</div>';
+      if(a.time) html+='<div style="font-size:12px;font-weight:700;color:var('+(accentVar||"--im")+');flex-shrink:0;text-align:right">'+a.time+'</div>';
+      html+='</div>';
+    }
+  }
+  if(results.men) renderRes(results.men,"Hommes");
+  if(results.women) renderRes(results.women,"Femmes");
+  html+='</div>';
+  return html;
+}
+
+// ── openWTCS ──
+function openWTCS(id) {
+  var r=wtcsRaces[id]; if(!r) return;
+  var icsOnc="downloadWTCSICS('"+id+"')";
+  var html='<div class="sh-hero">';
+  html+='<div class="sh-circuit wtcs">WORLD TRIATHLON CHAMPIONSHIP SERIES</div>';
+  html+='<div class="sh-name">'+r.name+'</div>';
+  html+='<div class="sh-loc">'+r.loc+' &mdash; '+r.date+'</div>';
+  html+='<div class="rbadge bwtcs" style="margin-top:6px;display:inline-block">'+r.format+'</div>';
+  if(r.postponed) html+='<div style="margin-top:10px;padding:10px 12px;border-radius:10px;background:rgba(255,159,10,.12);border:1px solid rgba(255,159,10,.3);font-size:12px;line-height:1.5">⏳ <b>Course reportée.</b> La manche élite d\'Abu Dhabi, prévue le 28-29 mars 2026, a été reportée en raison du conflit en cours au Moyen-Orient. Les courses amateurs ont eu lieu comme prévu. World Triathlon n\'a pas encore communiqué de nouvelle date — si la course est reprogrammée avant la Grande Finale de Pontevedra, elle comptera pour le classement général (5 manches + finale), sinon seulement 4 manches + finale seront retenues.</div>';
+  if(r.startTimeFR) html+='<div class="sh-time wtcs" style="margin-top:8px">🕐 Départ : '+r.startTimeFR+'</div>';
+  html+='<div class="sh-btns-row">';
+  html+='<button class="sh-btn-main wtcs" onclick="'+icsOnc+'">📅 Ajouter au calendrier</button>';
+  html+='<button class="sh-share" id="share-wtcs">🔗 Partager</button>';
+  html+='</div>';
+  html+='<a href="'+r.url+'" target="_blank" class="sh-ext-btn" style="margin-top:8px">🌐 Voir sur triathlon.org</a>';
+  html+='</div>';
+  html+='<div class="ssec"><div class="ssec-title">Diffusion</div>';
+  html+='<div class="bc-card"><div class="bc-icon">💻</div><div class="bc-info"><div class="bc-name"><a href="https://triathlon.org" target="_blank" style="color:inherit;text-decoration:underline">TriathlonLive</a></div><div class="bc-detail">Gratuit · Monde entier</div></div><div class="bc-right"><div class="bc-live" style="background:rgba(48,209,88,.15);color:var(--wtcs)">LIVE</div></div></div>';
+  html+='<div class="bc-card"><div class="bc-icon">📺</div><div class="bc-info"><div class="bc-name">Eurosport / Discovery+</div><div class="bc-detail">Europe</div></div><div class="bc-right"><div class="bc-live" style="background:rgba(48,209,88,.15);color:var(--wtcs)">LIVE</div></div></div>';
+  html+='<div class="bc-card"><div class="bc-icon">📺</div><div class="bc-info"><div class="bc-name">L&#39;Équipe Live</div><div class="bc-detail">France</div></div><div class="bc-right"><div class="bc-live" style="background:rgba(48,209,88,.15);color:var(--wtcs)">LIVE</div></div></div>';
+  html+='</div>';
+  if(r.done && r.results) html+=buildResultsHTML(r.results,"--wtcs");
+  if(r.men && r.men.length>0) {
+    html+='<div class="ssec"><div class="ssec-title">Athlètes attendus</div>';
+    html+='<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div><div class="ath-grid">';
+    for(var i=0;i<r.men.length;i++) {
+      var nm=r.men[i],ini=nm.substring(0,2).toUpperCase(),gc=i===0?"g1":i===1?"g2":i===2?"g3":"";
+      var f=flag(getNat(nm)),cn=stripNat(nm);
+      html+='<div class="ath-row"><div class="ath-num '+gc+'">'+(i+1)+'</div><div class="ath-av">'+ini+'</div><div class="ath-info"><div class="ath-name">'+cn+'</div></div>'+(f?'<div style="font-size:20px;flex-shrink:0">'+f+'</div>':'')+'</div>';
+    }
+    html+='</div></div>';
+  }
+  if(r.women && r.women.length>0) {
+    html+='<div class="ssec"><div class="gdiv"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div><div class="ath-grid">';
+    for(var j=0;j<r.women.length;j++) {
+      var wn=r.women[j],wi=wn.substring(0,2).toUpperCase(),wg=j===0?"g1":j===1?"g2":j===2?"g3":"";
+      var wf=flag(getNat(wn)),wcn=stripNat(wn);
+      html+='<div class="ath-row"><div class="ath-num '+wg+'">'+(j+1)+'</div><div class="ath-av f">'+wi+'</div><div class="ath-info"><div class="ath-name">'+wcn+'</div></div>'+(wf?'<div style="font-size:20px;flex-shrink:0">'+wf+'</div>':'')+'</div>';
+    }
+    html+='</div></div>';
+  }
+  html+='<div style="height:20px"></div>';
+  document.getElementById("sheetContent").innerHTML=html;
+  var sw=document.getElementById("share-wtcs");
+  if(sw){(function(rr){sw.onclick=function(){shareRace(rr);};})(r);}
+  openModal();
+}
+
+// ── openT100 ──
+function openT100(id) {
+  var r=t100Races[id]; if(!r) return;
+  var icsOnc="downloadT100ICS('"+id+"')";
+  var html='<div class="sh-hero">';
+  html+='<div class="sh-circuit t100">PTO T100 WORLD TOUR</div>';
+  html+='<div class="sh-name">'+r.name+'</div>';
+  html+='<div class="sh-loc">'+r.loc+' &mdash; '+r.date+'</div>';
+  html+='<div class="rbadge bt100" style="margin-top:6px;display:inline-block">'+r.format+'</div>';
+  if(r.startTimeFR) html+='<div class="sh-time t100" style="margin-top:8px">🕐 Départ : '+r.startTimeFR+'</div>';
+  html+='<div class="sh-btns-row">';
+  html+='<button class="sh-btn-main t100" onclick="'+icsOnc+'">📅 Ajouter au calendrier</button>';
+  html+='<button class="sh-share" id="share-t100">🔗 Partager</button>';
+  html+='</div>';
+  html+='<a href="'+r.url+'" target="_blank" class="sh-ext-btn" style="margin-top:8px">🌐 Voir sur t100triathlon.com</a>';
+  html+='</div>';
+  html+='<div class="ssec"><div class="ssec-title">Diffusion</div>';
+  html+='<div class="bc-card"><div class="bc-icon">📺</div><div class="bc-info"><div class="bc-name"><a href="https://www.discoveryplus.com" target="_blank" style="color:inherit;text-decoration:underline">Discovery+ / Max</a></div><div class="bc-detail">195+ territoires</div></div><div class="bc-right"><div class="bc-live" style="background:rgba(255,159,10,.15);color:var(--t100)">LIVE</div></div></div>';
+  html+='<div class="bc-card"><div class="bc-icon">📺</div><div class="bc-info"><div class="bc-name">Eurosport</div><div class="bc-detail">Europe</div></div><div class="bc-right"><div class="bc-live" style="background:rgba(255,159,10,.15);color:var(--t100)">LIVE</div></div></div>';
+  html+='<div class="bc-card"><div class="bc-icon">💻</div><div class="bc-info"><div class="bc-name"><a href="'+r.url+'" target="_blank" style="color:inherit;text-decoration:underline">t100triathlon.com</a></div><div class="bc-detail">Gratuit · replay disponible</div></div><div class="bc-right"><div class="bc-live" style="background:rgba(255,159,10,.15);color:var(--t100)">LIVE</div></div></div>';
+  html+='</div>';
+  if(r.done && r.results) html+=buildResultsHTML(r.results,"--t100");
+  if(r.men && r.men.length>0) {
+    html+='<div class="ssec"><div class="ssec-title">Athlètes attendus</div>';
+    html+='<div class="gdiv"><div class="gline"></div><div class="glabel">Hommes</div><div class="gline"></div></div><div class="ath-grid">';
+    for(var i=0;i<r.men.length;i++) {
+      var nm=r.men[i],ini=nm.substring(0,2).toUpperCase(),gc=i===0?"g1":i===1?"g2":i===2?"g3":"";
+      var f=flag(getNat(nm)),cn=stripNat(nm);
+      html+='<div class="ath-row"><div class="ath-num '+gc+'">'+(i+1)+'</div><div class="ath-av">'+ini+'</div><div class="ath-info"><div class="ath-name">'+cn+'</div></div>'+(f?'<div style="font-size:20px;flex-shrink:0">'+f+'</div>':'')+'</div>';
+    }
+    html+='</div></div>';
+  }
+  if(r.women && r.women.length>0) {
+    html+='<div class="ssec"><div class="gdiv"><div class="gline"></div><div class="glabel">Femmes</div><div class="gline"></div></div><div class="ath-grid">';
+    for(var j=0;j<r.women.length;j++) {
+      var wn=r.women[j],wi=wn.substring(0,2).toUpperCase(),wg=j===0?"g1":j===1?"g2":j===2?"g3":"";
+      var wf=flag(getNat(wn)),wcn=stripNat(wn);
+      html+='<div class="ath-row"><div class="ath-num '+wg+'">'+(j+1)+'</div><div class="ath-av f">'+wi+'</div><div class="ath-info"><div class="ath-name">'+wcn+'</div></div>'+(wf?'<div style="font-size:20px;flex-shrink:0">'+wf+'</div>':'')+'</div>';
+    }
+    html+='</div></div>';
+  }
+  html+='<div style="height:20px"></div>';
+  document.getElementById("sheetContent").innerHTML=html;
+  var st=document.getElementById("share-t100");
+  if(st){(function(rr){st.onclick=function(){shareRace(rr);};})(r);}
+  openModal();
+}
+
+// ── Modal helpers ──
+function openModal() {
+  document.getElementById("sheetContent").scrollTop=0;
+  document.getElementById("overlay").classList.add("open");
+  document.getElementById("sheet").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeSheet() {
+  document.getElementById("overlay").classList.remove("open");
+  document.getElementById("sheet").classList.remove("open");
+  document.body.style.overflow="";
+}
+
+// ── Partage ──
+function shareRace(r) {
+  var txt=r.name+" — "+r.loc+" · "+r.date;
+  if(navigator.share) navigator.share({title:r.name,text:txt,url:window.location.href}).catch(function(){});
+  else if(navigator.clipboard) navigator.clipboard.writeText(txt).then(function(){
+    var btns=document.querySelectorAll(".sh-share");
+    btns.forEach(function(b){var o=b.innerHTML;b.innerHTML="✅ Copié!";setTimeout(function(){b.innerHTML=o;},2000);});
+  });
+  else prompt("Copier :",txt);
+}
+
+// ── Base de données athlètes étendue (cross-circuit) ──
+var athleteDB = [
+  // IRONMAN Pro Series — athlètes clés 2025/2026
+  {name:"Kristian Blummenfelt",nat:"NOR",circuits:["IRONMAN","T100"]},
+  {name:"Casper Stornes",nat:"NOR",circuits:["IRONMAN"]},
+  {name:"Gustav Iden",nat:"NOR",circuits:["IRONMAN","T100"]},
+  {name:"Magnus Ditlev",nat:"DEN",circuits:["IRONMAN","T100"]},
+  {name:"Sam Long",nat:"USA",circuits:["IRONMAN"]},
+  {name:"Lionel Sanders",nat:"CAN",circuits:["IRONMAN"]},
+  {name:"Rudy Von Berg",nat:"USA",circuits:["IRONMAN"]},
+  {name:"Cameron Wurf",nat:"AUS",circuits:["IRONMAN"]},
+  {name:"Jonas Schomburg",nat:"GER",circuits:["IRONMAN"]},
+  {name:"Leon Chevalier",nat:"FRA",circuits:["IRONMAN","T100"]},
+  {name:"Jonas Hoffmann",nat:"GER",circuits:["IRONMAN"]},
+  {name:"Kristian Hogenhaug",nat:"DEN",circuits:["IRONMAN"]},
+  {name:"Nick Thompson",nat:"AUS",circuits:["IRONMAN"]},
+  {name:"Henrik Goesch",nat:"FIN",circuits:["IRONMAN"]},
+  {name:"Ben Kanute",nat:"USA",circuits:["IRONMAN","T100"]},
+  {name:"Chris Leiferman",nat:"USA",circuits:["IRONMAN"]},
+  {name:"Joe Skipper",nat:"GBR",circuits:["IRONMAN"]},
+  {name:"Pablo Dapena Gonzalez",nat:"ESP",circuits:["IRONMAN"]},
+  {name:"Florian Angert",nat:"GER",circuits:["IRONMAN"]},
+  {name:"Daniel Baekkegard",nat:"DEN",circuits:["IRONMAN"]},
+  {name:"Clement Mignon",nat:"FRA",circuits:["IRONMAN"]},
+  // NZ 2026 résultats
+  {name:"Trevor Foley",nat:"USA",circuits:["IRONMAN"]},
+  {name:"Pierre Le Corre",nat:"FRA",circuits:["IRONMAN"]},
+  {name:"Matt Hanson",nat:"USA",circuits:["IRONMAN"]},
+  {name:"Kyle Smith",nat:"NZL",circuits:["IRONMAN","T100"]},
+  {name:"Joel Moody",nat:"AUS",circuits:["IRONMAN"]},
+  // Femmes IRONMAN
+  {name:"Kat Matthews",nat:"GBR",circuits:["IRONMAN","T100"]},
+  {name:"Solveig Lovseth",nat:"NOR",circuits:["IRONMAN"]},
+  {name:"Laura Philipp",nat:"GER",circuits:["IRONMAN","T100"]},
+  {name:"Hannah Berry",nat:"NZL",circuits:["IRONMAN"]},
+  {name:"Lisa Perterer",nat:"AUT",circuits:["IRONMAN"]},
+  {name:"Jackie Hering",nat:"USA",circuits:["IRONMAN"]},
+  {name:"Chelsea Sodaro",nat:"USA",circuits:["IRONMAN"]},
+  {name:"Laura Jansen",nat:"GER",circuits:["IRONMAN"]},
+  {name:"Penny Slater",nat:"AUS",circuits:["IRONMAN"]},
+  {name:"Regan Hollioake",nat:"AUS",circuits:["IRONMAN"]},
+  {name:"Anne Reischmann",nat:"GER",circuits:["IRONMAN"]},
+  {name:"Chelsea Jewett",nat:"AUS",circuits:["IRONMAN"]},
+  {name:"Lotte Wilms",nat:"NED",circuits:["IRONMAN"]},
+  {name:"Skye Moench",nat:"USA",circuits:["IRONMAN"]},
+  {name:"Sarah Crowley",nat:"AUS",circuits:["IRONMAN"]},
+  {name:"Michelle Vesterby",nat:"DEN",circuits:["IRONMAN"]},
+  // WTCS
+  {name:"Matt Hauser",nat:"AUS",circuits:["WTCS"]},
+  {name:"Miguel Hidalgo",nat:"BRA",circuits:["WTCS"]},
+  {name:"Vasco Vilaca",nat:"POR",circuits:["WTCS"]},
+  {name:"Henry Graf",nat:"GER",circuits:["WTCS"]},
+  {name:"David Cantero",nat:"ESP",circuits:["WTCS"]},
+  {name:"Hayden Wilde",nat:"NZL",circuits:["WTCS","T100"]},
+  {name:"Jonathan Brownlee",nat:"GBR",circuits:["WTCS"]},
+  {name:"Tim Hellwig",nat:"GER",circuits:["WTCS"]},
+  {name:"Dorian Coninx",nat:"FRA",circuits:["WTCS"]},
+  {name:"Leo Bergere",nat:"FRA",circuits:["WTCS"]},
+  {name:"Jelle Geens",nat:"BEL",circuits:["WTCS"]},
+  {name:"Justus Nieschlag",nat:"GER",circuits:["WTCS"]},
+  {name:"Max Stapley",nat:"GBR",circuits:["WTCS"]},
+  {name:"Peter Rajmund",nat:"POL",circuits:["WTCS"]},
+  // Femmes WTCS
+  {name:"Lisa Tertsch",nat:"GER",circuits:["WTCS"]},
+  {name:"Leonie Periault",nat:"FRA",circuits:["WTCS"]},
+  {name:"Beth Potter",nat:"GBR",circuits:["WTCS","T100"]},
+  {name:"Taylor Knibb",nat:"USA",circuits:["WTCS","T100"]},
+  {name:"Julie Derron",nat:"SUI",circuits:["WTCS"]},
+  {name:"Georgia Taylor-Brown",nat:"GBR",circuits:["WTCS","T100"]},
+  {name:"Anne Haug",nat:"GER",circuits:["WTCS","IRONMAN"]},
+  {name:"Sophie Coldwell",nat:"GBR",circuits:["WTCS"]},
+  {name:"Cassandre Beaugrand",nat:"FRA",circuits:["WTCS"]},
+  {name:"Miriam Casillas",nat:"ESP",circuits:["WTCS"]},
+  // T100
+  {name:"Sam Laidlow",nat:"FRA",circuits:["T100","IRONMAN"]},
+  {name:"Pieter Heemeryck",nat:"BEL",circuits:["T100"]},
+  {name:"Andreas Dreitz",nat:"GER",circuits:["T100"]},
+  {name:"Rupert Hollinshead",nat:"GBR",circuits:["T100"]},
+  {name:"Max Neumann",nat:"AUS",circuits:["T100","IRONMAN"]},
+  {name:"Nicholas Kastelein",nat:"AUS",circuits:["T100"]},
+  // Femmes T100
+  {name:"Paula Findlay",nat:"CAN",circuits:["T100"]},
+  {name:"Jocelyn McCauley",nat:"USA",circuits:["T100"]},
+  {name:"Emma Pallant-Browne",nat:"GBR",circuits:["T100"]},
+  {name:"Lucy Charles-Barclay",nat:"GBR",circuits:["IRONMAN","T100"]},
+  {name:"Flora Duffy",nat:"BER",circuits:["WTCS","T100"]},
+];
+// ── Recherche athlète ──
+function doSearch(q) {
+  q=q.trim().toLowerCase();
+  var res=document.getElementById("srchResults"); if(!res) return;
+  if(q.length<2){res.innerHTML='<div class="srch-hint">Tapez au moins 2 lettres</div>';return;}
+  var found={};
+  function addAthlete(cn,nat,races){
+    var key=cn.toLowerCase();
+    if(!found[key]) found[key]={cn:cn,nat:nat,f:flag(nat),races:races||[]};
+    else found[key].races=found[key].races.concat(races||[]);
+  }
+  // Scan courses (athlètes engagés/résultats)
+  function scanMap(map,circuit,openFn,badgeCls,color){
+    for(var id in map){
+      var r=map[id];
+      var all=(r.men||[]).concat(r.women||[]);
+      for(var i=0;i<all.length;i++){
+        var nm=all[i];
+        if(nm.toLowerCase().indexOf(q)===-1) continue;
+        var nat=getNat(nm),cn=stripNat(nm),key=cn.toLowerCase();
+        if(!found[key]) found[key]={cn:cn,nat:nat,f:flag(nat),races:[]};
+        found[key].races.push({id:id,r:r,circuit:circuit,openFn:openFn,badgeCls:badgeCls,color:color});
+      }
+    }
+  }
+  scanMap(races,"IRONMAN","openSheet","bim","#FF4B6A");
+  scanMap(wtcsRaces,"WTCS","openWTCS","bwtcs","#30D158");
+  scanMap(t100Races,"T100","openT100","bt100","#FF9F0A");
+  // Scan athleteDB (athlètes connus sans course spécifique dans les données)
+  for(var ai=0;ai<athleteDB.length;ai++){
+    var ath=athleteDB[ai];
+    if(ath.name.toLowerCase().indexOf(q)===-1) continue;
+    var key=ath.name.toLowerCase();
+    if(!found[key]) found[key]={cn:ath.name,nat:ath.nat,f:flag(ath.nat),races:[],dbOnly:true,circuits:ath.circuits};
+  }
+  var keys=Object.keys(found);
+  if(keys.length===0){res.innerHTML='<div class="sr-empty"><div style="font-size:36px;margin-bottom:8px">🤔</div>Aucun résultat pour "'+q+'"</div>';return;}
+  var html="";
+  keys.forEach(function(k){
+    var ath=found[k],ini=ath.cn.split(" ").map(function(w){return w[0];}).join("").substring(0,2).toUpperCase();
+    var circuitsBadges="";
+    if(ath.dbOnly && ath.circuits){
+      ath.circuits.forEach(function(circ){
+        var bcls=circ==="IRONMAN"?"bim":circ==="WTCS"?"bwtcs":"bt100";
+        var col=circ==="IRONMAN"?"#FF4B6A":circ==="WTCS"?"#30D158":"#FF9F0A";
+        circuitsBadges+='<span class="sr-rbadge '+bcls+'" style="color:'+col+'">'+circ+'</span> ';
+      });
+    }
+    var subtitle=ath.races.length>0?ath.nat+' · '+ath.races.length+' course'+(ath.races.length>1?"s":""):ath.nat+(circuitsBadges?" · Athlète connu":"");
+    html+='<div class="sr-card">';
+    html+='<div class="sr-ath-hdr"><div class="sr-av">'+ini+'</div><div><div class="sr-ath-name">'+(ath.f?ath.f+" ":"")+ath.cn+'</div><div class="sr-ath-sub">'+subtitle+'</div></div>';
+    if(ath.dbOnly && circuitsBadges) html+='<div style="display:flex;gap:4px;flex-shrink:0;margin-left:auto">'+circuitsBadges+'</div>';
+    html+='</div>';
+    if(ath.races.length>0){
+      ath.races.forEach(function(rc){
+        var onc=rc.openFn+"('"+rc.id+"')";
+        html+='<div class="sr-race" onclick="'+onc+'">';
+        html+='<span class="sr-rbadge '+rc.badgeCls+'" style="color:'+rc.color+'">'+rc.circuit+'</span>';
+        html+='<span class="sr-rname">'+rc.r.name+'</span>';
+        html+='<span class="sr-rdate">'+rc.r.date+'</span>';
+        html+='</div>';
+      });
+    } else if(ath.dbOnly){
+      html+='<div style="padding:8px 14px;font-size:11px;color:var(--muted);border-top:1px solid var(--border)">Engagements disponibles prochainement</div>';
+    }
+    html+='</div>';
+  });
+  res.innerHTML=html;
+}
+
+function downloadICS(id) {
+  var r = races[id];
+  if (!r) return;
+  function addDays(iso, n) {
+    var y = parseInt(iso.slice(0,4));
+    var mo = parseInt(iso.slice(4,6)) - 1;
+    var d = parseInt(iso.slice(6,8));
+    var dt = new Date(y, mo, d + n);
+    return dt.getFullYear() + pad(dt.getMonth()+1) + pad(dt.getDate());
+  }
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  var dtStart = r.isoDate;
+  var dtEnd = addDays(r.isoDate, r.days);
+  var now = new Date().toISOString().replace(/[-:]/g,"").split(".")[0] + "Z";
+  var bcast = [];
+  for (var i = 0; i < r.broadcast.length; i++) {
+    if (r.broadcast[i].time && r.broadcast[i].time !== "Direct" && r.broadcast[i].time !== "Direct + replay") {
+      bcast.push(r.broadcast[i].name + ": " + r.broadcast[i].time);
+    }
+  }
+  var desc = bcast.length > 0 ? "Diffusion: " + bcast.join(" | ") : "proseries.ironman.com";
+  var ics = "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//IRONMAN Pro Series 2026//FR\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nBEGIN:VEVENT\r\nUID:ironman-" + id + "-2026@proseries\r\nDTSTAMP:" + now + "\r\nDTSTART;VALUE=DATE:" + dtStart + "\r\nDTEND;VALUE=DATE:" + dtEnd + "\r\nSUMMARY:" + r.name + " - IRONMAN Pro Series 2026\r\nLOCATION:" + r.loc + "\r\nDESCRIPTION:" + desc + "\r\nURL:https://proseries.ironman.com\r\nEND:VEVENT\r\nEND:VCALENDAR";
+  var blob = new Blob([ics], {type: "text/calendar;charset=utf-8"});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url; a.download = "ironman-" + id + "-2026.ics";
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
+function buildICS(uid, summary, location, desc, url, isoDate, startTimeUTC, durationH) {
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  var y = isoDate.slice(0,4), mo = isoDate.slice(4,6), d = isoDate.slice(6,8);
+  var hh = startTimeUTC.slice(0,2), mm = startTimeUTC.slice(3,5);
+  var dtStart = y + mo + d + "T" + hh + mm + "00Z";
+  var endMs = new Date(y+"-"+mo+"-"+d+"T"+hh+":"+mm+":00Z").getTime() + durationH*3600000;
+  var ed = new Date(endMs);
+  var dtEnd = ed.getUTCFullYear()+pad(ed.getUTCMonth()+1)+pad(ed.getUTCDate())+"T"+pad(ed.getUTCHours())+pad(ed.getUTCMinutes())+"00Z";
+  var now = new Date().toISOString().replace(/[-:]/g,"").split(".")[0]+"Z";
+  return "BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Tri 2026//FR\r\nCALSCALE:GREGORIAN\r\nMETHOD:PUBLISH\r\nBEGIN:VEVENT\r\nUID:"+uid+"\r\nDTSTAMP:"+now+"\r\nDTSTART:"+dtStart+"\r\nDTEND:"+dtEnd+"\r\nSUMMARY:"+summary+"\r\nLOCATION:"+location+"\r\nDESCRIPTION:"+desc+"\r\nURL:"+url+"\r\nBEGIN:VALARM\r\nTRIGGER:-PT15M\r\nACTION:DISPLAY\r\nDESCRIPTION:Depart dans 15 min - "+summary+"\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR";
+}
+function triggerICSDownload(ics, filename) {
+  var blob = new Blob([ics], {type:"text/calendar;charset=utf-8"});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+function downloadWTCSICS(id) {
+  var r = wtcsRaces[id]; if (!r || !r.isoDate) return;
+  var ics = buildICS("wtcs-"+id+"-2026@tri2026", r.name+" - WTCS 2026", r.loc, "World Triathlon Championship Series 2026 | triathlon.org", r.url, r.isoDate, r.startTimeUTC, 2);
+  triggerICSDownload(ics, "wtcs-"+id+"-2026.ics");
+}
+function downloadT100ICS(id) {
+  var r = t100Races[id]; if (!r || !r.isoDate) return;
+  var ics = buildICS("t100-"+id+"-2026@tri2026", r.name+" - T100 2026", r.loc, "PTO T100 Triathlon World Tour 2026 | t100triathlon.com", r.url, r.isoDate, r.startTimeUTC, 2);
+  triggerICSDownload(ics, "t100-"+id+"-2026.ics");
+}
+
+var startY = 0;
+document.getElementById("sheet").addEventListener("touchstart", function(e) { startY = e.touches[0].clientY; }, {passive: true});
+document.getElementById("sheet").addEventListener("touchmove", function(e) {
+  var dy = e.touches[0].clientY - startY;
+  var sc = document.getElementById("sheetContent").scrollTop;
+  if (dy > 60 && sc <= 0) closeSheet();
+}, {passive: true});
+
+
+
+// ═══════════ COUCHE DONNÉES (PWA) ═══════════
+var DATA_URL = 'data/races.json', LS_KEY = 'tri2026_data';
+var currentFilter = 'all', lastFetch = 0, cachedData = null, nrbTimer = null;
+var MONTHS = ["Janv.","Févr.","Mars","Avr.","Mai","Juin","Juil.","Août","Sept.","Oct.","Nov.","Déc."];
+
+function allCircuits() { return [['im', races], ['wtcs', wtcsRaces], ['t100', t100Races]]; }
+function parisHM(isoUtc) {
+  var s = new Intl.DateTimeFormat('fr-FR', {timeZone:'Europe/Paris', hour:'2-digit', minute:'2-digit', hourCycle:'h23'}).format(new Date(isoUtc));
+  return s.replace(':', 'h');
+}
+function raceDone(r) {
+  if (r.postponed) return false;
+  if (r.done) return true;
+  var base = r.startUTC ? Date.parse(r.startUTC) : Date.parse(r.isoDate.slice(0,4)+'-'+r.isoDate.slice(4,6)+'-'+r.isoDate.slice(6,8)+'T00:00:00Z');
+  return base + (r.days || 1) * 86400000 < Date.now();
+}
+function computeStats() {
+  var s = {total:0, done:0, im:{total:0,done:0}, wtcs:{total:0,done:0}, t100:{total:0,done:0}};
+  allCircuits().forEach(function(p) {
+    for (var id in p[1]) {
+      var d = raceDone(p[1][id]);
+      s.total++; s[p[0]].total++;
+      if (d) { s.done++; s[p[0]].done++; }
+    }
+  });
+  return s;
+}
+function applyData(d) {
+  races = d.races || {}; wtcsRaces = d.wtcsRaces || {}; t100Races = d.t100Races || {};
+  allCircuits().forEach(function(p) {
+    for (var id in p[1]) {
+      var r = p[1][id];
+      r.startTimeFR = r.startUTC ? parisHM(r.startUTC) + ' (heure fr.)' : '';
+      r.startTimeUTC = r.startUTC ? r.startUTC.slice(11, 16) : '06:00';   // utilisé par les boutons « ajouter au calendrier »
+    }
+  });
+  renderAll();
+  setSync(d.updatedAt, false);
+}
+function setSync(updatedAt, offline) {
+  var el = document.getElementById('syncStatus'); if (!el || !updatedAt) return;
+  var t = new Date(updatedAt).toLocaleString('fr-FR', {day:'numeric', month:'short', hour:'2-digit', minute:'2-digit', timeZone:'Europe/Paris'});
+  el.textContent = 'Données du ' + t + (offline ? ' · hors ligne' : '');
+}
+function syncData() {
+  if (Date.now() - lastFetch < 60000 && cachedData) return;
+  lastFetch = Date.now();
+  fetch(DATA_URL, {cache:'no-cache'})
+    .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(d) {
+      if (!cachedData || d.updatedAt !== cachedData.updatedAt) {
+        cachedData = d;
+        try { localStorage.setItem(LS_KEY, JSON.stringify(d)); } catch(e) {}
+        applyData(d);
+      } else setSync(d.updatedAt, false);
+    })
+    .catch(function() {
+      if (cachedData) setSync(cachedData.updatedAt, true);
+      else document.getElementById('cal-cards').innerHTML = '<div class="srch-hint">Impossible de charger les données. Réessaie une fois en ligne.</div>';
+    });
+}
+function boot() {
+  var sb = document.getElementById('subBtn');   // lien d'abonnement calculé depuis l'URL courante
+  if (sb && /^https?:$/.test(location.protocol)) sb.href = 'webcal://' + location.host + location.pathname.replace(/[^\/]*$/, '') + 'data/tricalendar.ics';
+  try { cachedData = JSON.parse(localStorage.getItem(LS_KEY)); } catch(e) {}
+  if (cachedData) applyData(cachedData);
+  syncData();
+}
+
+// ═══════════ RENDU ═══════════
+function badgesHTML(c, r) {
+  var short = {im:'IM', wtcs:'WTCS', t100:'T100'}[c];
+  if (r.cardBadge) return '<span class="rbadge ' + r.cardBadge.cls + '">' + r.cardBadge.label + '</span><span class="rbadge b' + c + '" style="font-size:8px">' + short + '</span>';
+  if (c === 'im') {
+    var cls = r.isWC ? 'bwc' : (r.badge || 'bfull');
+    var lab = r.tag || (r.isWC ? 'Champ. du Monde' : (cls === 'b703' ? '70.3' : 'Full 140.6'));
+    return '<span class="rbadge ' + cls + '">' + lab + '</span><span class="rbadge bim" style="font-size:8px">IM</span>';
+  }
+  if (c === 'wtcs') return '<span class="rbadge bwtcs">' + (r.format || '').split(/ [+·—] /)[0] + '</span><span class="rbadge bwtcs" style="font-size:8px">WTCS</span>';
+  return '<span class="rbadge bt100">' + (r.format || '') + '</span><span class="rbadge bt100" style="font-size:8px">T100</span>';
+}
+function cardHTML(c, id, r) {
+  var done = raceDone(r), d = r.isoDate, day = +d.slice(6,8), mon = MONTHS[+d.slice(4,6) - 1];
+  var loc = (r.loc || '').split(' — ')[0], dateBlock, sub, status = '';
+  if (r.postponed) {
+    dateBlock = '<div class="rdate" style="background:rgba(255,159,10,.12)"><div class="rdate-d" style="font-size:11px">⏳</div><div class="rdate-m">Reportée</div></div>';
+    sub = r.sub || (loc + ' · date initiale ' + day + ' ' + mon);
+    status = '<span class="done-badge" style="background:rgba(255,159,10,.18);color:var(--t100)">⏳ Reportée</span>';
+  } else {
+    dateBlock = '<div class="rdate"><div class="rdate-d">' + day + '</div><div class="rdate-m">' + mon + '</div></div>';
+    sub = r.sub || loc;
+    if (done) status = '<span class="done-badge">✓ Terminée</span>';
+  }
+  return '<div class="rcard rcard-' + c + (done ? ' rcard-done' : '') + '" data-circuit="' + c + '" data-done="' + (done ? '1' : '') + '" onclick="openRace(\'' + c + '\',\'' + id + '\')">' +
+    dateBlock +
+    '<div class="rcard-mid"><div class="rcard-name">' + r.name + '</div><div class="rcard-sub"><span style="color:var(--muted)">' + sub + '</span></div></div>' +
+    '<div class="rcard-badges">' + status + badgesHTML(c, r) + '</div>' +
+    '<svg class="rcard-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div>';
+}
+function renderCalendar() {
+  var list = [];
+  allCircuits().forEach(function(p) { for (var id in p[1]) list.push({c:p[0], id:id, r:p[1][id]}); });
+  list.sort(function(a, b) { return (a.r.isoDate + (a.r.startUTC || '')).localeCompare(b.r.isoDate + (b.r.startUTC || '')); });
+  var months = {};
+  list.forEach(function(x) { (months[+x.r.isoDate.slice(4,6) - 1] = months[+x.r.isoDate.slice(4,6) - 1] || []).push(x); });
+  var html = '';
+  Object.keys(months).map(Number).sort(function(a, b) { return a - b; }).forEach(function(m) {
+    var items = months[m], n = {im:0, wtcs:0, t100:0}, allDone = true;
+    items.forEach(function(x) { n[x.c]++; if (!raceDone(x.r) && !x.r.postponed) allDone = false; });
+    var cnt = [];
+    if (n.im) cnt.push('<span style="color:var(--im)">' + n.im + ' IM</span>');
+    if (n.wtcs) cnt.push('<span style="color:var(--wtcs)">' + n.wtcs + ' WTCS</span>');
+    if (n.t100) cnt.push('<span style="color:var(--t100)">' + n.t100 + ' T100</span>');
+    html += '<div class="month-wrap' + (allDone ? ' collapsed' : '') + '" data-dc="' + (allDone ? 1 : 0) + '">' +
+      '<button class="month-toggle" type="button" onclick="toggleMonth(this)"><div class="mhdr"><div class="mhdr-name">' + MONTHS[m] + '</div><div class="mcnt">' + cnt.join(' · ') + '</div><div class="month-chevron">▾</div></div></button>' +
+      '<div class="month-content">' + items.map(function(x) { return cardHTML(x.c, x.id, x.r); }).join('') + '</div></div>';
+  });
+  document.getElementById('cal-cards').innerHTML = html;
+}
+function toggleMonth(btn) { btn.parentElement.classList.toggle('collapsed'); }
+function renderHero() {
+  var s = computeStats();
+  function t(id, v) { var e = document.getElementById(id); if (e) e.textContent = v; }
+  t('heroSub', s.total + ' épreuves · IRONMAN · WTCS · T100');
+  t('spill-im', '🔴 ' + s.im.total + ' IRONMAN');
+  t('spill-wtcs', '🟢 ' + s.wtcs.total + ' WTCS');
+  t('spill-t100', '🟡 ' + s.t100.total + ' T100');
+}
+function renderAll() { renderCalendar(); renderHero(); filterCal(currentFilter); initNextBanner(); }
+
+// ═══════════ FILTRES / PROGRESSION / PROCHAIN DÉPART ═══════════
+function filterCal(type) {
+  currentFilter = type;
+  var pillMap = {all:'spill-all', upcoming:'spill-upcoming', done:'spill-done', im:'spill-im', wtcs:'spill-wtcs', t100:'spill-t100'};
+  Object.keys(pillMap).forEach(function(k) { var el = document.getElementById(pillMap[k]); if (el) el.classList.toggle('active', k === type); });
+  document.querySelectorAll('#cal-cards .rcard').forEach(function(card) {
+    var c = card.dataset.circuit, done = !!card.dataset.done, show;
+    if (type === 'all') show = true; else if (type === 'upcoming') show = !done; else if (type === 'done') show = done; else show = (type === c);
+    card.style.display = show ? 'flex' : 'none';
+  });
+  var expand = (type !== 'all' && type !== 'upcoming');
+  document.querySelectorAll('#cal-cards .month-wrap').forEach(function(w) {
+    var vis = [].some.call(w.querySelectorAll('.rcard'), function(c) { return c.style.display !== 'none'; });
+    w.style.display = vis ? '' : 'none';
+    w.classList.toggle('collapsed', expand ? false : w.dataset.dc === '1');
+  });
+  updateProgress(type);
+}
+function updateProgress(type) {
+  var s = computeStats();
+  var m = {all:[s.total,s.done], upcoming:[s.total-s.done,0], done:[s.done,s.done], im:[s.im.total,s.im.done], wtcs:[s.wtcs.total,s.wtcs.done], t100:[s.t100.total,s.t100.done]};
+  var p = m[type] || m.all, pct = p[0] > 0 ? Math.round(p[1] / p[0] * 100) : 0;
+  var lbl = document.getElementById('progLbl'), fill = document.getElementById('progFill'), ttl = document.getElementById('progTitle');
+  if (lbl) lbl.textContent = p[1] + ' / ' + p[0] + ' épreuve' + (p[0] > 1 ? 's' : '');
+  if (fill) {
+    var cm = {all:'all', upcoming:'all', done:'all', im:'im', wtcs:'wtcs', t100:'t100'};
+    fill.className = 'prog-fill ' + (cm[type] || 'all');
+    fill.style.width = Math.max(pct, 1) + '%';
+  }
+  var tm = {all:'Saison 2026', upcoming:'Prochaines épreuves', done:'Terminées', im:'IRONMAN 2026', wtcs:'WTCS 2026', t100:'T100 2026'};
+  if (ttl) ttl.textContent = tm[type] || 'Saison 2026';
+}
+function findNext() {
+  var now = Date.now(), best = null, bestTs = Infinity;
+  allCircuits().forEach(function(p) {
+    for (var id in p[1]) {
+      var r = p[1][id]; if (r.postponed || !r.startUTC) continue;
+      var ts = Date.parse(r.startUTC);
+      if (ts > now && ts < bestTs) { bestTs = ts; best = {id:id, r:r, ts:ts, circuit:p[0]}; }
+    }
+  });
+  return best;
+}
+function initNextBanner() {
+  var el = document.getElementById('nrb-cal'); if (!el) return;
+  clearInterval(nrbTimer);
+  var next = findNext(); if (!next) { el.innerHTML = ''; return; }
+  var lbl = next.circuit === 'im' ? 'IRONMAN' : next.circuit === 'wtcs' ? 'WTCS' : 'T100';
+  el.innerHTML = '<div class="nrb nrb-' + next.circuit + '" onclick="openRace(\'' + next.circuit + '\',\'' + next.id + '\')">' +
+    '<div style="flex:1;min-width:0"><div class="nrb-badge ' + next.circuit + '">⚡ PROCHAIN DÉPART · ' + lbl + '</div>' +
+    '<div class="nrb-name">' + next.r.name + '</div><div class="nrb-sub">' + next.r.loc + ' · ' + next.r.date + '</div></div>' +
+    '<div style="text-align:right;flex-shrink:0"><div class="nrb-cd" id="nrb-cd-main">' + fmtCd(next.ts - Date.now()) + '</div><div class="nrb-cd-lbl">avant le départ</div></div></div>';
+  nrbTimer = setInterval(function() { var e = document.getElementById('nrb-cd-main'); if (e) e.textContent = fmtCd(next.ts - Date.now()); }, 30000);
+}
+
+// ═══════════ DÉMARRAGE ═══════════
+boot();
+document.addEventListener('visibilitychange', function() {
+  if (!document.hidden) { if (cachedData) renderAll(); syncData(); }
+});
+window.addEventListener('online', syncData);
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() { navigator.serviceWorker.register('sw.js'); });
+}
+
+</script>
+</body>
+</html>
